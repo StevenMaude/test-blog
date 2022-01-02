@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>adblock - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/adblock/</link>
+        <description>adblock - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 28 Sep 2014 00:02:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/adblock/" rel="self" type="application/rss+xml" /><item>
+    <title>Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard</title>
+    <link>https://www.stevenmaude.co.uk/posts/taking-control-of-chromium-and-chrome/</link>
+    <pubDate>Sun, 28 Sep 2014 00:02:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/taking-control-of-chromium-and-chrome/</guid>
+    <description><![CDATA[How you can use ublock and HTTP Switchboard to take control of what your browser loads.]]></description>
+</item></channel>
+</rss>

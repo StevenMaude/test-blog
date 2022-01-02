@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>draft,article,Pelican - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/draftarticlepelican/</link>
+        <description>draft,article,Pelican - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 31 May 2015 20:16:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/draftarticlepelican/" rel="self" type="application/rss+xml" /><item>
+    <title>Hiding draft articles in Pelican</title>
+    <link>https://www.stevenmaude.co.uk/posts/hiding-draft-articles-in-pelican/</link>
+    <pubDate>Sun, 31 May 2015 20:16:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/hiding-draft-articles-in-pelican/</guid>
+    <description><![CDATA[How to hide articles you don&rsquo;t want to be published yet.]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Namecheap - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/namecheap/</link>
+        <description>Namecheap - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 11 Dec 2015 17:04:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/namecheap/" rel="self" type="application/rss+xml" /><item>
+    <title>As easy as 123(-reg) </title>
+    <link>https://www.stevenmaude.co.uk/posts/as-easy-as-123-reg/</link>
+    <pubDate>Fri, 11 Dec 2015 17:04:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/as-easy-as-123-reg/</guid>
+    <description><![CDATA[Transferring a .co.uk domain from 123-reg to Namecheap with no downtime.]]></description>
+</item></channel>
+</rss>

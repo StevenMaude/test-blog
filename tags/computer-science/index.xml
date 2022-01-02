@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>computer science - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/computer-science/</link>
+        <description>computer science - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 07 Jun 2020 20:55:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/computer-science/" rel="self" type="application/rss+xml" /><item>
+    <title>&#34;The Missing Semester of Your CS Education&#34;: a course review</title>
+    <link>https://www.stevenmaude.co.uk/posts/the-missing-semester-of-your-cs-education-a-course-review/</link>
+    <pubDate>Sun, 07 Jun 2020 20:55:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/the-missing-semester-of-your-cs-education-a-course-review/</guid>
+    <description><![CDATA[A quick review and recommendation of a useful computer science course]]></description>
+</item></channel>
+</rss>

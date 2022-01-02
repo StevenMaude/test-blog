@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>foolishness - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/foolishness/</link>
+        <description>foolishness - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 05 Jul 2014 11:34:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/foolishness/" rel="self" type="application/rss+xml" /><item>
+    <title>Arduous lessons in Python: why main() is useful</title>
+    <link>https://www.stevenmaude.co.uk/posts/arduous-lessons-in-python-why-main-is/</link>
+    <pubDate>Sat, 05 Jul 2014 11:34:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/arduous-lessons-in-python-why-main-is/</guid>
+    <description><![CDATA[Why if <code>__name__ == '__main__'</code> is a sensible check in code you&rsquo;re reusing.]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>TRIM - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/trim/</link>
+        <description>TRIM - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Dec 2013 00:04:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/trim/" rel="self" type="application/rss+xml" /><item>
+    <title>Some &lt;s&gt;spring&lt;/s&gt; winter Ubuntu cleaning</title>
+    <link>https://www.stevenmaude.co.uk/posts/some-spring-winter-ubuntu-cleaning/</link>
+    <pubDate>Tue, 24 Dec 2013 00:04:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/some-spring-winter-ubuntu-cleaning/</guid>
+    <description><![CDATA[Some Ubuntu tips: setting up TRIM on an encrypted drive for 12.04 LTS and freeing up space on the boot partition.]]></description>
+</item></channel>
+</rss>

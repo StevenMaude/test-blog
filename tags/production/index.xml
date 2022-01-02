@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>production - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/production/</link>
+        <description>production - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 26 Jun 2016 12:40:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/production/" rel="self" type="application/rss+xml" /><item>
+    <title>Book (and talk) review: Making Music. 74 Creative Strategies for Electronic Music Producers.</title>
+    <link>https://www.stevenmaude.co.uk/posts/book-and-talk-review-making-music.-74-creative-strategies-for-electronic-music-producers./</link>
+    <pubDate>Sun, 26 Jun 2016 12:40:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/book-and-talk-review-making-music.-74-creative-strategies-for-electronic-music-producers./</guid>
+    <description><![CDATA[Reviewing an Ableton tutorial book on production, and a talk by the author that discussed it.]]></description>
+</item><item>
+    <title>Making a MIDI keyboard modulation wheel work with third-party VSTs in FL Studio</title>
+    <link>https://www.stevenmaude.co.uk/posts/making-midi-keyboard-modulation-wheel/</link>
+    <pubDate>Sun, 27 Apr 2014 18:19:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/making-midi-keyboard-modulation-wheel/</guid>
+    <description><![CDATA[How to get a mod wheel working with third-party plugins in FL Studio.]]></description>
+</item></channel>
+</rss>

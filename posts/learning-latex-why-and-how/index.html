@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Learning LaTeX: why and how  - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Learning LaTeX: why and how " />
+<meta property="og:description" content="The pros and cons of LaTeX and Word; why you might want to learn" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/learning-latex-why-and-how/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-05-01T15:02:00+00:00" />
+<meta property="article:modified_time" content="2017-05-01T15:02:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Learning LaTeX: why and how "/>
+<meta name="twitter:description" content="The pros and cons of LaTeX and Word; why you might want to learn"/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/learning-latex-why-and-how/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/building-a-music-collection-on-a-budget/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/trying-to-trim-down-static-gtfs-feeds/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Learning LaTeX: why and how ",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/learning-latex-why-and-how\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "LaTeX, document preparation, word processor","wordcount":  1723 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/learning-latex-why-and-how\/","datePublished": "2017-05-01T15:02:00+00:00","dateModified": "2017-05-01T15:02:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Learning LaTeX: why and how </h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2017-05-01">2017-05-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1723 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#sharelatex">ShareLaTeX</a></li>
+    <li><a href="#installing-latex-on-windows">Installing LaTeX on Windows</a></li>
+    <li><a href="#starting-out">Starting out</a></li>
+    <li><a href="#latex-versus-word">LaTeX versus Word</a>
+      <ul>
+        <li><a href="#latex-installation">LaTeX installation</a></li>
+        <li><a href="#word-woes">Word woes</a></li>
+        <li><a href="#the-good-and-bad-of-latex">The good and bad of LaTeX</a></li>
+      </ul>
+    </li>
+    <li><a href="#do-you-still-need-to-learn-latex-these-days">Do you still need to learn LaTeX these days?</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><pre><code>     LaTeX, and how you might do that.
+</code></pre>
+<h2 id="sharelatex">ShareLaTeX</h2>
+<p>Today I saw <a href="https://www.sharelatex.com/learn/Learn_LaTeX_in_30_minutes" target="_blank" rel="noopener noreferrer">this
+documentation</a>
+from ShareLaTeX linked on Hacker News and, as I haven&rsquo;t used LaTeX in a
+while, thought I&rsquo;d quickly skim through to see what I remembered. And I
+started reminiscing about LaTeX which I&rsquo;d been using semi-regularly
+around a decade ago, eventually writing a circa 300 page thesis with it.</p>
+<p>If you&rsquo;ve never encountered it before, LaTeX is a free software project
+that is described by the <a href="https://www.latex-project.org" target="_blank" rel="noopener noreferrer">project&rsquo;s site</a>
+as:</p>
+<blockquote>
+<p>a high-quality typesetting system; it includes features designed for
+the production of technical and scientific documentation.</p>
+</blockquote>
+<p>There&rsquo;s nothing to stop you using it for other types of documents too;
+those are just the areas where it&rsquo;s traditionally used, particularly in
+academic circles.</p>
+<p>Back to ShareLaTeX. First, the ShareLaTeX documentation looks pretty
+good if you need something to get you started.</p>
+<p>I haven&rsquo;t used ShareLaTeX recently although I think I tried it out a few
+years back and it seemed fine enough. It&rsquo;s a web app that lets you
+prepare LaTeX documents and, if you pay, collaborate on them. One big
+advantage I can see of using a web app for LaTeX beginners is that it
+removes one of the barriers of starting with LaTeX: installing
+everything.</p>
+<h2 id="installing-latex-on-windows">Installing LaTeX on Windows</h2>
+<p>I&rsquo;ve not had cause to use LaTeX much recently, so haven&rsquo;t tried
+installing on Ubuntu; a lot of my writing is done via Markdown, whether
+technical documentation or words like the ones you&rsquo;re reading now on my
+blog.</p>
+<p>On Windows, it used to be reasonably simple to get a working system with
+<a href="http://www.texniccenter.org" target="_blank" rel="noopener noreferrer">TeXnicCenter</a> and
+<a href="https://miktex.org" target="_blank" rel="noopener noreferrer">MikTeX</a>, but you&rsquo;d still have to get a PDF viewer,
+like <a href="https://www.sumatrapdfreader.org" target="_blank" rel="noopener noreferrer">SumatraPDF</a> integrated into that
+for previewing. This <a href="https://tex.stackexchange.com/questions/116981/how-to-configure-texniccenter-2-0-with-sumatra-2013-2016-version" target="_blank" rel="noopener noreferrer">Stack Exchange
+answer</a>
+may help with integrating the PDF preview.</p>
+<p>Though that&rsquo;s still three different bits of software you have to get
+working together, so not a trivial task by any means. From memory,
+install MikTeX first, as TeXnicCenter can detect it during install and
+configure its own settings to use your MikTeX installation without you
+needing to set things up by hand.</p>
+<h2 id="starting-out">Starting out</h2>
+<p>The ShareLaTeX documentation just starts out with creating a basic
+document and has you working through following their example. That&rsquo;s
+fine to see things piece by piece. Beyond that the single suggestion I&rsquo;d
+have for a new user to learn effectively is to take a completed document
+you have written, representative of what you&rsquo;d like to create using
+LaTeX, and then <strong>struggle through recreating that existing document in
+LaTeX</strong>.</p>
+<p>And it may well be a struggle, but this has a few benefits:</p>
+<ul>
+<li>
+<p>It&rsquo;s presumably a finished work, so you don&rsquo;t have any time pressure
+for completion. With a deadline to meet, as soon as you encounter
+issues with LaTeX, you&rsquo;ll likely fall back to whatever word processor
+or document creator you&rsquo;re comfortable with to get the job done, and
+then give up on learning LaTeX.</p>
+</li>
+<li>
+<p>Using a document similar to that you&rsquo;d usually be writing, you&rsquo;ll
+encounter many of the issues in LaTeX that you&rsquo;d hit doing so, and can
+solve these without the aforementioned time pressure.</p>
+<p>In my experience, it was graphics and, especially, table layouts
+that caused the most problems, but you may have particular
+typography requirements that require some package to be installed,
+or some subtle override of the LaTeX defaults to change.</p>
+<p>Finding these solutions is not always quick, but I imagine there are
+more forum posts, <a href="https://tex.stackexchange.com/" target="_blank" rel="noopener noreferrer">Stack Exchange</a>
+questions and blog posts around than there were when I started, so
+it&rsquo;s likely someone&rsquo;s encountered and asked about the same issue
+you&rsquo;re dealing with. The LaTeX Community forum was also a good
+source of helpful solutions from knowledgable people even in its
+early days ten years ago, and <a href="http://latex.org/forum/" target="_blank" rel="noopener noreferrer">still lives on
+today</a>.</p>
+</li>
+<li>
+<p>A completed document gives you a reference for getting started in
+future.  You can use it as the basis for a new document, instead of
+starting from nothing, or you can just refer back to it and copy and
+paste appropriate bits of formatting markup you need.</p>
+</li>
+</ul>
+<h2 id="latex-versus-word">LaTeX versus Word</h2>
+<h3 id="latex-installation">LaTeX installation</h3>
+<p>As I saw it when learning back in 2007ish, LaTeX was more difficult to
+get started with than the likes of conventional word processors: the
+installation isn&rsquo;t trivial, and you need several things other than your
+desired text in a LaTeX document before you can get that text to
+display. In a word processor, you can just start typing. So there&rsquo;s some
+level of competence you need just to make <em>any</em> old document, let alone
+the one you actually want to make.</p>
+<h3 id="word-woes">Word woes</h3>
+<p>Word is easy to get started with, but Word had, and maybe still has, its
+own problems: again, going back to 2007, to when Word 2003 was still
+popular, referencing support was limited, that you&rsquo;d use external tools
+for (e.g. EndNote or <a href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer">Zotero</a>).  I&rsquo;m not sure
+how Word looks with respect to that now.</p>
+<p>Back then, Word seemed to struggle and be sluggish with large documents
+with lots of images, which was always fun. Again, maybe that&rsquo;s improved
+in recent versions? When editing LaTeX, you&rsquo;re only editing the source
+markup in whatever text editor you choose to use, and this source, even
+for a lengthy document, will be relatively small; images for LaTeX are
+stored entirely separately from the source.</p>
+<p>Another issue with Word is ensuring formatting styles are correctly and
+consistently applied to text. You can create styles, but you then have
+to apply them by hand, selecting the text. Sometimes you may delete
+spacing between words and suddenly you have to reapply a styling, as the
+text has changed to the style of its neighbours. In LaTeX, anything to
+do with formatting is specified explicitly in the markup, making it easy
+to see that the correct styling is applied to the text.  Furthermore,
+the LaTeX defaults are usually decent, not always perfect, but decent.</p>
+<h3 id="the-good-and-bad-of-latex">The good and bad of LaTeX</h3>
+<p>This explicitness and strictness of LaTeX is good and bad. It means that
+you know what is intended for your text, but it also means that it&rsquo;s
+possible for you to break your document sufficiently such that it cannot
+be rendered correctly, or sometimes even at all, by LaTeX.</p>
+<p>If you&rsquo;ve done programming and are used to finding and correcting your
+inevitable mistakes, this isn&rsquo;t unusual. But the idea of having written
+a document that you can&rsquo;t then display in the intended output format may
+be an intimidating concept to new users. Likewise, the error messages
+can be numerous and formal, and not much help to novice users.</p>
+<p>Tricks known to programmers like a regular edit-compile cycle to ensure
+you find issues as you create them, or commenting out markup to isolate
+the specific parts of markup that are the cause of difficult to
+understand problems are useful skills. (These ways of working are
+perhaps a result of the creators of LaTeX — and TeX, which LaTeX is
+built on — being computer scientists.) However, these concepts may not
+be immediately obvious by users with little experience of coding who
+just want to get on with writing, and don&rsquo;t want tools getting in the
+way.</p>
+<p>On the other hand, working just with the LaTeX source and focusing on
+the text alone seems much more productive to me. You can concentrate on
+content first, and fix up the presentation at the end. Otherwise, I find
+that working alongside the printed document layout presents me with the
+continuous distraction of making things look &ldquo;right&rdquo;, fixing incorrect
+formatting or alignments, even though the content in question could be
+modified or removed entirely during later editing. This time might be
+better spent just writing.</p>
+<p>Talking of layout, in my opinion, a LaTeX document using defaults will
+be much more pleasant to read than a Word document using defaults. To
+some extent, in both cases, this can somewhat depend on templates that
+you may choose to create your document, but a default LaTeX document has
+more of the look of a professionally typeset book.</p>
+<p>Finally, many useful additions to LaTeX come in the form of a huge range
+of additional packages you can install to add new commands and features.
+Again, this is a mixed blessing. First, you need to be aware that they
+even exist — <a href="https://tex.stackexchange.com/questions/553/what-packages-do-people-load-by-default-in-latex" target="_blank" rel="noopener noreferrer">lists like
+this</a>
+can help: there may be a package perfect for what you&rsquo;re trying to do,
+but you just haven&rsquo;t discovered it yet. Another hassle is that you can
+have incompatibility issues between certain packages, or they may
+require to be loaded in a certain order. Fixing problems like these is
+time, again, spent on tools, not on writing.</p>
+<p>You do need to be careful of package updates. Mostly these should be
+benign, but in one case I experienced, a package update suddenly broke
+my document, and I had to spend time discovering the problem and
+reverting the package version.  (My memory&rsquo;s hazy, but I think this was
+complicated by MikTeX only having the latest package versions, so in the
+end I think that I had to download from elsewhere and install by hand.)
+This may be an issue for compiling documents if you return to them much
+later in the future: if any of the packages have broken their backwards
+compatibility, you may be stuck. There&rsquo;s also no easy way that I was
+aware of to pin package versions, like you might in a <a href="https://packaging.python.org/requirements/" target="_blank" rel="noopener noreferrer">Python
+setup.py</a> file.</p>
+<h2 id="do-you-still-need-to-learn-latex-these-days">Do you still need to learn LaTeX these days?</h2>
+<p>Since I learned LaTeX, software like <a href="http://pandoc.org/" target="_blank" rel="noopener noreferrer">pandoc</a> has
+appeared and made it simple to write in other formats — for instance,
+Markdown, reStructuredText, or HTML — and convert that to LaTeX.
+<a href="https://en.wikipedia.org/wiki/Markdown" target="_blank" rel="noopener noreferrer">Markdown</a> in particular is very
+simple, and easy to learn.</p>
+<p>For relatively straightforward documents, that&rsquo;s an alternative to give
+you the benefit of nicely typeset output, without having to bother
+writing LaTeX directly. This can give you a handy subset of LaTeX in
+potentially a simpler markup, especially with Markdown.</p>
+<p>However, LaTeX remains flexible and powerful and, especially for
+creating more complicated documents, it still retains popularity more
+than thirty years after its first development. Furthermore, it&rsquo;s also
+released under an open source license (the LaTeX Project Public License)
+so these professional-level tools are available to everyone at no cost.
+If you have the likes of long reports or a thesis to write, it&rsquo;s
+certainly still worth a look.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2017-05-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/learning-latex-why-and-how/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/learning-latex-why-and-how/" data-title="Learning LaTeX: why and how " data-hashtags="LaTeX,document preparation,word processor"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/learning-latex-why-and-how/" data-hashtag="LaTeX"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/learning-latex-why-and-how/" data-title="Learning LaTeX: why and how "><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/latex/">LaTeX</a>,&nbsp;<a href="/tags/document-preparation/">document preparation</a>,&nbsp;<a href="/tags/word-processor/">word processor</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/building-a-music-collection-on-a-budget/" class="prev" rel="prev" title="Building a music collection on a budget"><i class="fas fa-angle-left fa-fw"></i>Building a music collection on a budget</a>
+            <a href="/posts/trying-to-trim-down-static-gtfs-feeds/" class="next" rel="next" title="Trying to trim down static GTFS feeds ">Trying to trim down static GTFS feeds <i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

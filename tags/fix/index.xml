@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>fix - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/fix/</link>
+        <description>fix - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 10 Dec 2018 21:16:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/fix/" rel="self" type="application/rss+xml" /><item>
+    <title>Stopping Fujitsu&#39;s Battery Charging Control Update Tool from crashing Windows 10</title>
+    <link>https://www.stevenmaude.co.uk/posts/stopping-fujitsus-battery-charging-control-update-tool-from-crashing-windows-10/</link>
+    <pubDate>Mon, 10 Dec 2018 21:16:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/stopping-fujitsus-battery-charging-control-update-tool-from-crashing-windows-10/</guid>
+    <description><![CDATA[Preventing Fujitsu&rsquo;s Battery Charging Control Update from]]></description>
+</item><item>
+    <title>My wifi&#39;s connected, but there&#39;s no internet…? (Intel Centrino versus Ubuntu)</title>
+    <link>https://www.stevenmaude.co.uk/posts/my-wifis-connected-but-theres-no/</link>
+    <pubDate>Tue, 29 Jul 2014 23:15:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/my-wifis-connected-but-theres-no/</guid>
+    <description><![CDATA[Describes how to fix an issue with Intel Centrino wireless adapters using iwlwifi seeing wifi, but not connecting.]]></description>
+</item><item>
+    <title>Arduous lessons in Python: why main() is useful</title>
+    <link>https://www.stevenmaude.co.uk/posts/arduous-lessons-in-python-why-main-is/</link>
+    <pubDate>Sat, 05 Jul 2014 11:34:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/arduous-lessons-in-python-why-main-is/</guid>
+    <description><![CDATA[Why if <code>__name__ == '__main__'</code> is a sensible check in code you&rsquo;re reusing.]]></description>
+</item><item>
+    <title>Windows Update locking up on XP when checking for updates: fixing the svchost.exe CPU usage problem</title>
+    <link>https://www.stevenmaude.co.uk/posts/windows-update-locking-up-on-xp-when/</link>
+    <pubDate>Wed, 11 Dec 2013 10:36:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/windows-update-locking-up-on-xp-when/</guid>
+    <description><![CDATA[How to fix the recent (2013) freezing of Windows Update on XP machines due to svchost.exe being stuck at full (100%) CPU usage.]]></description>
+</item><item>
+    <title>It&#39;s not often that I think of technical fixes as favourites, but…</title>
+    <link>https://www.stevenmaude.co.uk/posts/its-not-often-that-i-think-of-technical/</link>
+    <pubDate>Sun, 10 Nov 2013 16:49:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/its-not-often-that-i-think-of-technical/</guid>
+    <description><![CDATA[Fixing a common charging issue of the Logitech MX Revolution where the battery red LED flashes when charging.]]></description>
+</item></channel>
+</rss>

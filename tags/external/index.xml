@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>external - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/external/</link>
+        <description>external - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 28 Sep 2013 17:03:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/external/" rel="self" type="application/rss+xml" /><item>
+    <title>How to secure your storage and backup drives on Windows and Linux</title>
+    <link>https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/</link>
+    <pubDate>Sat, 28 Sep 2013 17:03:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/</guid>
+    <description><![CDATA[A guide to securing data on external and backup drives by encrypting them.]]></description>
+</item></channel>
+</rss>

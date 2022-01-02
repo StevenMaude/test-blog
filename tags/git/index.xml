@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>git  - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/git/</link>
+        <description>git  - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 16 Dec 2019 22:41:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/git/" rel="self" type="application/rss+xml" /><item>
+    <title>Learning from other projects: pelican-themes </title>
+    <link>https://www.stevenmaude.co.uk/posts/learning-from-other-projects-pelican-themes/</link>
+    <pubDate>Mon, 16 Dec 2019 22:41:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/learning-from-other-projects-pelican-themes/</guid>
+    <description><![CDATA[Taking a look at pelican-themes — a project I currently use — to learn from it.]]></description>
+</item><item>
+    <title>git: nice and lease-y</title>
+    <link>https://www.stevenmaude.co.uk/posts/git-nice-and-lease-y/</link>
+    <pubDate>Sat, 10 Nov 2018 13:23:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/git-nice-and-lease-y/</guid>
+    <description><![CDATA[Why generally using <code>git push --force-with-lease</code> over <code>git push --force</code> seems sensible.]]></description>
+</item></channel>
+</rss>

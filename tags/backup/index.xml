@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>backup - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/backup/</link>
+        <description>backup - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 13 Oct 2013 20:36:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/backup/" rel="self" type="application/rss+xml" /><item>
+    <title>Odd behaviour of Bitlocker, or maybe my HDD…</title>
+    <link>https://www.stevenmaude.co.uk/posts/odd-behaviour-of-bitlocker-or-maybe-my/</link>
+    <pubDate>Sun, 13 Oct 2013 20:36:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/odd-behaviour-of-bitlocker-or-maybe-my/</guid>
+    <description><![CDATA[Description of some strange behaviour I observed when setting up a USB drive with Bitlocker.]]></description>
+</item><item>
+    <title>How to secure your storage and backup drives on Windows and Linux</title>
+    <link>https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/</link>
+    <pubDate>Sat, 28 Sep 2013 17:03:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/</guid>
+    <description><![CDATA[A guide to securing data on external and backup drives by encrypting them.]]></description>
+</item></channel>
+</rss>

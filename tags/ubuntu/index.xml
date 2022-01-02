@@ -1,0 +1,57 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Ubuntu - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/ubuntu/</link>
+        <description>Ubuntu - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 03 Mar 2017 16:44:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/ubuntu/" rel="self" type="application/rss+xml" /><item>
+    <title>Fixing horrible wireless network pings in Ubuntu (2017 edition)</title>
+    <link>https://www.stevenmaude.co.uk/posts/fixing-horrible-wireless-network-pings-in-ubuntu-2017-edition/</link>
+    <pubDate>Fri, 03 Mar 2017 16:44:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/fixing-horrible-wireless-network-pings-in-ubuntu-2017-edition/</guid>
+    <description><![CDATA[How to disable wifi power management in Ubuntu. Again.]]></description>
+</item><item>
+    <title>Installing pip, virtualenv and virtualenvwrapper tidily in Linux</title>
+    <link>https://www.stevenmaude.co.uk/posts/installing-pip-virtualenv-and-virtualenvwrapper-tidily-in-linux/</link>
+    <pubDate>Fri, 30 Dec 2016 00:10:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/installing-pip-virtualenv-and-virtualenvwrapper-tidily-in-linux/</guid>
+    <description><![CDATA[Don&rsquo;t want to clutter up your system&rsquo;s Python install? Install]]></description>
+</item><item>
+    <title>Conversation conservation: recording audio input and output simultaneously in Linux</title>
+    <link>https://www.stevenmaude.co.uk/posts/conversation-conservation-recording-audio-input-and-output-simultaneously-in-linux/</link>
+    <pubDate>Thu, 01 Dec 2016 12:00:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/conversation-conservation-recording-audio-input-and-output-simultaneously-in-linux/</guid>
+    <description><![CDATA[Recording audio input and output in Linux for screencasts, podcasts and interviews.]]></description>
+</item><item>
+    <title>A beginner&#39;s guide to OS encryption: (almost) 2017 edition</title>
+    <link>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-almost-2017-edition/</link>
+    <pubDate>Mon, 28 Nov 2016 00:26:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-almost-2017-edition/</guid>
+    <description><![CDATA[How to dual boot Windows with Ubuntu and encrypt them both.]]></description>
+</item><item>
+    <title>My wifi&#39;s connected, but there&#39;s no internet…? (Intel Centrino versus Ubuntu)</title>
+    <link>https://www.stevenmaude.co.uk/posts/my-wifis-connected-but-theres-no/</link>
+    <pubDate>Tue, 29 Jul 2014 23:15:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/my-wifis-connected-but-theres-no/</guid>
+    <description><![CDATA[Describes how to fix an issue with Intel Centrino wireless adapters using iwlwifi seeing wifi, but not connecting.]]></description>
+</item><item>
+    <title>Some &lt;s&gt;spring&lt;/s&gt; winter Ubuntu cleaning</title>
+    <link>https://www.stevenmaude.co.uk/posts/some-spring-winter-ubuntu-cleaning/</link>
+    <pubDate>Tue, 24 Dec 2013 00:04:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/some-spring-winter-ubuntu-cleaning/</guid>
+    <description><![CDATA[Some Ubuntu tips: setting up TRIM on an encrypted drive for 12.04 LTS and freeing up space on the boot partition.]]></description>
+</item><item>
+    <title>Horrible wireless network pings in Ubuntu and how to fix them</title>
+    <link>https://www.stevenmaude.co.uk/posts/horrible-wireless-network-pings-in/</link>
+    <pubDate>Wed, 20 Nov 2013 18:51:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/horrible-wireless-network-pings-in/</guid>
+    <description><![CDATA[A quick guide on how to fix high and variable pings when connecting to wireless networks using Ubuntu Linux.]]></description>
+</item><item>
+    <title>Fixing Chromium on Ubuntu video playback issues (no video, black screen)</title>
+    <link>https://www.stevenmaude.co.uk/posts/fixing-chromium-on-ubuntu-video/</link>
+    <pubDate>Sun, 22 Sep 2013 21:49:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/fixing-chromium-on-ubuntu-video/</guid>
+    <description><![CDATA[How to fix playback of online videos in Chromium on Ubuntu 12.04.]]></description>
+</item><item>
+    <title>Explaining Python virtualenvwrapper (in a couple of minutes)</title>
+    <link>https://www.stevenmaude.co.uk/posts/explaining-python-virtualenvwrapper-in/</link>
+    <pubDate>Thu, 19 Sep 2013 17:53:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/explaining-python-virtualenvwrapper-in/</guid>
+    <description><![CDATA[How to use virtualenvwrapper to manage your Python virtualenvs.]]></description>
+</item><item>
+    <title>A beginner&#39;s guide to OS encryption: dual booting and encrypting Windows and Ubuntu</title>
+    <link>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-dual/</link>
+    <pubDate>Tue, 17 Sep 2013 18:48:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-dual/</guid>
+    <description><![CDATA[How to encrypt Windows and Ubuntu in a dual boot system.]]></description>
+</item></channel>
+</rss>

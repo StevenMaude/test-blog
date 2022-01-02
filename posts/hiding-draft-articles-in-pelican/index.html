@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Hiding draft articles in Pelican - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Hiding draft articles in Pelican" />
+<meta property="og:description" content="How to hide articles you don&rsquo;t want to be published yet." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/hiding-draft-articles-in-pelican/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-05-31T20:16:00+00:00" />
+<meta property="article:modified_time" content="2015-06-01T13:53:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Hiding draft articles in Pelican"/>
+<meta name="twitter:description" content="How to hide articles you don&rsquo;t want to be published yet."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/hiding-draft-articles-in-pelican/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/taking-control-of-chromium-and-chrome/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/blogger-versus-wordpress-revisited/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hiding draft articles in Pelican",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/hiding-draft-articles-in-pelican\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "draft,article,Pelican","wordcount":  526 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/hiding-draft-articles-in-pelican\/","datePublished": "2015-05-31T20:16:00+00:00","dateModified": "2015-06-01T13:53:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Hiding draft articles in Pelican</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2015-05-31">2015-05-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;526 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#writing-blog-posts">Writing blog posts</a></li>
+    <li><a href="#marking-as-draft-and-gitignore">Marking as draft and <code>.gitignore</code></a></li>
+    <li><a href="#stopping-pelican-from-seeing-the-draft-posts">Stopping Pelican from seeing the draft posts</a>
+      <ul>
+        <li><a href="#using-pelicans-ignore_files">Using Pelican&rsquo;s <code>IGNORE_FILES</code></a></li>
+        <li><a href="#hiding-the-files-completely-in-ubuntu-at-least">Hiding the files completely (in Ubuntu, at least)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>What I thought I&rsquo;d get done in a week, actually took about four
+months. But I&rsquo;m finally free of Blogger and have moved to
+<a href="http://docs.getpelican.com" target="_blank" rel="noopener noreferrer">Pelican</a> for creating my blog. I&rsquo;ll be
+writing more about how I migrated soon.</p>
+<p>As I approached the end of that lengthy migration, I found myself
+writing new draft articles that I wanted to ensure didn&rsquo;t actually make
+their way into my publication directory.</p>
+<h2 id="writing-blog-posts">Writing blog posts</h2>
+<p>The way that I usually approach writing blog posts is that, as
+I reach the end of writing them, I&rsquo;ll start reading in the final display
+format, i.e. as a web page. This helps spot any mistakes that
+I might miss from my eyes glazing over at a text editor, and helps me
+spot formatting problems.</p>
+<p>But, you might be working on multiple articles at once, so you want to
+publish while you still have draft articles in your <code>content</code> directory.</p>
+<p>Here&rsquo;s a few ways to prevent posts from being accidentally published,
+without needing to do file juggling of your drafts in and out of the
+<code>content</code> directory.</p>
+<h2 id="marking-as-draft-and-gitignore">Marking as draft and <code>.gitignore</code></h2>
+<p>Any articles we stick in the <code>content</code> directory will end up in our
+<code>output</code> directory, right? Not if we do like
+<a href="http://docs.getpelican.com/en/latest/content.html" target="_blank" rel="noopener noreferrer">the documentation says</a>
+and add <code>Status: draft</code> to the metadata.</p>
+<p>Building your site will then place draft articles in a <code>drafts</code>
+directory, and the articles therein aren&rsquo;t linked from anywhere. This
+might be useful if you want to share a link with someone to get feedback
+on a post before you officially publish it.</p>
+<p>Using a <code>.gitignore</code> file in your <code>output</code> directory is also an option
+if you&rsquo;re using <code>git</code> to push new versions of your blog for publication.
+Add <code>drafts/</code> to your <code>.gitignore</code> and you&rsquo;d have to make a deliberate
+effort to add them for publication.</p>
+<h2 id="stopping-pelican-from-seeing-the-draft-posts">Stopping Pelican from seeing the draft posts</h2>
+<p>The other option is to just prevent Pelican from seeing draft posts
+completely.</p>
+<p>This does mean that they won&rsquo;t appear in your local preview of your
+site, not even as an unlinked page.</p>
+<h3 id="using-pelicans-ignore_files">Using Pelican&rsquo;s <code>IGNORE_FILES</code></h3>
+<p>Putting &ldquo;draft&rdquo; in the filename of any drafts is another option. Then,
+you can use the <code>IGNORE_FILES</code> setting in <code>pelicanconf.py</code> to
+specifically ignore the drafts.</p>
+<p>Note that if you specify a setting in your Pelican configuration files,
+the defaults get overridden. This means that you&rsquo;ll need to copy over
+the existing settings from the defaults too. Otherwise, you&rsquo;ll
+unintentionally change your configuration.</p>
+<p>For instance, the <a href="http://docs.getpelican.com/en/latest/settings.html" target="_blank" rel="noopener noreferrer">default</a>
+<code>IGNORE_FILES</code> setting is <code>IGNORE_FILES = ['.#*']</code> so we&rsquo;ll need to
+add <code>IGNORE_FILES = ['.#*', '*draft*']</code> to our Pelican settings.</p>
+<h3 id="hiding-the-files-completely-in-ubuntu-at-least">Hiding the files completely (in Ubuntu, at least)</h3>
+<p>Under Linux, I thought that preceding the filename with a dot would hide
+posts from Pelican, but it doesn&rsquo;t seem to. However, sticking a tilde on
+the end of the filename does seem to prevent Pelican from seeing the
+post.</p>
+<p>One side-effect is that if you use a text editor that creates backup
+files with a tilde on the end, your backup files will actually have
+<strong>another</strong> tilde on the end (e.g. <code>my_draft_post.md~~</code>).</p>
+<p>(Maybe marking files as hidden in Windows would have the same effect?
+Haven&rsquo;t tried this.)</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2015-06-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/hiding-draft-articles-in-pelican/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/hiding-draft-articles-in-pelican/" data-title="Hiding draft articles in Pelican" data-hashtags="draft,article,Pelican"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/hiding-draft-articles-in-pelican/" data-hashtag="draft,article,Pelican"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/hiding-draft-articles-in-pelican/" data-title="Hiding draft articles in Pelican"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/draftarticlepelican/">draft,article,Pelican</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/taking-control-of-chromium-and-chrome/" class="prev" rel="prev" title="Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard"><i class="fas fa-angle-left fa-fw"></i>Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard</a>
+            <a href="/posts/blogger-versus-wordpress-revisited/" class="next" rel="next" title="Blogger versus Wordpress revisited">Blogger versus Wordpress revisited<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>radio - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/radio/</link>
+        <description>radio - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 15 Jul 2017 23:11:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/radio/" rel="self" type="application/rss+xml" /><item>
+    <title>Rinse FM&#39;s SoundCloud account takedown</title>
+    <link>https://www.stevenmaude.co.uk/posts/rinse-fms-soundcloud-account-takedown/</link>
+    <pubDate>Sat, 15 Jul 2017 23:11:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/rinse-fms-soundcloud-account-takedown/</guid>
+    <description><![CDATA[What the deletion of Rinse FM&rsquo;s SoundCloud account for]]></description>
+</item><item>
+    <title>Uses for a Raspberry Pi (part 2)</title>
+    <link>https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-2/</link>
+    <pubDate>Wed, 17 Jul 2013 19:32:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-2/</guid>
+    <description><![CDATA[Running the Raspberry Pi as a file and media server, and as a PVR with get_iplayer.]]></description>
+</item></channel>
+</rss>

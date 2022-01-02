@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>UEFaIeeee  - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="UEFaIeeee " />
+<meta property="og:description" content="Recovering a non-booting system when EFI boot entries are" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/uefaieeee/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-12-16T00:11:00+00:00" />
+<meta property="article:modified_time" content="2016-12-16T00:11:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="UEFaIeeee "/>
+<meta name="twitter:description" content="Recovering a non-booting system when EFI boot entries are"/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/uefaieeee/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/a-year-of-garmin-a-forerunner-15-review/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/the-novelist-a-haunting-experience/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "UEFaIeeee ",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/uefaieeee\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "EFI, UEFI, boot entry, efibootmgr ","wordcount":  976 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/uefaieeee\/","datePublished": "2016-12-16T00:11:00+00:00","dateModified": "2016-12-16T00:11:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">UEFaIeeee </h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2016-12-16">2016-12-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;976 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#installing-ubuntu-to-a-usb-stick-broke-my-existing-ubuntu-install">Installing Ubuntu to a USB stick broke my existing Ubuntu install</a></li>
+    <li><a href="#fixing-the-problem">Fixing the problem</a></li>
+    <li><a href="#what-are-the-failures-here">What are the failures here?</a>
+      <ul>
+        <li><a href="#hardware-side">Hardware side</a></li>
+        <li><a href="#ubuntu">Ubuntu</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><pre><code>     broken using efibootmgr.
+</code></pre>
+<p>In writing this, I checked the <a href="https://en.oxforddictionaries.com/definition/aie" target="_blank" rel="noopener noreferrer">valid spelling of
+&ldquo;aieeee&rdquo;</a> and it is
+apparently with four e letters at the end.</p>
+<p>If you&rsquo;re currently panicking how to fix a system where the UEFI boot
+entry for your operating system has disappeared (i.e. from what you
+might think of as the &ldquo;BIOS&rdquo; boot entries), you may be yelling a much
+more extended form of that exclamation than that correct spelling could
+ever suggest.</p>
+<p>In that case, go straight to <a href="#fixing-the-problem" rel="">&ldquo;Fixing the problem&rdquo;</a>
+— go directly to that section and do not collect £200 — for advice.</p>
+<h2 id="background">Background</h2>
+<p>Recently I&rsquo;ve been undergoing the arduous process of getting a recent
+version of Ubuntu on my laptop and dual booting with Windows. While I
+was experimenting, I&rsquo;d got everything working reasonably, when I&rsquo;d
+installed some updates and then, on shutting down that time, to let them
+take effect, the laptop decide to lock up with the blinking
+boot/shutdown dots illuminating but nothing happening.</p>
+<p>I figured I&rsquo;d check if everything was OK. I found that you can use
+debsums to check if installed packages are as expected. Running it
+(<code>sudo debsums -s</code> to ignore OK files) gave a few warnings. Since one of
+them referred to a kernel image, it was a little concerning.</p>
+<p>Since I hadn&rsquo;t done much with the laptop except install from a DVD for
+which I&rsquo;d verified the SHA256SUM (and verified the signature of the sum
+file too), I didn&rsquo;t think anything untoward could have happened. And,
+looking around, it seems that this has happened in previous releases
+too: the mismatch was likely a genuine error in the release, not
+indicative of anything wrong with my install. Of course, my rigorous
+side stupidly got the better of me and I figured I might as well
+investigate further.</p>
+<p>Simple. I can just install Ubuntu again to a USB stick, not touching my
+existing installation and then rerun debsums there. That thought there
+turned out to be anything but simple.</p>
+<p>But I wasn&rsquo;t to know that at the time. An hour and a USB installation
+later, yes, I&rsquo;d demonstrated that the same warnings from running debsums
+came up on this install too.</p>
+<p>Satisfied with that explanation, I&rsquo;d removed the USB stick, plugged my
+hard disk back in and decided to boot, and saw:</p>
+<blockquote>
+<p>Boot failure</p>
+</blockquote>
+<p>uh, OK.</p>
+<h2 id="installing-ubuntu-to-a-usb-stick-broke-my-existing-ubuntu-install">Installing Ubuntu to a USB stick broke my existing Ubuntu install</h2>
+<p>My guess as to what had happened is as follows. When I&rsquo;d installed
+Ubuntu to the USB stick, it installed to /dev/sdb, not /dev/sda. The
+previous &ldquo;ubuntu&rdquo; boot entry that worked fine for my hard disk was
+referencing /dev/sda and looked for a bootloader on the EFI partition of
+my hard disk.</p>
+<p>The USB install had been to /dev/sdb and the currently existing &ldquo;ubuntu&rdquo;
+boot entry had been overwritten by one with the same name. Now that boot
+entry was referencing /dev/sdb and looking for a bootloader on the EFI
+partition of my USB install, couldn&rsquo;t find it, and therefore no longer
+booted. The USB install could be booted without a hitch since the EFI
+entry was pointing correctly to it.</p>
+<p>Incidentally, the Windows install on the same hard disk was still
+booting fine, again as expected, because the Windows EFI entry hadn&rsquo;t
+changed.</p>
+<h2 id="fixing-the-problem">Fixing the problem</h2>
+<p>Some PCs give you UEFI setup options to add a boot entry, so you can
+resolve the problem directly there. You&rsquo;ll need to know the path to the
+bootloader for whatever operating system you want to boot, but that
+should be relatively easy to locate.</p>
+<p>However, my laptop is sparse in its configuration options and does not
+offer this option. In that case — and even if your PC does have an
+option to add boot entries directly) — you can use efibootmgr to add the
+entry back. See <a href="https://superuser.com/a/697012" target="_blank" rel="noopener noreferrer">the answer here</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> which
+shows that you&rsquo;ll want something along the lines of:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">efibootmgr -c -d /dev/sda -p 1 -l &#39;\EFI\ubuntu\shimx64.efi&#39; -L &#34;Ubuntu&#34;
+</code></pre></div><p>As the post says, you can equally use Microsoft&rsquo;s <code>bcdedit</code> to do the
+same, but that requires you to have Windows. You can always run
+<code>efibootmgr</code> from a bootable Linux DVD or USB. And, you&rsquo;ll need to
+change the disk (<code>/dev/sda</code>) and partition number (the <code>-p 1</code>) to
+reflect which one is the EFI System Partition, which you can find by
+doing <code>fdisk -l</code> in a terminal.</p>
+<p>Then the entry will be readded and your install should be bootable
+again.</p>
+<p>That answer was exactly what I needed. Unfortunately, it took me far
+longer to find than it should have, probably because it&rsquo;s talking about
+&ldquo;repairing GRUB&rdquo;. Hopefully, the keywords I&rsquo;ve used here might help
+others find this a bit more easily.</p>
+<h2 id="what-are-the-failures-here">What are the failures here?</h2>
+<p>This was unexpected. Yes, installing to a hard disk, then USB is
+probably not a common use case, but you certainly wouldn&rsquo;t expect it to
+break an existing installation. Maybe it&rsquo;s possible that it was because
+I had a slightly unusual dual boot setup, but I don&rsquo;t see that should
+make a difference. I&rsquo;d expect this to happen even if you&rsquo;re single
+booting. (Feel free to correct me if you&rsquo;ve tested and found otherwise.)</p>
+<h3 id="hardware-side">Hardware side</h3>
+<p>For my laptop in particular, you can&rsquo;t add EFI boot entries at all.
+Auto detection would be ideal, but you can&rsquo;t even add entries manually.</p>
+<h3 id="ubuntu">Ubuntu</h3>
+<p>Why does the installer not check for or warn of the possible issue of
+clobbering an existing valid boot entry? Wouldn&rsquo;t it be preferable for
+this to be far more explicit, check for an existing boot entry and ask
+the user whether they want to leave the boot entries intact (and abandon
+the install), add a new entry or replace the existing entry (with the
+warning that this will probably break the existing installation)?</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>The author of the answer maintains <a href="https://en.wikipedia.org/wiki/REFInd" target="_blank" rel="noopener noreferrer">an EFI boot
+manager</a>, so he definitely knows
+his stuff here.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2016-12-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/uefaieeee/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/uefaieeee/" data-title="UEFaIeeee " data-hashtags="EFI,UEFI,boot entry,efibootmgr "><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/uefaieeee/" data-hashtag="EFI"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/uefaieeee/" data-title="UEFaIeeee "><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/efi/">EFI</a>,&nbsp;<a href="/tags/uefi/">UEFI</a>,&nbsp;<a href="/tags/boot-entry/">boot entry</a>,&nbsp;<a href="/tags/efibootmgr/">efibootmgr </a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/a-year-of-garmin-a-forerunner-15-review/" class="prev" rel="prev" title="A Year of Garmin: a Forerunner 15 review"><i class="fas fa-angle-left fa-fw"></i>A Year of Garmin: a Forerunner 15 review</a>
+            <a href="/posts/the-novelist-a-haunting-experience/" class="next" rel="next" title="The Novelist: a haunting experience">The Novelist: a haunting experience<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

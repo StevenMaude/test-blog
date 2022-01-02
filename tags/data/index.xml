@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>data - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/data/</link>
+        <description>data - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 22 Jun 2014 21:47:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/data/" rel="self" type="application/rss+xml" /><item>
+    <title>Chatting about data science careers</title>
+    <link>https://www.stevenmaude.co.uk/posts/chatting-about-data-science-careers/</link>
+    <pubDate>Sun, 22 Jun 2014 21:47:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/chatting-about-data-science-careers/</guid>
+    <description><![CDATA[Write-up of a careers event I participated in at the University of Cambridge.]]></description>
+</item><item>
+    <title>Book review: &#34;Data Science for Business&#34;</title>
+    <link>https://www.stevenmaude.co.uk/posts/book-review-data-science-for-business/</link>
+    <pubDate>Tue, 14 Jan 2014 18:35:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/book-review-data-science-for-business/</guid>
+    <description><![CDATA[A review of Foster Provost and Tom Fawcett&rsquo;s introductory data science book: &ldquo;Data Science for Business&rdquo;.]]></description>
+</item><item>
+    <title>Types of data scientist</title>
+    <link>https://www.stevenmaude.co.uk/posts/types-of-data-scientist/</link>
+    <pubDate>Tue, 02 Jul 2013 17:22:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/types-of-data-scientist/</guid>
+    <description><![CDATA[My take on the &ldquo;Analyzing the Analyzers&rdquo; report by Harlan Harris and co-authors.]]></description>
+</item><item>
+    <title>Leaky phone apps</title>
+    <link>https://www.stevenmaude.co.uk/posts/leaky-phone-apps/</link>
+    <pubDate>Fri, 28 Jun 2013 21:03:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/leaky-phone-apps/</guid>
+    <description><![CDATA[My view on third party phone apps that leak data.]]></description>
+</item><item>
+    <title>Coursera&#39;s Introduction to Data Science course</title>
+    <link>https://www.stevenmaude.co.uk/posts/courseras-introduction-to-data-science/</link>
+    <pubDate>Mon, 24 Jun 2013 21:05:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/courseras-introduction-to-data-science/</guid>
+    <description><![CDATA[What I made of the recent Coursera Introduction to Data Science course.]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>activation - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/activation/</link>
+        <description>activation - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 12 Jan 2016 22:23:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/activation/" rel="self" type="application/rss+xml" /><item>
+    <title>Answers to some Windows 10 activation questions</title>
+    <link>https://www.stevenmaude.co.uk/posts/answers-to-some-windows-10-activation-questions/</link>
+    <pubDate>Tue, 12 Jan 2016 22:23:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/answers-to-some-windows-10-activation-questions/</guid>
+    <description><![CDATA[Some details of Windows 10 activation post-Threshold 2 release.]]></description>
+</item></channel>
+</rss>

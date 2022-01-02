@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>scraping - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/scraping/</link>
+        <description>scraping - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 19 Apr 2014 15:57:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/scraping/" rel="self" type="application/rss+xml" /><item>
+    <title>US PyCon 2014 talks</title>
+    <link>https://www.stevenmaude.co.uk/posts/us-pycon-2014-talks/</link>
+    <pubDate>Sat, 19 Apr 2014 15:57:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/us-pycon-2014-talks/</guid>
+    <description><![CDATA[Rundown of some great US PyCon talks I recently watched.]]></description>
+</item><item>
+    <title>Scraping Nature&#39;s job website</title>
+    <link>https://www.stevenmaude.co.uk/posts/scraping-natures-job-website/</link>
+    <pubDate>Sat, 06 Jul 2013 18:51:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/scraping-natures-job-website/</guid>
+    <description><![CDATA[Description of, and reasons for creating, my Nature job website scraper.]]></description>
+</item></channel>
+</rss>

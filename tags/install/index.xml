@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>install - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/install/</link>
+        <description>install - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 30 Sep 2013 18:57:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/install/" rel="self" type="application/rss+xml" /><item>
+    <title>Installing matplotlib in a virtualenv</title>
+    <link>https://www.stevenmaude.co.uk/posts/installing-matplotlib-in-virtualenv/</link>
+    <pubDate>Mon, 30 Sep 2013 18:57:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/installing-matplotlib-in-virtualenv/</guid>
+    <description><![CDATA[Solving matplotlib&rsquo;s plotting backends being inaccessible in virtualenvs.]]></description>
+</item><item>
+    <title>Installing Python modules on Windows: unable to find vcvarsall.bat</title>
+    <link>https://www.stevenmaude.co.uk/posts/installing-python-modules-on-windows/</link>
+    <pubDate>Sun, 09 Jun 2013 13:43:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/installing-python-modules-on-windows/</guid>
+    <description><![CDATA[How to install scientific modules in Python on Windows.]]></description>
+</item></channel>
+</rss>

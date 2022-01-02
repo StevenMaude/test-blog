@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Continuous integration with GitHub Actions - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Continuous integration with GitHub Actions" />
+<meta property="og:description" content="A look at GitHub Actions, and the good and bad of coupling automation" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/continuous-integration-with-github-actions/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-08-02T14:38:00+00:00" />
+<meta property="article:modified_time" content="2020-08-02T14:38:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Continuous integration with GitHub Actions"/>
+<meta name="twitter:description" content="A look at GitHub Actions, and the good and bad of coupling automation"/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/continuous-integration-with-github-actions/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/oh-fork-it/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/garmin-forerunner-35-a-competent-budget-running-watch/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Continuous integration with GitHub Actions",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/continuous-integration-with-github-actions\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "automation, continuous delivery, continuous integration, GitHub, GitHub Actions","wordcount":  1447 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/continuous-integration-with-github-actions\/","datePublished": "2020-08-02T14:38:00+00:00","dateModified": "2020-08-02T14:38:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Continuous integration with GitHub Actions</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-02">2020-08-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1447 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#a-quick-review-of-github-actions">A quick review of GitHub Actions</a>
+      <ul>
+        <li><a href="#competitive-pricing-and-features">Competitive pricing and features</a></li>
+        <li><a href="#coupling-automation-to-the-remote-repository-host">Coupling automation to the remote repository host</a></li>
+      </ul>
+    </li>
+    <li><a href="#so-whats-best">So what&rsquo;s best?</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><pre><code>     to a remote repository provider
+</code></pre>
+<h2 id="a-quick-review-of-github-actions">A quick review of GitHub Actions</h2>
+<p>I&rsquo;ve been using <a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a> a
+lot recently. It&rsquo;s a continuous integration and continuous
+delivery/deployment (CI/CD) tool that&rsquo;s, unsurprisingly, part of GitHub.</p>
+<p>As the vagueness of the &ldquo;D&rdquo; in &ldquo;CD&rdquo; might indicate, different people
+have different interpretations of how you actually define these terms.
+For this discussion, let&rsquo;s just take it that these tools encourage
+developers to automate many software development processes that don&rsquo;t
+involve writing code. There&rsquo;s an aim of frequently getting changes into
+the main development branch, with minimal manual labour and aiming for a
+good level of quality control, trying to avoid broken code getting
+deployed.</p>
+<p>So, I&rsquo;ve been using GitHub Actions a lot, both for personal projects and
+at work. And I&rsquo;ve enjoyed using it. It&rsquo;s reasonably easy to use, and
+there&rsquo;s a quick feedback loop from you pushing a workflow to seeing it
+run. This in turn makes it fun to work with; it puts you in a frame of
+mind where you ponder what development tasks you could automate.</p>
+<p>Where GitHub Actions lacks is often for want of a little polish and
+refinement are needed. I&rsquo;ll mention three examples. First, the
+<a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">documentation</a> occasionally lacks
+simple concrete examples for some of the features. The early parts of
+the documentation are actually example-focused. But then many of the
+features are simply all piled into a reference section at the end.
+Additionally, I don&rsquo;t know what exactly it is about the page design or
+the structuring of the documentation, but I did find it difficult to
+find precisely what I was looking for. That was the case even when I&rsquo;d
+actually read some information before and knew it was hidden there,
+somewhere.</p>
+<p>Often I&rsquo;ve found more useful information elsewhere. Other helpful places
+I&rsquo;ve found have included: GitHub&rsquo;s Architecture Decision Records in the
+<a href="https://github.com/actions/runner" target="_blank" rel="noopener noreferrer">GitHub Actions Runner</a> repository,
+Stack Overflow, other people&rsquo;s GitHub Actions workflows, and
+documentation for third-party actions.</p>
+<p>Second, at time of writing, there is no simple way to remove repetition
+within workflows and between workflows. For instance, you might want to
+run tests before you merge pull requests, and might want to do the same
+when you build and publish a new release. At the moment, this means
+duplicating part of one workflow in another, or creating a custom
+action. GitHub are planning to add <a href="https://github.com/actions/runner/issues/438" target="_blank" rel="noopener noreferrer">&ldquo;composite&rdquo;
+actions</a> soon which should
+help simplify this type of common reuse.</p>
+<p>Finally, workflow steps do not have a non-failing &ldquo;neutral&rdquo; outcome.
+(Apparently, this did use to be a feature during the GitHub Actions
+beta.) You might design a workflow with a step that could determine
+whether subsequent steps should run or not. Without a neutral outcome,
+there is no easy way to indicate &ldquo;no error, but we have stopped the
+workflow early&rdquo;. The only way to directly exit the workflow at that
+point is to fail. But this isn&rsquo;t semantically what is intended: this
+type of exit may be an expected valid state and not a workflow failure.</p>
+<p>Alternatively, you can continue without failing by specifying
+<code>continue-on-error: true</code> for a step. But now all subsequent steps will
+run, which we don&rsquo;t want: maybe those steps will waste a sizable chunk
+of our Actions minutes quota and/or maybe those steps will fail too. To
+skip the rest of the steps when they&rsquo;re not needed, conditional checks
+on &ldquo;success&rdquo; of steps can be threaded through the subsequent steps of
+your workflow. But this complicates the workflow, a &ldquo;neutral&rdquo; outcome
+would simplify this entirely by allowing us to exit, without failure, at
+the point where we really do want the workflow to stop.</p>
+<h3 id="competitive-pricing-and-features">Competitive pricing and features</h3>
+<p>GitHub Actions does well on bundling free usage minutes, even for
+private projects. For something like, say <a href="https://travis-ci.com/" target="_blank" rel="noopener noreferrer">Travis
+CI</a>, you have to pay a hefty fixed price per
+month to get that option. Though it should be noted that Travis CI
+pricing includes unlimited minutes, whereas you have to pay if you
+exceed your GitHub Actions monthly quota.</p>
+<p>However, at current pricing, you could get almost 10,000 monthly minutes
+on GitHub Actions using a Linux runner — $0.008 per minute, with 2000
+included in a GitHub Free plan — for the cost of the cheapest Travis
+plan ($63). So, unless you&rsquo;re using a lot of minutes, when comparing on
+price alone, there&rsquo;s no contest.</p>
+<p>The other big advantage of GitHub Actions is that it permits far more
+concurrent jobs than Travis CI: at the time of writing, a GitHub Free
+account has twenty concurrent (non-macOS) jobs. Travis CI offers only
+ten concurrent jobs even at the highest &ldquo;Premium&rdquo; plan, and just one on
+their lowest priced plan. This is important as, particularly if you&rsquo;re
+collaborating in a team, your request for a CI job may be blocked by
+other outstanding jobs, possibly delaying the completion of your
+requested job.</p>
+<p>Both Travis CI and GitHub Actions offer free usage in some cases. GitHub
+Actions pricing refers to &ldquo;free for public repositories&rdquo;. Travis CI&rsquo;s
+own site mentions &ldquo;free for open source&rdquo;. I suspect by that this Travis
+CI really just mean &ldquo;your code must be public&rdquo;. And not that anyone
+actually checks that your code is published under some kind of valid
+open source license.</p>
+<h3 id="coupling-automation-to-the-remote-repository-host">Coupling automation to the remote repository host</h3>
+<p>Price and concurrency aside, what might be consequences of using the
+same service — here GitHub — for hosting the repository&rsquo;s code and that
+repository&rsquo;s automation?</p>
+<p>From a quick search around, there doesn&rsquo;t appear any standard format for
+specifying these types of automation workflows. That&rsquo;s not too
+surprising. One reason might be that every provider implements their own
+features and therefore wants to be able to flexibly specify the
+configuration to incorporate those features. There aren&rsquo;t any
+transpilers for different formats: I can&rsquo;t take an existing
+<code>.travis.yml</code> and automatically convert it to a GitHub Actions
+<code>workflow.yml</code>. (However, there is <a href="https://github.com/ropensci/tic" target="_blank" rel="noopener noreferrer">an R
+project</a> that aims to specify workflow
+configurations for R packages agnostically, outputting configuration for
+different providers.)</p>
+<p>The consequence is that using GitHub Actions means that you now have a
+coupling of your code&rsquo;s organisation to GitHub, and adds work should you
+migrate to another Git repository host. To be fair, this is likely true
+already, even without using GitHub Actions. If you move to a different
+host, say GitLab, at the least, you&rsquo;ll also probably want to move the
+existing issues from GitHub to the new host. In mitigation of this,
+there are often tools or automatic imports for migrating these other
+non-code features, like issues.</p>
+<p>But, as we&rsquo;ve seen, any GitHub Actions workflows will probably need a
+manual rewrite to use a similar process elsewhere. This, then, is
+probably where using an external automation tool like Travis CI offers a
+benefit. If you migrate to a new remote repository host, to get your
+automation running, you just need to connect your new host to your
+existing automation system. No rewrite required.</p>
+<p>On the other hand, it&rsquo;s reasonable to think that external tools are more
+awkward to configure and monitor as opposed to comparable tooling that
+is a key part of your existing repository host. With an external
+service, there will also be some requirement for developers to create an
+account there, and then allow the external application to access their
+GitHub account. With GitHub Actions, it&rsquo;s just another tab on your
+GitHub repository. (Travis CI certainly didn&rsquo;t help themselves here by
+previously having <a href="https://blog.travis-ci.com/2018-05-02-open-source-projects-on-travis-ci-com-with-github-apps" target="_blank" rel="noopener noreferrer"><em>two</em> separate
+domains</a>,
+to independently handle free and paid services.)</p>
+<p>And an external tool is an additional point of failure. It&rsquo;s possible
+GitHub is up and running, while Travis CI is unavailable, or vice versa.
+Either service failing can block active development.</p>
+<h2 id="so-whats-best">So what&rsquo;s best?</h2>
+<p>Like many choices, there&rsquo;s no definitive answer. If the CI services have
+roughly equivalent features, then it comes down to what other aspects
+you prioritise. Is tight integration of your software development
+processes a positive — making for potentially easier configuration — or
+a hindrance to migration? Is pricing the most critical aspect?</p>
+<p>For funded development teams, the pricing issue is perhaps less
+important since it will likely still be a small part of an
+organisation&rsquo;s budget. Where GitHub Actions is particularly well placed
+is in the giving of individual developers an allocation of free
+automation job time for their private projects. Together with that
+allocation being easily used as part of the service developers are
+already likely using, it is challenging for external automation services
+to compete.</p>
+<p>And that&rsquo;s where my personal view is. I&rsquo;m still sticking with GitHub
+Actions, notwithstanding the slight risk of getting too tied into
+GitHub. GitHub is incredibly popular right now, it&rsquo;s where open source
+projects are developed, and that network effect is an important one.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-08-02</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/continuous-integration-with-github-actions/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/continuous-integration-with-github-actions/" data-title="Continuous integration with GitHub Actions" data-hashtags="automation,continuous delivery,continuous integration,GitHub,GitHub Actions"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/continuous-integration-with-github-actions/" data-hashtag="automation"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/continuous-integration-with-github-actions/" data-title="Continuous integration with GitHub Actions"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">automation</a>,&nbsp;<a href="/tags/continuous-delivery/">continuous delivery</a>,&nbsp;<a href="/tags/continuous-integration/">continuous integration</a>,&nbsp;<a href="/tags/github/">GitHub</a>,&nbsp;<a href="/tags/github-actions/">GitHub Actions</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/oh-fork-it/" class="prev" rel="prev" title="Oh, fork it"><i class="fas fa-angle-left fa-fw"></i>Oh, fork it</a>
+            <a href="/posts/garmin-forerunner-35-a-competent-budget-running-watch/" class="next" rel="next" title="Garmin Forerunner 35: a competent budget running watch">Garmin Forerunner 35: a competent budget running watch<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

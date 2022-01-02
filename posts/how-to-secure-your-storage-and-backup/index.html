@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>How to secure your storage and backup drives on Windows and Linux - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="How to secure your storage and backup drives on Windows and Linux" />
+<meta property="og:description" content="A guide to securing data on external and backup drives by encrypting them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2013-09-28T17:03:00+00:00" />
+<meta property="article:modified_time" content="2015-10-26T17:17:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="How to secure your storage and backup drives on Windows and Linux"/>
+<meta name="twitter:description" content="A guide to securing data on external and backup drives by encrypting them."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/fixing-chromium-on-ubuntu-video/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/installing-matplotlib-in-virtualenv/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to secure your storage and backup drives on Windows and Linux",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/how-to-secure-your-storage-and-backup\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Bitlocker, backup, encryption, USB, HDD, external, TrueCrypt, drive","wordcount":  1139 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/how-to-secure-your-storage-and-backup\/","datePublished": "2013-09-28T17:03:00+00:00","dateModified": "2015-10-26T17:17:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">How to secure your storage and backup drives on Windows and Linux</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2013-09-28">2013-09-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1139 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#bitlocker">Bitlocker</a>
+      <ul>
+        <li><a href="#issues-with-bitlocker">Issues with Bitlocker</a></li>
+      </ul>
+    </li>
+    <li><a href="#truecrypt">TrueCrypt</a>
+      <ul>
+        <li><a href="#issues-with-truecrypt">Issues with TrueCrypt</a></li>
+      </ul>
+    </li>
+    <li><a href="#encrypting-backup-drives">Encrypting backup drives</a>
+      <ul>
+        <li><a href="#windows">Windows</a></li>
+        <li><a href="#ubuntu">Ubuntu</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>If you use computers even a little, you&rsquo;ll probably have acquired a few
+external USB drives. They&rsquo;re cheap, reasonably quick and small, so it&rsquo;s
+unsurprising that they&rsquo;re so popular. The only issue is that you may
+well be storing personal data on them, meaning that if you lost them and
+they&rsquo;re unencrypted, anyone can read their contents.</p>
+<p>Compared with the painful time <a href="%7bfilename%7d../2013/a-beginners-guide-to-os-encryption-dual.md" rel="">I previously
+spent</a>
+encrypting operating system drives, it&rsquo;s a relief that encrypting
+non-system drives is far, far simpler.</p>
+<img class="article-image" src="{static}/images/2013/Bitlocker_context_menu.png" alt="Bitlocker drive context menu.">
+<h2 id="bitlocker">Bitlocker</h2>
+<p>If only using Windows, and provided your copy of Windows is bundled with
+it, you could use Bitlocker. Bitlocker is straightforward to setup with
+self-explanatory instructions.</p>
+<p>Right clicking an external drive in Explorer brings up the Bitlocker
+option (as shown to the right).</p>
+<img class="article-image" src="{static}/images/2013/Bitlocker_unlock_menu.png" alt="Bitlocker drive unlock menu.">
+<p>Next, you then choose a password to unlock the drive, then save or print
+a recovery key in case you forget your password. All that&rsquo;s left is to
+encrypt the drive by finally choosing to Start Encryption.</p>
+<p>The next time you insert the drive, it will prompt you for the password
+to unlock it. Enter it and the drive functions just as normal.</p>
+<h3 id="issues-with-bitlocker">Issues with Bitlocker</h3>
+<p>Note that you&rsquo;ll need to use Microsoft&rsquo;s <a href="http://windows.microsoft.com/en-us/windows7/what-is-the-bitlocker-to-go-reader" target="_blank" rel="noopener noreferrer">Bitlocker To Go
+Reader</a>
+for <strong>read-only access</strong> to Bitlocker-encrypted drives in older Windows
+version (Vista and XP). There are also
+<a href="https://code.google.com/p/libbde/" target="_blank" rel="noopener noreferrer">some</a>
+<a href="http://www.hsc.fr/ressources/outils/dislocker/" target="_blank" rel="noopener noreferrer">unofficial</a> projects
+that support Bitlocker under Linux and OS X.</p>
+<p>Update: Bought a USB 3 drive so that I could backup faster and was told
+by Windows that &ldquo;a drive attached to the system is not functioning&rdquo; when
+trying to enable Bitlocker. This is a <a href="http://support.microsoft.com/kb/2704232" target="_blank" rel="noopener noreferrer">known
+issue</a>, but I hadn&rsquo;t read
+anything about it until just now. In my case, my drive wouldn&rsquo;t even
+show up when plugged in the USB 2 port making my shiny new drive
+enclosure fairly useless. This is with the latest USB 3.0 eXtensible
+Host Controller Driver for Intel 7 Series (1.0.9.254, at the time of
+writing).</p>
+<p>Update 2: USB 3 works fine, but there&rsquo;s <a href="%7bfilename%7d../2013/odd-behaviour-of-bitlocker-or-maybe-my.md" rel="">some weird Bitlocker or drive
+specific issue
+behaviour</a>…</p>
+<h2 id="truecrypt">TrueCrypt</h2>
+<p>!!! article-edit &quot;&quot;
+Edit: see my <a href="%7bfilename%7d../2013/a-beginners-guide-to-os-encryption-dual.md#approach-3-encrypt-windows-7-any-version-with-truecrypt-encrypt-ubuntu-with-luks" rel="">earlier encryption
+post</a>
+for notes on the current state of TrueCrypt; it shouldn&rsquo;t be used
+anymore (on Windows, for certain), but one of its successors may be a
+suitable replacement.</p>
+<p>The other main option is TrueCrypt which is
+freely available, and has good cross-platform support, perhaps making it
+a better choice. Go to Volumes &gt; Create New Volume… and you&rsquo;ll see
+this menu:</p>
+<img class="article-image" src="{static}/images/2013/TrueCrypt_menu.png" alt="The TrueCrypt volume creation wizard.">
+<p>You can optionally use an encrypted drive container, which is a virtual
+disk in a file, should you want to store unencrypted files on your drive
+alongside encrypted ones. My preference is just to encrypt the entire
+thing, so there&rsquo;s no risk of me inadvertently storing something
+containing personal information in the unencrypted part.</p>
+<img class="article-image" src="{static}/images/2013/TrueCrypt_volume_type.png" alt="Specifying TrueCrypt volume type.">
+<p>Here, TrueCrypt asks if you want to hide the volume. In my case, a
+standard volume is sufficient.</p>
+<img class="article-image" src="{static}/images/2013/TrueCrypt_volume_location.png" alt="Specifying TrueCrypt volume location.">
+<p>Click Select Device, choose the drive you want to encrypt and click
+Next.</p>
+<img class="article-image" src="{static}/images/2013/TrueCrypt_encryption_options.png" alt="The TrueCrypt volume creation window.">
+<p>If you&rsquo;ve nothing on the drive already, you can format it. Otherwise,
+you&rsquo;ll have to encrypt it in place which will take longer. On the next
+page after this, it allows you to specify the encryption algorithms, I
+leave these as default. It will then tell you the volume size so that
+you can double check you&rsquo;ve specified the correct drive.</p>
+<img class="article-image" src="{static}/images/2013/TrueCrypt_format_options.png" alt="The TrueCrypt volume format window.">
+<p>After that, you enter a password, choose what kind of filesystem (e.g.
+FAT or NTFS) you want for the drive, move the mouse in the TrueCrypt for
+a while to generate random data and click Format.</p>
+<img class="article-image" src="{static}/images/2013/TrueCrypt_drive_menu.png" alt="The TrueCrypt window showing a list of drives and drive letters to mount.">
+<p>To mount the drive, you launch TrueCrypt, choose Select Device, select
+your TrueCrypt drive, select an empty drive letter and choose Mount.
+You&rsquo;ll be prompted for your password, and then providing you enter the
+correct password, your drive will be mounted and you can access the
+files on it. When you&rsquo;ve finished working with the drive, you should
+select it in TrueCrypt and choose Dismount. You can then safely eject
+the drive from Windows as you would normally, and then remove it from
+your PC.</p>
+<h3 id="issues-with-truecrypt">Issues with TrueCrypt</h3>
+<p>The only requirement is that you need TrueCrypt to be running on a
+destination PC. This can either be via having it installed to the PC
+directly, or, for Windows PCs at least, having access to an appropriate
+portable version of TrueCrypt.</p>
+<p>The one big tradeoff compared with Bitlocker is that you require
+administrative privileges even when running the
+<a href="https://en.wikipedia.org/wiki/Portable_application" target="_blank" rel="noopener noreferrer">portable</a> version
+on Windows. If TrueCrypt has been previously installed to a Windows PC
+by an administrator, then admin privileges are <strong>not</strong> required to mount
+drives. (On Linux, even with TrueCrypt installs, it asks for admin
+privileges since it requires them to mount a drive.) With Bitlocker,
+non-admins can access drives without any issue (aside from older Windows
+version needing the reader application ), and this might factor into
+your choice of encryption software.</p>
+<h2 id="encrypting-backup-drives">Encrypting backup drives</h2>
+<p>If you&rsquo;re encrypting everything else, it probably makes sense to
+considering encrypting your backups too. If your system is already
+encrypted completely, you could simply clone the entire drive with
+<a href="http://clonezilla.org/" target="_blank" rel="noopener noreferrer">Clonezilla</a>. I haven&rsquo;t tested this and I&rsquo;m not
+sure if there are issues with restoring the drive, particularly when if
+a drive&rsquo;s been encrypted with TrueCrypt, though <a href="http://superuser.com/questions/312166/how-to-properly-image-a-truecrypt-system-partition" target="_blank" rel="noopener noreferrer">some users report this
+is fine</a>.</p>
+<p>Using the backup tools provided by each individual OS is also an
+option.</p>
+<h3 id="windows">Windows</h3>
+<p>Windows Backup and Restore <a href="http://superuser.com/questions/126111/how-can-you-use-windows-backup-with-a-truecrypt-encrypted-backup-destination" target="_blank" rel="noopener noreferrer">needs slightly awkward
+workarounds</a>
+to function with TrueCrypt drives; however, Bitlocker encrypted external
+drives work seamlessly with this feature. The File History feature in
+Windows 8 should work fine with TrueCrypt drives, on the other hand (it
+doesn&rsquo;t use Volume Shadow Copy that TrueCrypt is incompatible with).</p>
+<h3 id="ubuntu">Ubuntu</h3>
+<p>For Ubuntu, I&rsquo;m using the built-in Backup tool (Déjà Dup) which is based
+on <a href="http://duplicity.nongnu.org/" target="_blank" rel="noopener noreferrer">Duplicity</a>. At its core, this backup
+tool is very much end-user focused. It&rsquo;s incredibly simple to set up.
+Although it could benefit from better scheduling and more options, e.g.
+exclusion of files versus simply choosing which directories to include,
+making backups easy for users to do is not a bad thing.</p>
+<p>Despite this, Déjà Dup has two handy features. First, it supports
+encryption natively, so you don&rsquo;t even need to specially format a drive
+or partition to encrypt the backup. You choose an encryption password
+and it encrypts the backup.</p>
+<p>Second, it integrates nicely with Ubuntu. Given a backup, you are able
+to restore deleted files or previous versions directly from
+<a href="https://en.wikipedia.org/wiki/Nautilus_%28file_manager%29" target="_blank" rel="noopener noreferrer">Nautilus</a>.</p>
+<p>There are other backup alternatives like
+<a href="http://www.rsnapshot.org/" target="_blank" rel="noopener noreferrer">rsnapshot</a> (though you&rsquo;d have to <a href="http://pig-monkey.com/2012/09/24/cryptshot-automated-encrypted-backups-rsnapshot/" target="_blank" rel="noopener noreferrer">handle
+encryption
+yourself</a>),
+but Déjà Dup gave me a fuss-free way to get an encrypted backup running,
+which I really like.</p>
+<h2 id="summary">Summary</h2>
+<p>If you&rsquo;re carrying around sensitive or personal data on portable drives,
+it&rsquo;s worth taking the time to make sure that the data&rsquo;s secure in case
+you lose the drive. It&rsquo;s simple to setup regardless of whichever OS
+you&rsquo;re using.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2015-10-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/how-to-secure-your-storage-and-backup/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/" data-title="How to secure your storage and backup drives on Windows and Linux" data-hashtags="Bitlocker,backup,encryption,USB,HDD,external,TrueCrypt,drive"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/" data-hashtag="Bitlocker"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/" data-title="How to secure your storage and backup drives on Windows and Linux"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/bitlocker/">Bitlocker</a>,&nbsp;<a href="/tags/backup/">backup</a>,&nbsp;<a href="/tags/encryption/">encryption</a>,&nbsp;<a href="/tags/usb/">USB</a>,&nbsp;<a href="/tags/hdd/">HDD</a>,&nbsp;<a href="/tags/external/">external</a>,&nbsp;<a href="/tags/truecrypt/">TrueCrypt</a>,&nbsp;<a href="/tags/drive/">drive</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/fixing-chromium-on-ubuntu-video/" class="prev" rel="prev" title="Fixing Chromium on Ubuntu video playback issues (no video, black screen)"><i class="fas fa-angle-left fa-fw"></i>Fixing Chromium on Ubuntu video playback issues (no video, black screen)</a>
+            <a href="/posts/installing-matplotlib-in-virtualenv/" class="next" rel="next" title="Installing matplotlib in a virtualenv">Installing matplotlib in a virtualenv<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

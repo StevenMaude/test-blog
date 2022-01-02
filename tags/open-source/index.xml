@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>open source - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/open-source/</link>
+        <description>open source - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 10 Dec 2016 23:06:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/open-source/" rel="self" type="application/rss+xml" /><item>
+    <title>Still rocking Rockbox</title>
+    <link>https://www.stevenmaude.co.uk/posts/still-rocking-rockbox/</link>
+    <pubDate>Sat, 10 Dec 2016 23:06:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/still-rocking-rockbox/</guid>
+    <description><![CDATA[Explaining why Rockbox is my portable audio player software of choice, and how you can try it out.]]></description>
+</item></channel>
+</rss>

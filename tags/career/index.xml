@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>career - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/career/</link>
+        <description>career - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 Nov 2013 13:23:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/career/" rel="self" type="application/rss+xml" /><item>
+    <title>Differences between working in university research and a tech startup</title>
+    <link>https://www.stevenmaude.co.uk/posts/differences-between-working-in/</link>
+    <pubDate>Sun, 03 Nov 2013 13:23:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/differences-between-working-in/</guid>
+    <description><![CDATA[A comparison of the differences between working in university research and working in a technology startup.]]></description>
+</item><item>
+    <title>How universities can help develop researchers&#39; post-university careers</title>
+    <link>https://www.stevenmaude.co.uk/posts/how-universities-can-help-develop/</link>
+    <pubDate>Sun, 18 Aug 2013 22:20:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/how-universities-can-help-develop/</guid>
+    <description><![CDATA[My account of a new and intensive career development programme for postdoctoral researchers leaving university.]]></description>
+</item><item>
+    <title>Types of data scientist</title>
+    <link>https://www.stevenmaude.co.uk/posts/types-of-data-scientist/</link>
+    <pubDate>Tue, 02 Jul 2013 17:22:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/types-of-data-scientist/</guid>
+    <description><![CDATA[My take on the &ldquo;Analyzing the Analyzers&rdquo; report by Harlan Harris and co-authors.]]></description>
+</item></channel>
+</rss>

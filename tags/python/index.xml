@@ -1,0 +1,57 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Python - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/python/</link>
+        <description>Python - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 15 Oct 2021 17:27:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/python/" rel="self" type="application/rss+xml" /><item>
+    <title>PyCon 2021: Secure software supply chains</title>
+    <link>https://www.stevenmaude.co.uk/posts/pycon-2021-secure-software-supply-chains/</link>
+    <pubDate>Fri, 15 Oct 2021 17:27:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/pycon-2021-secure-software-supply-chains/</guid>
+    <description><![CDATA[A summary of a talk by Dustin Ingram at PyCon 2021.]]></description>
+</item><item>
+    <title>A look at Pipenv</title>
+    <link>https://www.stevenmaude.co.uk/posts/a-look-at-pipenv/</link>
+    <pubDate>Sun, 26 Aug 2018 14:06:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/a-look-at-pipenv/</guid>
+    <description><![CDATA[A quick look at Pipenv, a tool to manage Python packages.]]></description>
+</item><item>
+    <title>Solve your problem with sloppy Python</title>
+    <link>https://www.stevenmaude.co.uk/posts/solve-your-problem-with-sloppy-python/</link>
+    <pubDate>Sun, 20 May 2018 17:24:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/solve-your-problem-with-sloppy-python/</guid>
+    <description><![CDATA[A summary of a talk by Larry Hastings at PyCon 2018.]]></description>
+</item><item>
+    <title>Installing pip, virtualenv and virtualenvwrapper tidily in Linux</title>
+    <link>https://www.stevenmaude.co.uk/posts/installing-pip-virtualenv-and-virtualenvwrapper-tidily-in-linux/</link>
+    <pubDate>Fri, 30 Dec 2016 00:10:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/installing-pip-virtualenv-and-virtualenvwrapper-tidily-in-linux/</guid>
+    <description><![CDATA[Don&rsquo;t want to clutter up your system&rsquo;s Python install? Install]]></description>
+</item><item>
+    <title>PyPI: releasing frustration </title>
+    <link>https://www.stevenmaude.co.uk/posts/pypi-releasing-frustration/</link>
+    <pubDate>Sun, 15 May 2016 12:34:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/pypi-releasing-frustration/</guid>
+    <description><![CDATA[My first attempt at publishing a Python package on PyPI.]]></description>
+</item><item>
+    <title>Arduous lessons in Python: why main() is useful</title>
+    <link>https://www.stevenmaude.co.uk/posts/arduous-lessons-in-python-why-main-is/</link>
+    <pubDate>Sat, 05 Jul 2014 11:34:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/arduous-lessons-in-python-why-main-is/</guid>
+    <description><![CDATA[Why if <code>__name__ == '__main__'</code> is a sensible check in code you&rsquo;re reusing.]]></description>
+</item><item>
+    <title>How to use mock in Python to mock methods on objects</title>
+    <link>https://www.stevenmaude.co.uk/posts/how-to-use-mock-in-python-to-mock/</link>
+    <pubDate>Sat, 10 May 2014 11:05:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/how-to-use-mock-in-python-to-mock/</guid>
+    <description><![CDATA[Using mocks in Python to mock methods on objects.]]></description>
+</item><item>
+    <title>Beware Python&#39;s pyc files</title>
+    <link>https://www.stevenmaude.co.uk/posts/beware-pythons-pyc-files/</link>
+    <pubDate>Fri, 09 May 2014 21:29:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/beware-pythons-pyc-files/</guid>
+    <description><![CDATA[When Python&rsquo;s pyc files cause errors, it&rsquo;s time to remove them.]]></description>
+</item><item>
+    <title>US PyCon 2014 talks</title>
+    <link>https://www.stevenmaude.co.uk/posts/us-pycon-2014-talks/</link>
+    <pubDate>Sat, 19 Apr 2014 15:57:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/us-pycon-2014-talks/</guid>
+    <description><![CDATA[Rundown of some great US PyCon talks I recently watched.]]></description>
+</item><item>
+    <title>Installing Bokeh on Ubuntu 12.04 LTS</title>
+    <link>https://www.stevenmaude.co.uk/posts/installing-bokeh-on-ubuntu-1204-lts/</link>
+    <pubDate>Wed, 27 Nov 2013 20:24:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/installing-bokeh-on-ubuntu-1204-lts/</guid>
+    <description><![CDATA[Fixing a problem with installing Bokeh on Ubuntu.]]></description>
+</item></channel>
+</rss>

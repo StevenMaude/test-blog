@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>development - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/development/</link>
+        <description>development - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 19 Sep 2013 17:53:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/development/" rel="self" type="application/rss+xml" /><item>
+    <title>Explaining Python virtualenvwrapper (in a couple of minutes)</title>
+    <link>https://www.stevenmaude.co.uk/posts/explaining-python-virtualenvwrapper-in/</link>
+    <pubDate>Thu, 19 Sep 2013 17:53:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/explaining-python-virtualenvwrapper-in/</guid>
+    <description><![CDATA[How to use virtualenvwrapper to manage your Python virtualenvs.]]></description>
+</item><item>
+    <title>Explaining Python virtualenv (in under two minutes)</title>
+    <link>https://www.stevenmaude.co.uk/posts/explaining-python-virtualenv-in-under/</link>
+    <pubDate>Thu, 22 Aug 2013 20:31:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/explaining-python-virtualenv-in-under/</guid>
+    <description><![CDATA[How to setup virtualenvs to simplify Python software development.]]></description>
+</item></channel>
+</rss>

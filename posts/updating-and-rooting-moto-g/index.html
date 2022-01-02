@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Updating and rooting Moto G - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Updating and rooting Moto G" />
+<meta property="og:description" content="How to restore a Moto G to stock firmware, unlock bootloader and gain root access." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/updating-and-rooting-moto-g/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2014-08-25T15:42:00+00:00" />
+<meta property="article:modified_time" content="2014-08-25T18:34:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Updating and rooting Moto G"/>
+<meta name="twitter:description" content="How to restore a Moto G to stock firmware, unlock bootloader and gain root access."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/updating-and-rooting-moto-g/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/my-wifis-connected-but-theres-no/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/taking-control-of-chromium-and-chrome/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Updating and rooting Moto G",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/updating-and-rooting-moto-g\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Moto, firmware, upgrade, Android, system, root","wordcount":  1067 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/updating-and-rooting-moto-g\/","datePublished": "2014-08-25T15:42:00+00:00","dateModified": "2014-08-25T18:34:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Updating and rooting Moto G</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-08-25">2014-08-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1067 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#my-moto-g-has-been-nagging-me-to-upgrade-firmware">My Moto G has been nagging me to upgrade firmware</a></li>
+    <li><a href="#preliminary-setup-with-ubuntu">Preliminary setup with Ubuntu</a></li>
+    <li><a href="#backup-data-from-phone">Backup data from phone</a></li>
+    <li><a href="#restore-stock-firmware">Restore stock firmware</a></li>
+    <li><a href="#upgrade">Upgrade</a></li>
+    <li><a href="#unlock-bootloader">Unlock bootloader</a></li>
+    <li><a href="#install-custom-recovery">Install custom recovery</a></li>
+    <li><a href="#root-the-phone-by-installing-supersu">Root the phone by installing SuperSU</a></li>
+    <li><a href="#install-xprivacy">Install XPrivacy</a></li>
+    <li><a href="#encrypt-and-change-password-again">Encrypt and change password again</a></li>
+    <li><a href="#disable-all-the-slow-animations">Disable all the slow animations</a></li>
+    <li><a href="#restore-data-account-messages-call-logs">Restore data, account, messages, call logs</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="my-moto-g-has-been-nagging-me-to-upgrade-firmware">My Moto G has been nagging me to upgrade firmware</h2>
+<p>So I did today.</p>
+<p>(I was persuaded by the Motorola system updater. Not because it&rsquo;s a
+lovely looking bit of software, but because it makes nagging an art with
+its focus-stealing prompt. If you go for the &ldquo;no&rdquo; option, your phone
+kindly reminds you again in an hour <strong>every hour</strong>, just in case you&rsquo;ve
+forgotten. This is regardless of what you&rsquo;re doing at the time, even if
+you&rsquo;re say using Google Maps for driving navigation which is quite
+hideous. Even the option to postpone the reminder for a week or a month
+would be nice. A rubbish, rubbish, rubbish user experience.)</p>
+<p>A simple upgrade is as easy as pressing &ldquo;upgrade&rdquo;. Because my phone was
+rooted and encrypted, the upgrade was likely to fail, so I had to
+restore it to stock firmware first.</p>
+<p>However, I wanted to then reroot it so that I could use
+<a href="https://github.com/M66B/XPrivacy" target="_blank" rel="noopener noreferrer">XPrivacy</a>. This lets you restrict the
+permissions that apps have. Google did have App Ops in Android which did
+a similar thing (without quite as much granularity, I believe) but
+promptly removed it. It would have been good of them to leave it in: it
+would have removed one reason I have for rooting. Android apps are just
+far more intrusive in their permissions than they usually need to be.</p>
+<p>No, I don&rsquo;t want Twitter&rsquo;s app to access my contacts, thanks; I&rsquo;m more
+than capable of finding people on Twitter directly. No, there&rsquo;s no
+reason for Soundhound to know where I am. No, even if my phone <strong>had</strong>
+NFC, I don&rsquo;t want F-Droid to be able to use it.</p>
+<p>The assessment
+<a href="http://www.cnet.com/news/why-android-wont-be-getting-app-ops-anytime-soon/" target="_blank" rel="noopener noreferrer">here</a>
+is that one big reason for the removal of App Ops is due to it breaking
+apps. I disagree with that though. Using XPrivacy, I restrict almost
+every app and haven&rsquo;t had any trouble.</p>
+<p>I can understand that if app permission controls were enabled by
+default, there&rsquo;s the possibility that it could cause problems for users
+that don&rsquo;t understand the implications of allowing/denying permissions,
+but if it was something like the developer options where you have to
+deliberately enable it, then they wouldn&rsquo;t even know it was present.</p>
+<p>Anyway, here are the reference notes I made while upgrading for (the
+inevitable) next time.</p>
+<h2 id="preliminary-setup-with-ubuntu">Preliminary setup with Ubuntu</h2>
+<p>(or your choice of a Linux that has <code>adb</code> and <code>fastboot</code>)</p>
+<ol>
+<li>Install (to a live USB, or use an existing install on your laptop)</li>
+<li>Enable third party repositories in &ldquo;Software and Updates&rdquo;.</li>
+<li>Do <code>sudo apt-get update</code>.</li>
+<li><code>sudo apt-get install android-tools-adb android-tools-fastboot</code></li>
+</ol>
+<h2 id="backup-data-from-phone">Backup data from phone</h2>
+<p>Copy off any photos, documents or other files you want to save.</p>
+<p>If you want to backup your call logs and text messages, Call Logs Backup
+and Restore, and SMS Backup and Restore work pretty well for me. That
+said, they do request internet permissions which I block.</p>
+<h2 id="restore-stock-firmware">Restore stock firmware</h2>
+<p>Stock firmwares are available
+<a href="http://sbf.droid-developers.org/phone.php?device=14" target="_blank" rel="noopener noreferrer">here</a> and <a href="http://forum.xda-developers.com/showthread.php?t=2542219" target="_blank" rel="noopener noreferrer">this
+post</a> was a
+useful reference.</p>
+<p>Boot into the bootloader using power on and volume down key (or enable
+USB debugging mode when the phone&rsquo;s on normally and do
+<code>adb reboot-bootloader</code>).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sudo fastboot flash partition gpt.bin
+sudo fastboot flash motoboot motoboot.img
+sudo fastboot flash logo logo.bin
+sudo fastboot flash boot boot.img
+sudo fastboot flash recovery recovery.img
+sudo fastboot flash system system.img_sparsechunk1
+sudo fastboot flash system system.img_sparsechunk2
+sudo fastboot flash system system.img_sparsechunk3
+sudo fastboot flash modem NON-HLOS.bin
+sudo fastboot erase modemst1
+sudo fastboot erase modemst2
+sudo fastboot flash fsg fsg.mbn
+sudo fastboot erase cache
+sudo fastboot erase userdata
+sudo fastboot reboot
+</code></pre></div><p>(sparsechunk files may have numbers 0, 1, 2 - just flash them in
+ascending order.)</p>
+<h2 id="upgrade">Upgrade</h2>
+<p>Boot into stock and install update.</p>
+<p><strong>To avoid heartache</strong>, make sure you check for system updates
+<strong>after</strong> you update, and install any further updates before
+proceeding. Repeat until no update is found. Otherwise, like me, you may
+discover after rooting again that there are still updates remaining
+after the first one. In that case, you&rsquo;ll have to restore to stock again
+:( (I was on 4.4.2, but there was a minor update that didn&rsquo;t change the
+version before the latest 4.4.4 update.)</p>
+<h2 id="unlock-bootloader">Unlock bootloader</h2>
+<p>** Only needed if not previously unlocked; while restoring stock
+firmware and upgrading, this didn&rsquo;t get relocked. **</p>
+<p>You need a bootloader unlock code from Motorola&rsquo;s
+<a href="https://motorola-global-portal.custhelp.com/app/standalone/bootloader/unlock-your-device-a" target="_blank" rel="noopener noreferrer">site</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">fastboot oem unlock
+</code></pre></div><p>Boot into fastboot mode: Enable developer mode again in settings:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">adb reboot bootloader
+</code></pre></div><p>Optional: get a copy of the original Motorola logo and do:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sudo fastboot flash logo original_logo.bin
+</code></pre></div><p>to remove the annoying &ldquo;bootloader is unlocked&rdquo; warning at boot.</p>
+<p>See <a href="http://wiki.cyanogenmod.org/w/Template:Unlock_Bootloader" target="_blank" rel="noopener noreferrer">CyanogenMod&rsquo;s
+site</a> for more
+details.</p>
+<h2 id="install-custom-recovery">Install custom recovery</h2>
+<p>Get custom recovery; <a href="http://teamw.in/project/twrp2/233" target="_blank" rel="noopener noreferrer">I used TWRP</a>.</p>
+<p>Get a recent fastboot .img; at the time of writing, 2.7.1.1 was the
+latest, but didn&rsquo;t work. 2.7.1.0 worked fine.</p>
+<p>Install through bootloader using fastboot:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sudo fastboot flash recovery modified_recovery.img
+</code></pre></div><h2 id="root-the-phone-by-installing-supersu">Root the phone by installing SuperSU</h2>
+<p>Boot from bootloader into TWRP recovery. Reboot system, say yes to
+install SuperSU.</p>
+<p>Boot up, run SuperSU installer; go to Play Store and choose <strong>update</strong>
+(<strong>not</strong> open).</p>
+<p>This will probably prompt to install a new binary; the normal install
+should work fine.</p>
+<h2 id="install-xprivacy">Install XPrivacy</h2>
+<p>Install XPrivacy installer. Follow each of the several instruction steps
+that are shown when you run it.</p>
+<h2 id="encrypt-and-change-password-again">Encrypt and change password again</h2>
+<p>Create a screen lock PIN or password, then fully charge battery and
+encrypt.</p>
+<p>Change the password using <a href="https://play.google.com/store/apps/details?id=org.nick.cryptfs.passwdmanager&amp;hl=en" target="_blank" rel="noopener noreferrer">Cryptfs
+Password</a>
+so that you can have a separate screen unlock code and encryption passphrase.</p>
+<p>(This is another good reason to root your phone. Without this, your
+encryption password is identical to your screen unlock code. Unless you
+want to have either:</p>
+<ul>
+<li>a weak password, or</li>
+<li>a huge password that you have to enter every time you unlock your phone</li>
+</ul>
+<p>you&rsquo;ll need to change it using CryptFS which requires root access.)</p>
+<h2 id="disable-all-the-slow-animations">Disable all the slow animations</h2>
+<p>To make Android snappier, disable the animations by enabling the
+developer options. Go in Settings &gt; About phone, scroll to the bottom
+and keep pressing build number until it tells you the developer options
+are active. Now, in Settings &gt; Developer options, you can set &ldquo;Window
+animation scale&rdquo;, &ldquo;Transition animation scale&rdquo; and &ldquo;Animator duration
+scale&rdquo; all to off.</p>
+<h2 id="restore-data-account-messages-call-logs">Restore data, account, messages, call logs</h2>
+<p>Reinstall SMS Backup and Restore, Call Log Backup and Restore, and
+restore the backups you made. Reinstall any other apps you want,
+including <a href="https://f-droid.org/" target="_blank" rel="noopener noreferrer">F-Droid</a> if you want AdAway and that&rsquo;s
+everything finally done. No more nagging for updates!</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2014-08-25</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/updating-and-rooting-moto-g/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/updating-and-rooting-moto-g/" data-title="Updating and rooting Moto G" data-hashtags="Moto,firmware,upgrade,Android,system,root"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/updating-and-rooting-moto-g/" data-hashtag="Moto"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/updating-and-rooting-moto-g/" data-title="Updating and rooting Moto G"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/moto/">Moto</a>,&nbsp;<a href="/tags/firmware/">firmware</a>,&nbsp;<a href="/tags/upgrade/">upgrade</a>,&nbsp;<a href="/tags/android/">Android</a>,&nbsp;<a href="/tags/system/">system</a>,&nbsp;<a href="/tags/root/">root</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/my-wifis-connected-but-theres-no/" class="prev" rel="prev" title="My wifi&#39;s connected, but there&#39;s no internet…? (Intel Centrino versus Ubuntu)"><i class="fas fa-angle-left fa-fw"></i>My wifi&#39;s connected, but there&#39;s no internet…? (Intel Centrino versus Ubuntu)</a>
+            <a href="/posts/taking-control-of-chromium-and-chrome/" class="next" rel="next" title="Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard">Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>How to use mock in Python to mock methods on objects - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="How to use mock in Python to mock methods on objects" />
+<meta property="og:description" content="Using mocks in Python to mock methods on objects." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/how-to-use-mock-in-python-to-mock/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2014-05-10T11:05:00+00:00" />
+<meta property="article:modified_time" content="2014-05-10T11:05:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="How to use mock in Python to mock methods on objects"/>
+<meta name="twitter:description" content="Using mocks in Python to mock methods on objects."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/how-to-use-mock-in-python-to-mock/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/beware-pythons-pyc-files/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/52-weeks-52-posts/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to use mock in Python to mock methods on objects",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/how-to-use-mock-in-python-to-mock\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "mock, testing, test, unit, Python","wordcount":  953 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/how-to-use-mock-in-python-to-mock\/","datePublished": "2014-05-10T11:05:00+00:00","dateModified": "2014-05-10T11:05:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">How to use mock in Python to mock methods on objects</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-05-10">2014-05-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;953 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#testing">Testing</a></li>
+    <li><a href="#testing-and-me">Testing and me</a></li>
+    <li><a href="#mocking-a-method-of-an-object-with-python-mock">Mocking a method of an object with Python <code>mock</code></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="testing">Testing</h2>
+<p>Testing is a useful programming practice which, in all honesty, I&rsquo;m
+still learning much about. Tests can give you some reassurance as to the
+behaviour of your code, providing you&rsquo;ve written your tests such that
+they&rsquo;re testing appropriate things. They can also help you think about
+how you write your code, in a positive way: the process of making unit
+tests can require you to rethink how your code operates in order to make
+it testable.</p>
+<p>If you&rsquo;re unfamiliar and want to know more, probably the single most
+useful resources I&rsquo;ve found are two of Ned Batchelder&rsquo;s PyCon talks, one
+from <a href="http://nedbatchelder.com/text/testability.html" target="_blank" rel="noopener noreferrer">Pycon 2010</a>, and
+one he <a href="http://nedbatchelder.com/text/st.html" target="_blank" rel="noopener noreferrer">recently</a> gave. In the
+latter, he covers testing from the ground up. The former is a little
+less introductory, but is a good complimentary talk; he works through a
+few examples where writing tests can give a better organisation to code.</p>
+<h2 id="testing-and-me">Testing and me</h2>
+<p>My problems in creating tests are often two-fold. First, I&rsquo;m not always
+sure what are good tests to write - for instance, unit tests should be
+isolated, but how much should I be mocking out in unit tests? For some
+functions, if you mock out all other function calls, you may have very
+little left to actually test there.</p>
+<p>Spotting which paths through the code you want to prioritise for
+integration tests is another issue. Ideally, you&rsquo;d either work bottom
+up, starting with tests that mock out everything, then slowly adding in
+real code, or maybe top down, progressively mocking out units. However
+you approach it, the number of combinations of tests you could write
+will increase rapidly: even for moderately small programs, the number of
+possible combinations of mocked out functions and objects can be huge.
+For example, if A calls B and B calls C, I could write tests that use
+all three actual functions, two of them or just one (and perhaps even
+none of them). To exhaustively test every combination becomes
+unmanageable.</p>
+<p>I&rsquo;m hoping the more I write tests, the more confident I&rsquo;ll be at
+evaluating whether the tests I&rsquo;m thinking of aren&rsquo;t going to be that
+useful to implement. Where I know I should improve is the second problem
+I often encounter: how to actually implement tests. Often, I&rsquo;ll find I
+know what I want to achieve but find difficulty in actually articulating
+this in code, usually because I&rsquo;ve not found the functions I want in
+<code>mock</code>.</p>
+<h2 id="mocking-a-method-of-an-object-with-python-mock">Mocking a method of an object with Python <code>mock</code></h2>
+<p>Anyway, here&rsquo;s an example of this which might be useful if you&rsquo;re trying
+to do something similar. In this case, I wanted to test a method of an
+object, but wasn&rsquo;t sure how to do that using a mock.</p>
+<p>This is a really cut-down version of what my code was doing, but
+features the main thing I was testing:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">table_name</span> <span class="o">=</span> <span class="s1">&#39;some_table&#39;</span>
+    <span class="n">sqlite_db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;database.sqlite&#39;</span><span class="p">)</span>
+    <span class="n">sqlite_db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&#34;drop table if exists </span><span class="si">{}</span><span class="s2">;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table_name</span><span class="p">))</span>
+    <span class="c1"># next, get some data and then save to db</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div><p>As what the database saves depends on some input that the user supplies
+(fixed here), I wanted to ensure that the table is wiped before we add
+anything to it. Otherwise repeated runs would cause the table to become
+cluttered with data the user no longer wants.)</p>
+<p>What I specifically wanted to check was whether the database was getting
+the correct table name to drop. One way of checking this is using
+Python&rsquo;s <code>mock</code>(a <code>pip</code>-installable package if you&rsquo;re on Python 2, part of
+the standard library from Python 3.3).</p>
+<p>By replacing objects with mocks as stand-ins, we can avoid the need for
+actually connecting to a database in our test (which may be slow or
+unreliable, if it&rsquo;s remote). Mocks aren&rsquo;t just dummy objects though;
+it&rsquo;s possible to inspect them after we execute some statements, allowing
+us to see, for instance, if the mock was called, and what arguments it
+was called with.</p>
+<p>In my case, I got particularly confused with the mocking out of the
+<code>.execute method</code> of the <code>sqlite_db</code> object. I&rsquo;d tried all combinations
+of accessing the call via the <code>mock_sqlite3_connect</code>. What it took me
+ages to realise is that I had to mock out what <code>sqlite3.connect()</code>
+returns; you can&rsquo;t (unless I&rsquo;m mistaken) access calls on the object it
+returns otherwise.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">import</span> <span class="nn">code_to_test</span>
+<span class="kn">import</span> <span class="nn">mock</span>
+
+<span class="k">class</span> <span class="nc">CodeToTestTestCase</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;code_to_test.sqlite3.connect&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_database_drop_table_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_sqlite3_connect</span><span class="p">):</span>
+        <span class="n">sqlite_execute_mock</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
+        <span class="n">mock_sqlite3_connect</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">sqlite_execute_mock</span>
+        <span class="n">code_to_test</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+        <span class="n">call</span> <span class="o">=</span> <span class="s1">&#39;drop table if exists some_table;&#39;</span>
+        <span class="n">sqlite_execute_mock</span><span class="o">.</span><span class="n">execute</span><span class="o">.</span><span class="n">assert_called_with</span><span class="p">(</span><span class="n">call</span><span class="p">)</span>
+</code></pre></div><p>What&rsquo;s happening here? First, we&rsquo;re using a decorator, <code>@mock.patch</code>
+which replaces <code>sqlite3.connect()</code> in <code>code_to_test</code> with a mock,
+<code>mock_sqlite3_connect</code>. We can then make the return value of the
+<code>mock_sqlite3_connect</code> <em>a mock itself</em>. After that, all we have to do is
+actually call the main function which now will run with our mocks
+inside. Now, we can check that <code>sqlite3.execute()</code> was called correctly.
+If we save this as <code>tests.py</code> and run <code>nosetests</code>
+(<code>pip install python-nose mock</code> if you haven&rsquo;t already), the test will
+pass.</p>
+<p>(What I think happens is that without us supplying a return value, the
+sqlite database is mocked, but there&rsquo;s no easy way to access it within the
+test to check the method&rsquo;s called. If you know I&rsquo;m wrong and have an
+explanation, I&rsquo;d love to hear it.)</p>
+<p>Given the solution, you might wonder why I&rsquo;d been bashing my head
+against the keyboard for an hour or two to figure it out. It&rsquo;s just
+knowing the vocabulary of what you need to do with mocks, whereas I&rsquo;d
+got sidetracked thinking there <strong>must</strong> be a way to implicitly access
+methods of the object with the initial mock. Seeing and using patterns
+is definitely a good way to develop; next time I do something similar,
+I&rsquo;ll be much quicker to get something going.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2014-05-10</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/how-to-use-mock-in-python-to-mock/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/how-to-use-mock-in-python-to-mock/" data-title="How to use mock in Python to mock methods on objects" data-hashtags="mock,testing,test,unit,Python"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/how-to-use-mock-in-python-to-mock/" data-hashtag="mock"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/how-to-use-mock-in-python-to-mock/" data-title="How to use mock in Python to mock methods on objects"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mock/">mock</a>,&nbsp;<a href="/tags/testing/">testing</a>,&nbsp;<a href="/tags/test/">test</a>,&nbsp;<a href="/tags/unit/">unit</a>,&nbsp;<a href="/tags/python/">Python</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/beware-pythons-pyc-files/" class="prev" rel="prev" title="Beware Python&#39;s pyc files"><i class="fas fa-angle-left fa-fw"></i>Beware Python&#39;s pyc files</a>
+            <a href="/posts/52-weeks-52-posts/" class="next" rel="next" title="52 weeks, 52 posts">52 weeks, 52 posts<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>university - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/university/</link>
+        <description>university - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 22 Jun 2014 21:47:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/university/" rel="self" type="application/rss+xml" /><item>
+    <title>Chatting about data science careers</title>
+    <link>https://www.stevenmaude.co.uk/posts/chatting-about-data-science-careers/</link>
+    <pubDate>Sun, 22 Jun 2014 21:47:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/chatting-about-data-science-careers/</guid>
+    <description><![CDATA[Write-up of a careers event I participated in at the University of Cambridge.]]></description>
+</item><item>
+    <title>Differences between working in university research and a tech startup</title>
+    <link>https://www.stevenmaude.co.uk/posts/differences-between-working-in/</link>
+    <pubDate>Sun, 03 Nov 2013 13:23:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/differences-between-working-in/</guid>
+    <description><![CDATA[A comparison of the differences between working in university research and working in a technology startup.]]></description>
+</item><item>
+    <title>How universities can help develop researchers&#39; post-university careers</title>
+    <link>https://www.stevenmaude.co.uk/posts/how-universities-can-help-develop/</link>
+    <pubDate>Sun, 18 Aug 2013 22:20:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/how-universities-can-help-develop/</guid>
+    <description><![CDATA[My account of a new and intensive career development programme for postdoctoral researchers leaving university.]]></description>
+</item></channel>
+</rss>

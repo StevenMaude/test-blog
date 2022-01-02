@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>A look at Pipenv - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="A look at Pipenv" />
+<meta property="og:description" content="A quick look at Pipenv, a tool to manage Python packages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/a-look-at-pipenv/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-08-26T14:06:00+00:00" />
+<meta property="article:modified_time" content="2020-06-19T12:39:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="A look at Pipenv"/>
+<meta name="twitter:description" content="A quick look at Pipenv, a tool to manage Python packages."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/a-look-at-pipenv/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/solve-your-problem-with-sloppy-python/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/git-nice-and-lease-y/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "A look at Pipenv",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/a-look-at-pipenv\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Pipenv, Python","wordcount":  912 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/a-look-at-pipenv\/","datePublished": "2018-08-26T14:06:00+00:00","dateModified": "2020-06-19T12:39:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">A look at Pipenv</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2018-08-26">2018-08-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;912 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#differences">Differences</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>!!! article-edit &quot;&quot;
+Edit 2020-06-19: These days, I just tend to use a manually created
+virtualenv when working on Python, and a bash one-liner to activate
+the appropriate virtualenv.</p>
+<pre><code>As mentioned below, [poetry](https://github.com/python-poetry/poetry) is
+another option for managing dependencies and I've seen a lot of
+positive things written about poetry since I originally wrote this
+post.
+</code></pre>
+<p><a href="https://github.com/pypa/pipenv" target="_blank" rel="noopener noreferrer">Pipenv</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is a tool that aims to
+remove the hassle of using
+<a href="%7bfilename%7d../2013/explaining-python-virtualenv-in-under.md" rel="">virtualenvs</a>
+(Python runtime environments to keep separate Python setups for
+different projects independent), and also help manage requirements. It
+also aims to help provide deterministic builds of software.</p>
+<p>I had read about Pipenv previously, but couldn&rsquo;t ever really understand
+how it worked from just reading about it. So I switched from my existing
+virtualenv setup to this to try it out and figure out whether I can
+replicate the same behaviour I had with virtualenv and
+virtualenvwrapper.</p>
+<h2 id="differences">Differences</h2>
+<p>The main difference of Pipenv to the way you might work with virtualenvs
+— which, for me, is switch to a particular virtualenv for a project, then
+run commands in the shell as normal, just with a self-contained Python
+setup — is that Pipenv is more contextual.</p>
+<p>With Pipenv, you change to the appropriate project directory and then
+run commands directly in that virtualenv by preceding them with <code>pipenv run</code>, e.g. <code>pipenv run myscript.py</code>. Pipenv knows which virtualenv to
+use based on the location you&rsquo;re in.</p>
+<p>(You can also get more virtualenv-like behaviour by going to a project
+directory and doing <code>pipenv shell</code> where it effectively activates the
+virtualenv in the shell. However, one downside with this is that the
+subshell command history there only exists within that subshell; it is
+not stored in your main shell.)</p>
+<p>Another difference is that you would also tend to favour using <code>pipenv</code>
+over <code>pip</code> for installing packages; <code>pipenv install &lt;SOME_PACKAGE&gt;</code> also
+adds packages to your project&rsquo;s
+<a href="https://github.com/pypa/pipfile" target="_blank" rel="noopener noreferrer"><code>Pipfile</code></a>, which replaces the older
+<code>requirements.txt</code> file of specifying dependencies.</p>
+<h2 id="usage">Usage</h2>
+<p>You can create a new Pipenv either implicitly by <code>pipenv install --dev</code>
+which installs dependencies for that project (including dev
+dependencies) in a new virtualenv it creates, or more explicitly by:
+<code>pipenv --two</code> or <code>pipenv --three</code> which gets you a new virtualenv with
+that version of Python.</p>
+<p>You can also use <code>--python &lt;VERSION_NUMBER&gt;</code> to use a specific point
+release of Python of your choice you have installed, e.g. 3.7.
+Furthermore, if you have pyenv installed, it will install the requested
+version of Python for you, if that version is not installed already.</p>
+<p>There are two broad uses of virtualenvs I had:</p>
+<ol>
+<li>
+<p>for Python development to avoid any clash of package versions, which
+is covered quite well by the default behaviour of Pipenv.</p>
+</li>
+<li>
+<p>for running standalone Python software I want to run, e.g.
+Docker Compose, but keeping their installations entirely independent
+of each other to avoid any conflicts. This isn&rsquo;t quite covered as
+well, because <code>pipenv run</code> requires you to be in the directory or a
+subdirectory of that directory<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> where you&rsquo;ve already run Pipenv
+and a Pipfile exists, as that&rsquo;s how I assume it figures out which
+virtualenv to use. Otherwise, running Pipenv creates a new
+virtualenv! I think <code>pipenv shell</code> works around this dropping you
+into a new subshell where the virtualenv is activated.</p>
+<p>Alternatively, in bash, you can do <code>source $(pipenv --venv)/bin/activate</code> in the directory with the virtualenv, to work
+at a slightly lower level, with the virtualenv directly, without
+<code>pipenv shell</code>.</p>
+</li>
+</ol>
+<p>These use cases are both handled reasonably well by Pipenv.</p>
+<h2 id="summary">Summary</h2>
+<p>Pipenv seems to work well enough if you want to simplify using
+virtualenvs and management of dependencies. I think there are two groups
+of users that it might particularly suit: those who are newer to
+managing Python packaging and virtualenvs — as a means of abstracting
+away virtualenv management — and those who are more experienced but want
+to have a tool that integrates other features, e.g. checking for
+dependency vulnerabilities via <code>pipenv check</code> (which is provided by the
+<a href="https://github.com/pyupio/safety" target="_blank" rel="noopener noreferrer">safety</a> package).</p>
+<p>However, if you read around, there is still some contention about Pipenv
+being <a href="https://packaging.python.org/guides/tool-recommendations/" target="_blank" rel="noopener noreferrer">recommended by the
+PyPA</a>.
+Certainly, there are a considerable number of small issues that remove
+some of Pipenv&rsquo;s sheen; <a href="https://github.com/pypa/pipenv/issues/2753" target="_blank" rel="noopener noreferrer">I encountered a small one already
+reported</a> within just a
+short time of using Pipenv. There are also several issues relating to
+dependency resolution, which seem a little more critical seeing as
+dependency management is one of the tool&rsquo;s core goals.</p>
+<p>Pipenv then is no panacea for Python&rsquo;s still byzantine dependency
+management. <a href="https://www.python.org/dev/peps/pep-0020/" target="_blank" rel="noopener noreferrer">PEP 20</a>&rsquo;s call
+for &ldquo;one obvious way to do it&rdquo; is not yet fully heeded. But maybe it&rsquo;s a
+step roughly in the right direction, even if there&rsquo;s still some
+meandering to do before there&rsquo;s a really simple and transparent workflow
+for Python. (However, I don&rsquo;t think it&rsquo;s uncommon for dependency
+management being tricky to get right either; Go has been around for a
+decade and is only just <a href="https://blog.golang.org/versioning-proposal" target="_blank" rel="noopener noreferrer">getting
+there</a>. Python&rsquo;s had
+considerably longer than Go to get it right though.)</p>
+<p>Finally, it is worth noting that there are other alternatives too.
+<a href="https://github.com/python-poetry/poetry" target="_blank" rel="noopener noreferrer">Poetry</a> is a newer, and perhaps
+less well known, tool whose goals intersect with those of Pipenv. It
+fixes some of the existing issues of dependency resolution that
+pip-tools has (pip-tools is the underlying package that pipenv actually
+uses for this task), and therefore may be another useful contender to
+keep in mind.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Confusingly, Pipenv&rsquo;s name is capitalised, while pip&rsquo;s is not.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Caveat: it only looks a certain number of subdirectories deep by
+default, though <a href="https://github.com/pypa/pipenv/issues/1634" target="_blank" rel="noopener noreferrer">this number is configurable</a>.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-06-19</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/a-look-at-pipenv/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/a-look-at-pipenv/" data-title="A look at Pipenv" data-hashtags="Pipenv,Python"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/a-look-at-pipenv/" data-hashtag="Pipenv"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/a-look-at-pipenv/" data-title="A look at Pipenv"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/pipenv/">Pipenv</a>,&nbsp;<a href="/tags/python/">Python</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/solve-your-problem-with-sloppy-python/" class="prev" rel="prev" title="Solve your problem with sloppy Python"><i class="fas fa-angle-left fa-fw"></i>Solve your problem with sloppy Python</a>
+            <a href="/posts/git-nice-and-lease-y/" class="next" rel="next" title="git: nice and lease-y">git: nice and lease-y<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

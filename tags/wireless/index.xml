@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>wireless - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/wireless/</link>
+        <description>wireless - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 03 Mar 2017 16:44:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/wireless/" rel="self" type="application/rss+xml" /><item>
+    <title>Fixing horrible wireless network pings in Ubuntu (2017 edition)</title>
+    <link>https://www.stevenmaude.co.uk/posts/fixing-horrible-wireless-network-pings-in-ubuntu-2017-edition/</link>
+    <pubDate>Fri, 03 Mar 2017 16:44:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/fixing-horrible-wireless-network-pings-in-ubuntu-2017-edition/</guid>
+    <description><![CDATA[How to disable wifi power management in Ubuntu. Again.]]></description>
+</item><item>
+    <title>Horrible wireless network pings in Ubuntu and how to fix them</title>
+    <link>https://www.stevenmaude.co.uk/posts/horrible-wireless-network-pings-in/</link>
+    <pubDate>Wed, 20 Nov 2013 18:51:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/horrible-wireless-network-pings-in/</guid>
+    <description><![CDATA[A quick guide on how to fix high and variable pings when connecting to wireless networks using Ubuntu Linux.]]></description>
+</item><item>
+    <title>Uses for a Raspberry Pi (part 1)</title>
+    <link>https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-1/</link>
+    <pubDate>Wed, 10 Jul 2013 21:21:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-1/</guid>
+    <description><![CDATA[A few simple, but useful, applications for a Raspberry Pi, including a wireless adapter and AirPrint server.]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>encryption - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/encryption/</link>
+        <description>encryption - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 28 Nov 2016 00:26:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/encryption/" rel="self" type="application/rss+xml" /><item>
+    <title>A beginner&#39;s guide to OS encryption: (almost) 2017 edition</title>
+    <link>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-almost-2017-edition/</link>
+    <pubDate>Mon, 28 Nov 2016 00:26:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-almost-2017-edition/</guid>
+    <description><![CDATA[How to dual boot Windows with Ubuntu and encrypt them both.]]></description>
+</item><item>
+    <title>Android device encryption is (mostly) good</title>
+    <link>https://www.stevenmaude.co.uk/posts/android-device-encryption-is-mostly-good/</link>
+    <pubDate>Sat, 05 Apr 2014 10:21:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/android-device-encryption-is-mostly-good/</guid>
+    <description><![CDATA[Encrypting Android and the usability issues that arise.]]></description>
+</item><item>
+    <title>Some &lt;s&gt;spring&lt;/s&gt; winter Ubuntu cleaning</title>
+    <link>https://www.stevenmaude.co.uk/posts/some-spring-winter-ubuntu-cleaning/</link>
+    <pubDate>Tue, 24 Dec 2013 00:04:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/some-spring-winter-ubuntu-cleaning/</guid>
+    <description><![CDATA[Some Ubuntu tips: setting up TRIM on an encrypted drive for 12.04 LTS and freeing up space on the boot partition.]]></description>
+</item><item>
+    <title>How to secure your storage and backup drives on Windows and Linux</title>
+    <link>https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/</link>
+    <pubDate>Sat, 28 Sep 2013 17:03:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/</guid>
+    <description><![CDATA[A guide to securing data on external and backup drives by encrypting them.]]></description>
+</item><item>
+    <title>A beginner&#39;s guide to OS encryption: dual booting and encrypting Windows and Ubuntu</title>
+    <link>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-dual/</link>
+    <pubDate>Tue, 17 Sep 2013 18:48:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-dual/</guid>
+    <description><![CDATA[How to encrypt Windows and Ubuntu in a dual boot system.]]></description>
+</item></channel>
+</rss>

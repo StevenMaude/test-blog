@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Pelican - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/pelican/</link>
+        <description>Pelican - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Jul 2015 23:54:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/pelican/" rel="self" type="application/rss+xml" /><item>
+    <title>Thinking of using a static site generator for your blog?</title>
+    <link>https://www.stevenmaude.co.uk/posts/thinking-of-using-a-static-site-generator-for-your-blog/</link>
+    <pubDate>Sat, 18 Jul 2015 23:54:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/thinking-of-using-a-static-site-generator-for-your-blog/</guid>
+    <description><![CDATA[The (many) good and the (few) bad aspects of static site]]></description>
+</item><item>
+    <title>Restoring a tag cloud dispersed by Pelican 3.6.0</title>
+    <link>https://www.stevenmaude.co.uk/posts/restoring-a-tag-cloud-dispersed-by-pelican-3.6.0/</link>
+    <pubDate>Sun, 12 Jul 2015 11:51:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/restoring-a-tag-cloud-dispersed-by-pelican-3.6.0/</guid>
+    <description><![CDATA[How to fix tag clouds in Pelican 3.6.0.]]></description>
+</item><item>
+    <title>Full circle</title>
+    <link>https://www.stevenmaude.co.uk/posts/full-circle/</link>
+    <pubDate>Sat, 22 Mar 2014 14:55:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/full-circle/</guid>
+    <description><![CDATA[Thoughts on moving away from Blogger to a static site.]]></description>
+</item></channel>
+</rss>

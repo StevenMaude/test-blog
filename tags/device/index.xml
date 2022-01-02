@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>device - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/device/</link>
+        <description>device - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 29 Aug 2013 22:32:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/device/" rel="self" type="application/rss+xml" /><item>
+    <title>Darik&#39;s Boot and Nuke: fixing an &#34;unrecognized device&#34; error</title>
+    <link>https://www.stevenmaude.co.uk/posts/dariks-boot-and-nuke-unrecognized/</link>
+    <pubDate>Thu, 29 Aug 2013 22:32:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/dariks-boot-and-nuke-unrecognized/</guid>
+    <description><![CDATA[Fixing unrecognized device errors in Darik&rsquo;s Boot and Nuke.]]></description>
+</item></channel>
+</rss>

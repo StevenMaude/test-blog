@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>PyPI: releasing frustration  - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="PyPI: releasing frustration " />
+<meta property="og:description" content="My first attempt at publishing a Python package on PyPI." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/pypi-releasing-frustration/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-05-15T12:34:00+00:00" />
+<meta property="article:modified_time" content="2016-05-15T12:34:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="PyPI: releasing frustration "/>
+<meta name="twitter:description" content="My first attempt at publishing a Python package on PyPI."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/pypi-releasing-frustration/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/taking-web-page-screenshots-smartly-with-firefoxs-developer-tools/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/book-and-talk-review-making-music.-74-creative-strategies-for-electronic-music-producers./" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "PyPI: releasing frustration ",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/pypi-releasing-frustration\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Python, PyPI","wordcount":  1599 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/pypi-releasing-frustration\/","datePublished": "2016-05-15T12:34:00+00:00","dateModified": "2016-05-15T12:34:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">PyPI: releasing frustration </h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2016-05-15">2016-05-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1599 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#starting-out">Starting out</a></li>
+    <li><a href="#testing-times">Testing times</a>
+      <ul>
+        <li><a href="#building-the-project-distribution">Building the project distribution</a></li>
+        <li><a href="#registering-the-project">Registering the project</a></li>
+        <li><a href="#adding-a-description">Adding a description</a></li>
+        <li><a href="#uploading">Uploading</a></li>
+        <li><a href="#releasing">Releasing</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>A while back I wrote an <a href="https://github.com/StevenMaude/bbc-radio-tracklisting-downloader" target="_blank" rel="noopener noreferrer">automatic tracklisting downloader for BBC radio
+shows</a> in
+Python. It&rsquo;s simple to use and it also hooks well into
+<a href="https://github.com/get-iplayer/get_iplayer" target="_blank" rel="noopener noreferrer">get_iplayer</a> to retrieve or tag
+tracklistings when you download a radio show.</p>
+<p><a href="https://github.com/StevenMaude/bbc-radio-tracklisting-downloader/issues/21" target="_blank" rel="noopener noreferrer">One of the outstanding
+issues</a>
+was to actually release it on PyPI — the official source for third party Python
+packages — to make it a bit simpler to install, and to make it easier for
+Python users to find. It was already packaged such that it could be installed
+using <code>pip</code>, but this was via GitHub rather than PyPI.</p>
+<p>I remembered I never got round to releasing my package on PyPI and, for some
+reason yesterday, thought it would be a good time to see what the process was
+like. Maybe it&rsquo;ll only take half an hour, I thought, naively. It actually took
+me more like double to triple that time to complete the task.</p>
+<p>Anyway, perhaps documenting this process, along with the numerous errors I
+encountered, might help save anyone else running up against the same painful
+brick walls that I did, and allow them to share their work with the Python
+community.</p>
+<h2 id="starting-out">Starting out</h2>
+<p>A good starting point is a
+<a href="https://packaging.python.org/en/latest/distributing/#uploading-your-project-to-pypi" target="_blank" rel="noopener noreferrer">guide</a>
+on the official Python site that&rsquo;s fairly comprehensive.</p>
+<p>The first thing you notice when reading it is that there are lots of options
+that are labelled &ldquo;not recommended&rdquo; and instead suggest using the
+<a href="https://github.com/pypa/twine/" target="_blank" rel="noopener noreferrer"><code>twine</code></a> package instead. This is because
+older versions of Python will happily submit your PyPI credentials in plaintext
+when uploading packages. More recent versions are OK, but you&rsquo;re best to check.</p>
+<p>It&rsquo;s clearly a good thing to warn people about this. But it would be much nicer
+if they didn&rsquo;t even need such warnings in the first place. (I&rsquo;m also willing to
+bet there&rsquo;s still a non-zero number of people on affected versions of Python
+who follow instructions elsewhere without even being aware of sending their
+passwords in the clear.)</p>
+<h2 id="testing-times">Testing times</h2>
+<p>As the Python packaging guide mentions, there&rsquo;s a <a href="https://testpypi.python.org" target="_blank" rel="noopener noreferrer">PyPI test
+site</a> that you can use to test out uploading your
+package before you do the same on the live site.</p>
+<p>Why&rsquo;s this useful? If you make mistakes in your setup and your package doesn&rsquo;t
+install, the only real recourse is to release a new version. Rather than having
+to create new versions, you&rsquo;re really best using the test PyPI site first to
+make sure everything&rsquo;s OK before you begin.</p>
+<p>The test site looks to be an exact duplicate of the main site albeit with a
+different selection of packages. This also means that you have the same
+restriction as on the live site: that is, you can&rsquo;t replace an existing
+version. You have to bump the version in <code>setup.py</code> and upload it as a new
+version.</p>
+<p>I understand why this is in place for the live site. But, it&rsquo;s a little
+frustrating when testing: every change requires you to also increase the
+version number. Or, as I more often did, forget to do so, then see the error
+message telling you that the version already exists and only then increase the
+version number.</p>
+<p>The details in the guide show the structure of the <code>.pypirc</code> configuration.
+However, they don&rsquo;t point out that you can also add the PyPI test site too:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">[distutils]
+index-servers=
+    pypi
+    testpypi
+
+[testpypi]
+repository = https://testpypi.python.org/pypi
+
+[pypi]
+repository = https://pypi.python.org/pypi
+</code></pre></div><p>You can also add your username and password to each entry too, although you may
+not want it lying around in plain text in a configuration file. If you don&rsquo;t
+already have accounts on the live and test PyPI sites, this point is a
+good time to create them. You won&rsquo;t be able to progress much further otherwise.</p>
+<h3 id="building-the-project-distribution">Building the project distribution</h3>
+<p>Provided you&rsquo;ve got <code>setup.py</code> configured correctly, it&rsquo;s not too difficult to
+build for distribution. I used the example from the <a href="https://github.com/pypa/sampleproject" target="_blank" rel="noopener noreferrer">PyPA sample
+project</a> as a starting point. It&rsquo;s also
+sensible to have tagged the commit in your repository that marks the version to
+be released.</p>
+<p>The Python packaging guide linked above is also really helpful in  determining
+which arguments you should use with <code>setup.py</code> to build your package.</p>
+<p>If you&rsquo;re trying to build Python wheels, one hiccup is that you likely need the
+<code>wheel</code> package installed. Otherwise, you may find with a command like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">python setup.py sdist bdist_wheel
+</code></pre></div><p>you get the error:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">error: invalid command &#39;bdist_wheel&#39;
+</code></pre></div><h3 id="registering-the-project">Registering the project</h3>
+<p>Since <code>twine</code> is recommended, it seemed sensible to use that. As my
+package is for Python 2 only — since a dependency doesn&rsquo;t support Python
+3 yet — it also seemed sensible to do the distribution upload using
+Python 2.7.</p>
+<p>The first problem I hit was running <code>twine register dist/* -r testpypi</code> to
+register the project. Note that you need to specify the repository using <code>-r</code>
+if you want to use something other than the default, and the name is taken from
+your <code>.pypirc</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">Registering bbc-radio-tracklisting-downloader-0.0.1.tar.gz
+UnicodeDecodeError: &#39;ascii&#39; codec can&#39;t decode byte 0xc2 in position 27:
+ordinal not in range(128)
+</code></pre></div><p>That&rsquo;s the entirety of the error message from the <code>register</code> command. There was
+nothing to indicate where the problem lay at all, making it very difficult to
+start fixing it.</p>
+<p>Switching to Python 3.4 for the upload avoided the Unicode error, but instead
+gave me:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">HTTPError: 401 Client Error: You must login to access this feature for
+url: https://pypi.python.org/pypi
+</code></pre></div><p>It still could have been a problem with the way I was inputting my password.
+I&rsquo;d tried both typing it at the command line <code>-p PASSWORD</code> and pasting it into
+the prompt which appears if no password is entered. I&rsquo;d even tried entering it
+directly into <code>.pypirc</code>. It&rsquo;s possible I was just doing something wrong, but,
+to me, it implies that <code>twine</code> wasn&rsquo;t correctly handling one of the characters
+in my password.</p>
+<p>At this stage, I gave up trying at this point and went directly to the test
+site to register the package so I could at least make some progress and feel
+slightly less incompetent. That worked without a hitch.</p>
+<h3 id="adding-a-description">Adding a description</h3>
+<p>On to the next problem. Unfortunately, the PyPI site doesn&rsquo;t support the
+display of Markdown READMEs for package descriptions. So, before you actually
+upload a package, you should provide the package description in a form that
+PyPI can use.</p>
+<p>To me, Markdown always seemed much simpler than reStructuredText (reST), so I
+naturally gravitate to writing documentation in it. My README for this project
+was no different.</p>
+<p>The main options I was aware of for solving this were:</p>
+<ul>
+<li>
+<p>specifying a <code>long_description</code> in your <code>setup.py</code> which uses reST markup,
+whether read in from a file, or included in full in the <code>setup.py</code> itself, or</p>
+</li>
+<li>
+<p>converting <code>README.md</code> to a reStructuredText <code>README.rst</code>.</p>
+</li>
+</ul>
+<p>I went for the latter for simplicity.</p>
+<p>Using <code>pandoc</code>, it&rsquo;s pretty simple to convert an existing Markdown file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">pandoc --from<span class="o">=</span>markdown --to<span class="o">=</span>rst --output<span class="o">=</span>README.rst README.md
+</code></pre></div><p>On checking the output from <code>pandoc</code> in an online viewer, everything
+looked the same as it did when using Markdown. I also edited the README
+slightly to use nicer looking markup for headings than the source Pandoc
+generated.</p>
+<h3 id="uploading">Uploading</h3>
+<p>Whew! Back to <code>twine</code>, and now the project&rsquo;s registered, let&rsquo;s try uploading it
+via:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">twine upload dist/* -r testpypi
+</code></pre></div><p>I was still having the same problem as before: the 401 error. Systematically
+removing unusual characters from my password until the upload worked fixed
+this.  (Note that the PyPI site itself was OK with me logging in with the same
+password, this seemed a <code>twine</code> problem, or something I was just doing wrong.)</p>
+<p>OK. Now it&rsquo;s uploaded, let&rsquo;s check what everything looks like on the test PyPI
+site.</p>
+<p>What? Where&rsquo;s the description taken from the README? There&rsquo;s <strong>nothing</strong> there
+at all. The README&rsquo;s not even present as plain text instead of formatted HTML!</p>
+<p>What I then did first was to replace my <code>README.rst</code> with one borrowed from
+someone else&rsquo;s package that I knew displayed correctly on PyPI. Then, I
+uploaded a new version of my package to the test site to make sure that I had
+everything configured and uploaded correctly.</p>
+<p>Once I&rsquo;d proved that the problem was with the content of my README, I
+somehow instinctively figured that it was the transition markers that
+I&rsquo;d added that were to blame. Again, this was the second time in this
+entire process that I had little or no indication of where the problem
+actually was.</p>
+<p>Anyway, removing these transition markers, running <code>setup.py</code> and uploading yet
+again <strong>finally</strong> enabled my README to be correctly displayed as the package
+description.</p>
+<h3 id="releasing">Releasing</h3>
+<p>Once that worked, all I had to do was revert the change to the version number
+I&rsquo;d made in <code>setup.py</code> during testing, and then repeat the whole process on the
+real PyPI site. Having negotiated all the obstacles the first time, I was
+relieved to find this just worked.</p>
+<p>The end result of all that is that you can finally do <code>pip install bbc-radio-tracklisting-downloader</code> instead of having to install it from GitHub.</p>
+<p>Obviously in a process like this, there&rsquo;s going to be a couple of configuration
+hoops to jump through, especially the first time you attempt the process. Now
+I&rsquo;ve been through it, I could actually probably release a new project in the
+thirty minutes I originally estimated.</p>
+<p>On the other hand, the number of barriers I faced, along with the cases of
+little or no helpful error information was frustrating. Every stumbling block
+encountered is a point where someone could decide that they&rsquo;ve had finally
+enough and just give up. In those cases, it&rsquo;s the community&rsquo;s loss. Developers
+who may well have useful packages to contribute may ultimately decide that it&rsquo;s
+not worth the trouble to release on PyPI.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2016-05-15</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/pypi-releasing-frustration/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/pypi-releasing-frustration/" data-title="PyPI: releasing frustration " data-hashtags="Python,PyPI"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/pypi-releasing-frustration/" data-hashtag="Python"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/pypi-releasing-frustration/" data-title="PyPI: releasing frustration "><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/pypi/">PyPI</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/taking-web-page-screenshots-smartly-with-firefoxs-developer-tools/" class="prev" rel="prev" title="Taking web page screenshots smartly with Firefox&#39;s Developer Tools"><i class="fas fa-angle-left fa-fw"></i>Taking web page screenshots smartly with Firefox&#39;s Developer Tools</a>
+            <a href="/posts/book-and-talk-review-making-music.-74-creative-strategies-for-electronic-music-producers./" class="next" rel="next" title="Book (and talk) review: Making Music. 74 Creative Strategies for Electronic Music Producers.">Book (and talk) review: Making Music. 74 Creative Strategies for Electronic Music Producers.<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Learning from other projects: pelican-themes  - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Learning from other projects: pelican-themes " />
+<meta property="og:description" content="Taking a look at pelican-themes — a project I currently use — to learn from it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/learning-from-other-projects-pelican-themes/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-12-16T22:41:00+00:00" />
+<meta property="article:modified_time" content="2019-12-16T22:41:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Learning from other projects: pelican-themes "/>
+<meta name="twitter:description" content="Taking a look at pelican-themes — a project I currently use — to learn from it."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/learning-from-other-projects-pelican-themes/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/stopping-fujitsus-battery-charging-control-update-tool-from-crashing-windows-10/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/a-ulps-take-windows-10-black-screens-and-slow-boot/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Learning from other projects: pelican-themes ",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/learning-from-other-projects-pelican-themes\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "git, project management","wordcount":  1286 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/learning-from-other-projects-pelican-themes\/","datePublished": "2019-12-16T22:41:00+00:00","dateModified": "2019-12-16T22:41:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Learning from other projects: pelican-themes </h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-16">2019-12-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1286 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#lack-of-updates">Lack of updates</a></li>
+    <li><a href="#learning-from-other-projects">Learning from other projects</a></li>
+    <li><a href="#pelican-themes">pelican-themes</a>
+      <ul>
+        <li><a href="#a-note">A note</a></li>
+        <li><a href="#the-current-state">The current state</a></li>
+        <li><a href="#how-else-might-pelican-themes-be-managed">How else might pelican-themes be managed?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="lack-of-updates">Lack of updates</h2>
+<p>At the time of writing, this blog uses Pelican to convert the Markdown
+blog content into publishable HTML. And, if you noticed from the dates
+on my posts, there has been just over a year between the last post and
+this one. This was mainly because there was considerable work needed to
+get this blog setup up-to-date: both in upgrading Pelican to the latest
+version, and pulling in updates to the theme.</p>
+<p>Updating the theme was made slightly more complicated by the migration
+of the theme from its <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank" rel="noopener noreferrer">original
+repository</a>. The new
+home became the
+<a href="https://github.com/getpelican/pelican-themes" target="_blank" rel="noopener noreferrer">pelican-themes</a>
+repository, not as a submodule but as the definitive repository for that
+theme.</p>
+<p>In the past, it was simpler for me to simply pull request changes from
+the parent of my theme&rsquo;s fork directly into my fork. Instead, I had to
+restructure my repository slightly and start to <code>git cherry-pick</code>
+individual commits that were applied to the theme within the repository.</p>
+<p>Anyway, I&rsquo;ve caught up on the maintenance. Bootstrap 3 is now
+<a href="https://blog.getbootstrap.com/2019/07/24/lts-plan/" target="_blank" rel="noopener noreferrer">end-of-life</a> so
+there is a longer term issue of this theme still being stuck on it. If I
+end up migrating to a new theme, it might be worth investigating using
+<a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> instead of Pelican at the same time. Hugo has
+increased in popularity considerably since I started using Pelican.</p>
+<h2 id="learning-from-other-projects">Learning from other projects</h2>
+<p>While spending a fair amount of time updating my theme and working with
+the pelican-themes repository, I had chance to think about how the
+pelican-themes repository is structured and lessons I&rsquo;ve learned just
+from having to work with it.</p>
+<p>Reading and understanding — or at least attempting to understand —
+other people&rsquo;s source code is a way of picking up new ideas or concepts.
+What might also be useful for learning is looking at projects you use as
+a whole. How are they organised? How does that makes them easy or
+difficult to work with?</p>
+<p>There is a caveat that even a public source code repository doesn&rsquo;t
+necessarily yield all the decision making that went on to get it to such
+a state. Some of that process may indeed be located with the source
+repository, e.g. pull request comment threads or issues. Some of that
+process may be separate to the source repository, but still public, e.g.
+public mailing lists. Some of that process may be entirely private, e.g.
+emails or private working documents. Some of it may be undocumented at
+all and reside entirely within maintainers' heads.</p>
+<h2 id="pelican-themes">pelican-themes</h2>
+<h3 id="a-note">A note</h3>
+<p>The tone of this post shouldn&rsquo;t be considered as a ranting &ldquo;why, oh why,
+is this project not doing things the way I suggest?&rdquo; post, but primarily
+an exercise to just consider and note other ways it could have been
+structured.</p>
+<p>It&rsquo;s an actively maintained project, and the maintainers are
+volunteering considerable amounts of their own time doing just that.</p>
+<p>In many projects, whether by a single developer or a team, whether
+commercial and proprietary or open source, it&rsquo;s also entirely believable
+that there&rsquo;s no long-term maintenance plan from the outset. At the
+start, it&rsquo;s not even known whether the project will have a long-term
+future. The first commit of pelican-themes was in February 2011, making
+it nine years old in 2020. Often, things do just get worked out along
+the way.</p>
+<h3 id="the-current-state">The current state</h3>
+<p><a href="https://github.com/getpelican/pelican-themes/" target="_blank" rel="noopener noreferrer">pelican-themes</a> is a
+mixture of submodules and themes whose files exist entirely in the
+repository. The included non-submodule themes sometimes (if not often or
+even always) use the pelican-themes repository as their definitive home.
+There are a few problems I&rsquo;ve seen with this approach, exemplified by
+the theme I am currently using my <a href="https://github.com/StevenMaude/pelican-bootstrap3-sm" target="_blank" rel="noopener noreferrer">own
+fork</a> of,
+pelican-bootstrap3.</p>
+<p>Back when pelican-bootstrap3 was still maintained by its original
+developer, there were actually changes made to the version in
+<a href="https://github.com/getpelican/pelican-themes/commit/c817f12a9f5034a05abec4d2515adabd003f9ac0#diff-32c97fb49ece91afc9f43c8405423109" target="_blank" rel="noopener noreferrer">pelican-themes</a>
+that diverged from pelican-bootstrap3. pelican-bootstrap3 within
+<a href="https://github.com/getpelican/pelican-themes/commit/faa85d6112a759767a4f327e35a07fa55d9e747e#diff-0eb6cb930365747af1fe070650593b8e" target="_blank" rel="noopener noreferrer">pelican-themes</a>
+was then updated by simply a straight copy over of the then-current
+version of the upstream theme, losing the changes made to the
+pelican-themes version. Apart from losing work, this process can be
+potentially confusing for users not directly following the development
+process; you can have something that was fixed, then <em>unfixed</em>.</p>
+<p>Later, the official home of pelican-bootstrap3 became the pelican-themes
+repository as the original developer <a href="https://github.com/getpelican/pelican-themes/pull/383" target="_blank" rel="noopener noreferrer">no longer wanted to support
+it</a>. This had a
+couple of consequences.</p>
+<p>First, it meant that the pelican-themes maintainers adopted the extra
+maintenance work of a popular theme. Those maintainers may not even
+<em>use</em> the theme. This means that pull requests can languish, perhaps
+because the maintainers don&rsquo;t feel that comfortable merging substantial
+changes or don&rsquo;t have strong opinions on whether the proposed changes
+are worthwhile. For pelican-bootstrap3, at the time of writing in
+December 2019, there are several unmerged pull requests on
+pelican-themes right now, even as <a href="https://github.com/getpelican/pelican-themes/pull/414" target="_blank" rel="noopener noreferrer">far back as
+2016</a>.  Pull
+requests left unloved and unmerged are a deterrent to other developers
+who may be considering contributing other changes.</p>
+<p>Second, even if pull requests are regularly merged, there may be less of
+a definitive direction taken than if maintainers have strong opinions
+about where that subproject is headed. It can also lead to a lack of
+quality assurance. For pelican-bootstrap3, an example is this
+<a href="https://github.com/getpelican/pelican-themes/pull/441" target="_blank" rel="noopener noreferrer">translation
+feature</a>. Such a
+feature is one that&rsquo;s useful to lots of people, but unfortunately it
+<a href="https://github.com/getpelican/pelican-themes/issues/460" target="_blank" rel="noopener noreferrer">broke things</a>
+for users who didn&rsquo;t have the same plugin configuration as the original
+author, affecting those users who did not intend to use the new feature.</p>
+<h3 id="how-else-might-pelican-themes-be-managed">How else might pelican-themes be managed?</h3>
+<p>That&rsquo;s how things are structured in pelican-themes now. I did think
+about other ways the repository might have been structured taking the
+above features of how it works right now into account.</p>
+<ul>
+<li>
+<p>pelican-themes could simply have been a list of links to themes,
+solely a reference resource.</p>
+<p>The advantage of this is no management on the part of the
+pelican-themes maintainers is required except to add new themes or
+remove themes that are no longer supported or unavailable. In many
+cases, once a theme is added, that would be as much as is ever
+required to be done for that theme. The big disadvantage is that you
+can&rsquo;t just clone the entire repository and have all the themes ready
+to use.</p>
+</li>
+<li>
+<p>There could be a &ldquo;more strongly&rdquo; monorepo version of what there is
+now, that is, pelican-themes could be a pure monorepo with no
+submodules.  This now means that <em>every theme</em> has to be
+hand-maintained by copying from the upstream version repository, if
+pelican-themes isn&rsquo;t the original repository for a theme. This
+doesn&rsquo;t, however, solve the problem of having a mixture of maintained
+and unmaintained themes.</p>
+</li>
+<li>
+<p>Going completely in the opposite direction is an option too: have
+every theme in pelican-themes included as a submodule. This has the
+advantage that pull requests into pelican-themes would be simple,
+simply reflecting a submodule update to the parent repository&rsquo;s
+current release.</p>
+<p>It would mean that every theme in pelican-themes where
+pelican-themes is the definitive repository for that theme would
+need to be moved to its own individual repository. However, breaking
+out the themes in this way might make it easier for those themes to
+be managed by specific maintainers for each theme only (provided
+volunteers could be found), as opposed to the current agglomerate
+repository maintained by developers who may not use most of the
+themes present.</p>
+</li>
+</ul>
+<p>Of course, the problems described above are easy to spot when using a
+project that&rsquo;s been around a while, but perhaps subtle at a project&rsquo;s
+inception. I think this is symptomatic of software development. It is
+possible to build something that takes on a direction beyond that
+originally envisaged, especially projects that have many contributors or
+maintainers over time, each of which may have their own opinions as to
+how such a project should be nurtured.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-12-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/learning-from-other-projects-pelican-themes/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/learning-from-other-projects-pelican-themes/" data-title="Learning from other projects: pelican-themes " data-hashtags="git,project management"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/learning-from-other-projects-pelican-themes/" data-hashtag="git"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/learning-from-other-projects-pelican-themes/" data-title="Learning from other projects: pelican-themes "><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/git/">git </a>,&nbsp;<a href="/tags/project-management/">project management</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/stopping-fujitsus-battery-charging-control-update-tool-from-crashing-windows-10/" class="prev" rel="prev" title="Stopping Fujitsu&#39;s Battery Charging Control Update Tool from crashing Windows 10"><i class="fas fa-angle-left fa-fw"></i>Stopping Fujitsu&#39;s Battery Charging Control Update Tool from crashing Windows 10</a>
+            <a href="/posts/a-ulps-take-windows-10-black-screens-and-slow-boot/" class="next" rel="next" title="A ULPS take: Windows 10 black screens and slow boot">A ULPS take: Windows 10 black screens and slow boot<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

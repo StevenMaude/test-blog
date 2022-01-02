@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Uses for a Raspberry Pi (part 2) - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Uses for a Raspberry Pi (part 2)" />
+<meta property="og:description" content="Running the Raspberry Pi as a file and media server, and as a PVR with get_iplayer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-2/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2013-07-17T19:32:00+00:00" />
+<meta property="article:modified_time" content="2015-01-09T16:59:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Uses for a Raspberry Pi (part 2)"/>
+<meta name="twitter:description" content="Running the Raspberry Pi as a file and media server, and as a PVR with get_iplayer."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-2/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-1/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/how-universities-can-help-develop/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Uses for a Raspberry Pi (part 2)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/uses-for-a-raspberry-pi-part-2\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "server, Samba, radio, Pi, tracklisting, Raspberry, iplayer, Python, get_iplayer","wordcount":  1528 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/uses-for-a-raspberry-pi-part-2\/","datePublished": "2013-07-17T19:32:00+00:00","dateModified": "2015-01-09T16:59:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Uses for a Raspberry Pi (part 2)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2013-07-17">2013-07-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1528 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#4-file-server-using-samba-and-media-server-using-minidlna">4. File server using Samba, and media server using MiniDLNA</a></li>
+    <li><a href="#5-get_iplayer-for-uk-users-or-overseas-users-with-eg-vpn-access">5. <code>get_iplayer</code>: for UK users (or overseas users with e.g. VPN access)</a>
+      <ul>
+        <li><a href="#whats-get_iplayer">What&rsquo;s <code>get_iplayer</code>?</a></li>
+        <li><a href="#installation-of-get_iplayer">Installation of <code>get_iplayer</code></a></li>
+        <li><a href="#basic-use">Basic use</a></li>
+        <li><a href="#adding-searches-to-the-pvr">Adding searches to the PVR</a></li>
+        <li><a href="#scheduling-the-pvr-to-run">Scheduling the PVR to run</a></li>
+        <li><a href="#why-i-think-the-pvr-is-great">Why I think the PVR is great</a></li>
+        <li><a href="#custom-commands-after-downloading-recordings">Custom commands after downloading recordings</a></li>
+        <li><a href="#example-automatic-downloading-of-radio-tracklistings">Example: automatic downloading of radio tracklistings</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><img class="article-image" src="{static}/images/2013/Raspberry_Pi.jpg" alt="A Raspberry Pi working hard!">
+<p>In my <a href="%7bfilename%7d../2013/uses-for-a-raspberry-pi-part-1.md" rel="">last
+post</a>,
+I described a few simple, but effective uses for a Raspberry Pi. Here
+are two more!</p>
+<hr>
+<h2 id="4-file-server-using-samba-and-media-server-using-minidlna">4. File server using Samba, and media server using MiniDLNA</h2>
+<p>The Pi makes for a useful low cost file server. I used <a href="http://elinux.org/R-Pi_NAS" target="_blank" rel="noopener noreferrer">this
+guide</a> to install Samba which enables file
+shares to be accessed via Windows (and also OS X). It&rsquo;s pretty easy to
+follow step-by-step. Following that guide, you can also attach a USB
+drive, making for a cheap <a href="https://en.wikipedia.org/wiki/Network-attached_storage" target="_blank" rel="noopener noreferrer">network-attached
+storage</a> (NAS)
+solution.</p>
+<p>Furthermore, you can also <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?t=16352" target="_blank" rel="noopener noreferrer">install
+MiniDLNA</a> to
+allow networked media devices to easily access video and audio on the
+Pi, though I&rsquo;ve not tested this personally.</p>
+<h2 id="5-get_iplayer-for-uk-users-or-overseas-users-with-eg-vpn-access">5. <code>get_iplayer</code>: for UK users (or overseas users with e.g. VPN access)</h2>
+<h3 id="whats-get_iplayer">What&rsquo;s <code>get_iplayer</code>?</h3>
+<p>For the benefit of those not in the UK,
+<a href="https://en.wikipedia.org/wiki/BBC_iPlayer" target="_blank" rel="noopener noreferrer">iPlayer</a> is a
+<a href="http://www.bbc.co.uk/" target="_blank" rel="noopener noreferrer">BBC</a> service that allows users to stream
+television and radio programmes for a limited time after they are
+broadcast. It also lets you download them for a limited time, although
+they are then bogged down with
+<a href="https://en.wikipedia.org/wiki/Digital_rights_management" target="_blank" rel="noopener noreferrer">DRM</a>,
+restricting how you can watch or listen.</p>
+<p><a href="http://www.infradead.org/get_iplayer/html/get_iplayer.html" target="_blank" rel="noopener noreferrer"><code>get_iplayer</code></a>
+is a great open source project that really enhances the usefulness of
+iPlayer. First of all, it downloads TV and radio shows in DRM-free
+formats, allowing you to play them back on any device capable of playing
+those formats, without restriction. Second, it has a really useful PVR
+feature: you can queue up future programmes that are already in the
+BBC&rsquo;s current schedule, and you can easily setup PVR searches (e.g. to
+look for a specific programme title) that can be configured to run
+periodically and download on any suitable matches.</p>
+<h3 id="installation-of-get_iplayer">Installation of <code>get_iplayer</code></h3>
+<p>I installed <code>get_iplayer</code> last year on my Pi running Rapsbian; I followed
+<a href="http://raspi.tv/2012/get_iplayer-installation-on-raspberry-pi-with-raspbian" target="_blank" rel="noopener noreferrer">this
+guide</a>.
+Since then however, it&rsquo;s now much easier to install and maintain<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>,
+apparently you only need to enter this terminal command now:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">sudo apt-get install get-iplayer ffmpeg atomicparsley libmp3-info-perl
+</span></code></pre></div><p>For convenience, I changed the default directory that <code>get_iplayer</code> saves
+in so that it was within a directory that was publically shared via
+Samba, using a command like</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">./get_iplayer –-prefs-add –output=/home/shares/public/iPlayer
+</span></code></pre></div><p>(Note that for all these commands, I&rsquo;m assuming that you have changed
+directory to whichever one <code>get_iplayer</code> is installed.)</p>
+<p><code>--prefs-add</code>, unsurprisingly, adds settings to the
+<code>get_iplayer</code> defaults. I also used this command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">./get_iplayer --prefs-add --modes=best -–subtitles --subdir --nopurge
+</span></code></pre></div><ul>
+<li><code>--modes=best</code> <a href="https://github.com/dinkypumpkin/get_iplayer/wiki/modes" target="_blank" rel="noopener noreferrer">downloads the HD versions of a TV programme if it is
+available</a></li>
+<li><code>--subtitles</code> <a href="https://github.com/dinkypumpkin/get_iplayer/wiki/documentation#wiki-Subtitles" target="_blank" rel="noopener noreferrer">downloads subtitles if available</a></li>
+<li><code>--subdir</code> <a href="https://github.com/dinkypumpkin/get_iplayer/wiki/documentation#wiki-Filenames%20and%20Directories" target="_blank" rel="noopener noreferrer">sorts programmes into subdirectories based on their title</a>, while</li>
+<li><code>--nopurge</code> prevents the deletion of programmes that were
+recorded more than 30 days ago.</li>
+</ul>
+<h3 id="basic-use">Basic use</h3>
+<p>There are <a href="https://github.com/dinkypumpkin/get_iplayer/wiki/documentation" target="_blank" rel="noopener noreferrer">plenty of usage
+examples</a>
+in the documentation which is definitely worth a read and explains all
+the available options. A simple usage case would be to download all TV
+programmes that have &ldquo;Top Gear&rdquo; in the title or episode info:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">./get_iplayer --get &#34;Top Gear&#34;
+</span></code></pre></div><p>By default, the type of programme is set to TV. This is equivalent to
+using the command line option <code>--type=tv</code>. If you are looking
+for radio shows instead, you need to specify <code>--type=radio</code>.
+Alternatively, you could use <code>--type=tv,radio</code> and
+<code>get_iplayer</code> will search both the TV and radio programme lists.</p>
+<p>If there are several programmes with the same title (e.g. Newsnight),
+you can search for all programmes first by:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">./get_iplayer &#34;Newsnight&#34;
+</span></code></pre></div><p>It shows a list of matching programmes and programme numbers. When I ran
+this just now, it gave me several matches, but say that I wanted the
+broadcast from 01/07/2013. Among the nine matches this command gave me,
+it showed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">611: Newsnight - 01/07/2013, BBC Two, News, TV, default
+</code></pre></div><p>I can then get that specific programme by just <code>--get</code>ting a
+programme number instead of a &mdash;
+title:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">./get_iplayer --get 611
+</span></code></pre></div><h3 id="adding-searches-to-the-pvr">Adding searches to the PVR</h3>
+<p>Adding searches to the PVR is very similar to downloading available
+shows. As the documentation shows, instead of the <code>--get</code>
+option, you use <code>--pvr-add</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">./get_iplayer --pvr-add=Top_Gear &#34;Top Gear&#34;
+</span></code></pre></div><p>This adds a search named <code>Top_Gear</code> which looks for programmes with Top
+Gear in the title or episode info. This doesn&rsquo;t actually do anything
+until the PVR searches are executed by the command:
+<code> ./get_iplayer --pvr</code></p>
+<p>Supposing that we grew tired of Clarkson, Hammond and May&rsquo;s shenanigans,
+we can remove the PVR search entirely by <code>--pvr-del</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">./get_iplayer --pvr-del=Top_Gear
+</span></code></pre></div><p>or if we weren&rsquo;t so sure, we could use <code>--pvr-disable=&quot;Top Gear&quot;</code> to disable the search and <code>--pvr-enable=&quot;Top Gear&quot;</code> to re-enable it at a later date.</p>
+<p>Further PVR management options are listed in the
+<a href="https://github.com/dinkypumpkin/get_iplayer/wiki/documentation#wiki-PVR%20Usage" target="_blank" rel="noopener noreferrer">documentation</a>.
+Additionally, there is also a <a href="https://github.com/dinkypumpkin/get_iplayer/wiki/webpvr" target="_blank" rel="noopener noreferrer">web PVR
+interface</a>, if
+you prefer that to using the command line to manage the PVR, although
+it&rsquo;s advised to have it running on trusted networks for security
+reasons.</p>
+<h3 id="scheduling-the-pvr-to-run">Scheduling the PVR to run</h3>
+<img class="article-image" src="{static}/images/2013/get_iplayer_crontab.png" alt="Crontab with get_iplayer scheduled.">
+<p>However, it is more convenient to run the PVR regularly rather than have
+to run it manually. You can add the command to run the PVR to the <a href="https://en.wikipedia.org/wiki/Cron" target="_blank" rel="noopener noreferrer">cron
+task scheduler</a>. Scheduling tasks by
+cron is carried out by entering <code>crontab -e</code> and then editing the file
+to start the job.`</p>
+<p>I had a problem where I could run the command</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">get_iplayer --pvr
+</span></code></pre></div><p>and the PVR would work fine from a terminal window, but it failed
+when running via cron. This was fixed by finding the contents of my
+current PATH variable (by typing <code>echo $PATH</code> into the
+terminal) and then copying this into a line in my crontab that started
+<code>PATH=</code>.</p>
+<h3 id="why-i-think-the-pvr-is-great">Why I think the PVR is great</h3>
+<p>What&rsquo;s awesome about the PVR function is that <em>the search terms are
+persistent</em>. If the PVR is looking out for a particular show, you don&rsquo;t
+even need to keep an eye out for when your favourite shows start a new
+series, in case you forget to record it. The PVR feature will
+automatically catch them for you, without you thinking about it.</p>
+<h3 id="custom-commands-after-downloading-recordings">Custom commands after downloading recordings</h3>
+<p>This is another useful feature of <code>get_iplayer</code>. <code>--command</code>
+runs custom commands after downloading a recording and can pass various
+bits of information to those commands as arguments. Because of this
+feature, it&rsquo;s easy to <em>use your own scripts to process your
+recordings</em>.</p>
+<h3 id="example-automatic-downloading-of-radio-tracklistings">Example: automatic downloading of radio tracklistings</h3>
+<p>Sometimes I&rsquo;ll hear a track that a DJ plays on a radio show and I&rsquo;ll
+want to make a note of it to look it up later. It&rsquo;s not always that easy
+to do, occasionally they neglect to mention the title and artist, which
+can be frustrating when you&rsquo;ve heard something amazing.</p>
+<p>At least these days tracklistings are usually posted online, but if I&rsquo;m
+listening on my iPod Nano (running <a href="http://www.rockbox.org/" target="_blank" rel="noopener noreferrer">Rockbox</a>),
+this means I still need to dig out my phone, fire up a web browser and
+look it up. It&rsquo;s much easier if the tracklisting is stored together with
+the radio show for quick reference.</p>
+<p>To automate this, I wrote <a href="https://github.com/StevenMaude/bbc_radio_tracklisting_downloader/" target="_blank" rel="noopener noreferrer">a Python script that downloads BBC
+tracklistings</a>
+(bbc_tracklist.py). Once a radio show has been downloaded using
+<code>get_iplayer</code>, the corresponding tracklisting is saved to a text file in
+the same directory.</p>
+<p>All the bbc_tracklist.py script needs to know is the programme id,
+which <code>get_iplayer</code> can pass through to it as <code>&lt;pid&gt;</code>. For
+example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">./get_iplayer --get &#34;Gilles Peterson&#34; --type=radio --command &#34;/home/get_iplayer/bbc_tracklist.py &lt;pid&gt; &lt;dir&gt; &lt;fileprefix&gt;&#34;
+</span></code></pre></div><p>My script optionally takes arguments of the directory (to store the
+tracklisting with the downloaded show) and a filename (to give the text
+file the same base filename). These are provided by <code>get_iplayer</code> via
+<code>&lt;dir&gt;</code> and <code>&lt;fileprefix&gt;</code>.</p>
+<p>It also works in the same way with PVR searches.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">./get_iplayer --pvr-add=Benji_B --type=radio &#34;Benji B&#34; --command &#34;/home/get_iplayer/bbc_tracklist.py &lt;pid&gt; &lt;dir&gt; &lt;fileprefix&gt;
+</span></code></pre></div><p>Once this has been setup in a radio PVR search, you can forget about the
+script entirely. It should execute automatically everytime a show has
+been downloaded.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p><code>get_iplayer</code> does its job superbly well. It has many useful features and
+seems very stable. Comparing <code>get_iplayer</code> to the TV tuner my main PC has
+installed, <code>get_iplayer</code> has been used much more for &ldquo;recording&rdquo;.</p>
+<p>Why should this be?</p>
+<p>It doesn&rsquo;t matter if you miss a show with
+<code>get_iplayer</code> since you can still download it several days after
+broadcast and, with the PVR feature, you probably won&rsquo;t miss it. This
+isn&rsquo;t possible with a TV card if you missed the only broadcast.
+<code>get_iplayer</code> also circumvents entirely the problems I occasionally have
+with my TV signal. Combined with a Samba or miniDLNA setup described
+above, you can leave the Pi running to periodically save programmes and
+then either playback files across the network or copy them to another
+device. Finally, shows downloaded by <code>get_iplayer</code> are ready to playback
+on many devices immediately; this isn&rsquo;t always the case with TV captures
+which might require some post-record processing.</p>
+<p>Of course, I should mention that, since the video formats are
+unencumbered with DRM, it&rsquo;s possible to play them with, of course,
+<a href="http://www.raspbmc.com/" target="_blank" rel="noopener noreferrer">Raspbmc</a>. :)</p>
+<hr>
+<p>So, there you have it. Five handy uses for a Raspberry Pi. If I find
+further uses for my Pi, I&rsquo;ll definitely be writing about them. In the
+meantime, feel free to let me know via a comment what you&rsquo;re using your
+Pi for!</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>(That should also help keep it up
+to date as it should be upgraded when you run a <code>sudo apt-get upgrade</code>; my install is currently manually updated by running
+<code>./get_iplayer --update</code> in the install directory.)`&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2015-01-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/uses-for-a-raspberry-pi-part-2/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-2/" data-title="Uses for a Raspberry Pi (part 2)" data-hashtags="server,Samba,radio,Pi,tracklisting,Raspberry,iplayer,Python,get_iplayer"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-2/" data-hashtag="server"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-2/" data-title="Uses for a Raspberry Pi (part 2)"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/server/">server</a>,&nbsp;<a href="/tags/samba/">Samba</a>,&nbsp;<a href="/tags/radio/">radio</a>,&nbsp;<a href="/tags/pi/">Pi</a>,&nbsp;<a href="/tags/tracklisting/">tracklisting</a>,&nbsp;<a href="/tags/raspberry/">Raspberry</a>,&nbsp;<a href="/tags/iplayer/">iplayer</a>,&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/get_iplayer/">get_iplayer</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/uses-for-a-raspberry-pi-part-1/" class="prev" rel="prev" title="Uses for a Raspberry Pi (part 1)"><i class="fas fa-angle-left fa-fw"></i>Uses for a Raspberry Pi (part 1)</a>
+            <a href="/posts/how-universities-can-help-develop/" class="next" rel="next" title="How universities can help develop researchers&#39; post-university careers">How universities can help develop researchers&#39; post-university careers<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

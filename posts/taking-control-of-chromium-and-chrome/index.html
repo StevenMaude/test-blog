@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard" />
+<meta property="og:description" content="How you can use ublock and HTTP Switchboard to take control of what your browser loads." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/taking-control-of-chromium-and-chrome/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2014-09-28T00:02:00+00:00" />
+<meta property="article:modified_time" content="2015-08-02T17:24:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard"/>
+<meta name="twitter:description" content="How you can use ublock and HTTP Switchboard to take control of what your browser loads."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/taking-control-of-chromium-and-chrome/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/updating-and-rooting-moto-g/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/hiding-draft-articles-in-pelican/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/taking-control-of-chromium-and-chrome\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "ad, µBlock, HTTP Switchboard, blocking, privacy, adblock, ublock","wordcount":  1888 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/taking-control-of-chromium-and-chrome\/","datePublished": "2014-09-28T00:02:00+00:00","dateModified": "2015-08-02T17:24:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2014-09-28">2014-09-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1888 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-are-you-blocking-content-at-all">Why are you blocking content at all?</a></li>
+    <li><a href="#why-shouldnt-sites-and-advertisers-worry-so-much">Why shouldn&rsquo;t sites and advertisers worry so much?</a></li>
+    <li><a href="#but-why-worry-about-where-displayed-web-content-originates-from">But why worry about where displayed web content originates from?</a>
+      <ul>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#malware">Malware</a></li>
+      </ul>
+    </li>
+    <li><a href="#controlling-what-your-browser-displays">Controlling what your browser displays</a></li>
+    <li><a href="#ublock">ublock</a></li>
+    <li><a href="#http-switchboard">HTTP Switchboard</a></li>
+    <li><a href="#a-summary">A summary</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>!!! article-edit &quot;&quot;
+Edit 2015-07-24: Slightly involved story aside, the version of
+uBlock linked here, by the original developer, is now uBlock Origin.
+I&rsquo;d recommend searching for that version if installing as an
+extension.</p>
+<pre><code>It's available for both Firefox and Chrome/Chromium.
+</code></pre>
+<p>!!! article-edit &quot;&quot;
+Edit 2015-05-18: The Chromium bug is fixed which should fix the uMatrix
+UI sluggishness, and uMatrix is finally available as a Firefox addon.</p>
+<p>!!! article-edit &quot;&quot;
+Edit 2015-01-09: HTTP Switchboard development is discontinued and has been
+replaced with <a href="https://github.com/gorhill/uMatrix" target="_blank" rel="noopener noreferrer">uMatrix</a>. The
+interface is largely unchanged. One problem at the time of writing is a
+<a href="https://github.com/gorhill/uBlock/issues/419" target="_blank" rel="noopener noreferrer">Chromium bug</a> which I
+think is the cause of the UI being really laggy to appear. Hopefully,
+this should be fixed soon.</p>
+<p>After tinkering around with Adblock&rsquo;s filters to block some ads, I
+remembered that I&rsquo;d read about an alternative to Adblock for
+Chromium-based browsers called <a href="https://github.com/gorhill/httpswitchboard" target="_blank" rel="noopener noreferrer">HTTP
+Switchboard</a> a few months ago
+and figured I should actually give it a try.</p>
+<p>One of the reasons that HTTP Switchboard was notable is that it promised
+to be much more CPU and memory friendly than <a href="https://blog.mozilla.org/nnethercote/2014/05/14/adblock-pluss-effect-on-firefoxs-memory-usage/" target="_blank" rel="noopener noreferrer">Adblock Plus</a>
+currently is.</p>
+<p>In fact, the adblocking part of HTTP Switchboard has now been separated
+out into another project, ublock. Both are still useful. I&rsquo;ll explain
+why below.</p>
+<h2 id="why-are-you-blocking-content-at-all">Why are you blocking content at all?</h2>
+<p>Many content-driven websites use advertising as their business model. My
+feeling is that, while sites are welcome to try and send content to my
+browser, I should have the freedom to choose what my browser actually
+loads.</p>
+<p>There&rsquo;s no contract I&rsquo;ve signed that states I must load and display the
+page as the site owner intends. (What if I&rsquo;m using a text browser like
+links?) And there&rsquo;s no obligation on my part to make their business
+model sustainable.</p>
+<p>Maybe you still think this seems selfish. Well, to some extent it is.
+But, my privacy and computer security are more important to me than the
+financial success or failure of an external organisation. That I put my
+priorities in this order is kind of obvious though, right?</p>
+<h2 id="why-shouldnt-sites-and-advertisers-worry-so-much">Why shouldn&rsquo;t sites and advertisers worry so much?</h2>
+<p>Even with &ldquo;despicable&rdquo; users like me, there are two reasons I can think
+of as to why advertisers and sites dependent on them shouldn&rsquo;t feel so
+glum:</p>
+<ol>
+<li>
+<p>Adblocking users have made an active choice to block ads. Those
+users have done you a favour in removing themselves from your
+viewership as you don&rsquo;t waste time targeting them; why chase
+&ldquo;customers&rdquo; running in the opposite direction from you?</p>
+</li>
+<li>
+<p>Browsing is increasingly done from mobile browsers. How many users
+are going to bother to root their devices or install alternative
+browsers just for adblocking?</p>
+</li>
+</ol>
+<h2 id="but-why-worry-about-where-displayed-web-content-originates-from">But why worry about where displayed web content originates from?</h2>
+<h3 id="privacy">Privacy</h3>
+<p>One contentious issue with ads and cookies is privacy.</p>
+<p>As <a href="http://www.economist.com/news/special-report/21615871-everything-people-do-online-avidly-followed-advertisers-and-third-party" target="_blank" rel="noopener noreferrer">this Economist
+article</a>
+highlights,
+the depth of what advertisers collect about your browsing habits is
+extensive, and it&rsquo;s handled and passed around by many organisations.
+Unless you&rsquo;re all for being advertised at, this isn&rsquo;t for your benefit.</p>
+<p>Maybe advertisers are really all benign and just interested in deciding
+who&rsquo;s best to try to sell to. Perhaps just as the executive in that
+article quoted claims, it really is just that,</p>
+<blockquote>
+<p>&ldquo;We are not trolling for personal information. We are trying to figure
+out if you are a high-value customer and are in the market for a car.&rdquo;</p>
+</blockquote>
+<p>But, the sheer amount of information being collected is worrying,
+especially when, as a user, I&rsquo;ve no idea of what&rsquo;s actually being
+tracked and what the intended end use is.</p>
+<h3 id="malware">Malware</h3>
+<p>As well as that, web advertising has been a conduit for the deployment
+of malware previously and will no doubt continue to be. (It&rsquo;s a nice way
+of distributing it to users who are visiting, what to them, might seem
+like a trustworthy site. If they can get the malicious ad past the
+company providing the advertising, they don&rsquo;t need to go to the trouble
+of hacking the site directly.)</p>
+<p>There have been
+<a href="http://arstechnica.com/security/2014/09/google-stops-malicious-advertising-campaign-that-could-have-reached-millions/" target="_blank" rel="noopener noreferrer">one</a>
+or <a href="http://www.washingtonpost.com/blogs/the-switch/wp/2014/01/04/thousands-of-visitors-to-yahoo-com-hit-with-malware-attack-researchers-say/" target="_blank" rel="noopener noreferrer">two</a>
+high-profile incidents this year too.</p>
+<p>In terms of potentially malicious content, it&rsquo;s not only just ad
+providers that I&rsquo;m concerned with, but allowing large numbers of
+arbitrary sites to run their scripts on your machine unchecked.</p>
+<p>Look at the recent <a href="http://www.zdnet.com/was-jquery-hacked-7000034009/" target="_blank" rel="noopener noreferrer">JQuery
+compromise</a>, for
+instance. Fortunately, only the site itself was affected and <strong>not</strong> the
+hosted libraries that many sites. It&rsquo;s not inconceivable that an
+attacker may well deliberately go after to poison hosted libraries. It&rsquo;s
+just way too big a jackpot for malware distributors to ignore.</p>
+<p>Even if such an attack might be spotted quite quickly, how many users
+could be affected in the interim? (I&rsquo;m not even sure what the solution
+is here; often JQuery&rsquo;s needed for sites to function as intended…)</p>
+<p>Minimising the number of third-party sites that you allow content to
+load from can&rsquo;t be a bad thing. (There&rsquo;s some risk wherever you go, but
+in some cases, I&rsquo;ve seen sites loading in content from more sites than I
+can count on both hands.)</p>
+<h2 id="controlling-what-your-browser-displays">Controlling what your browser displays</h2>
+<p>So, what can you do? There are browser extensions for Firefox and Chrome
+that give you more control over what your browser loads.</p>
+<p>Lots of sites are perfectly readable without them storing tracking
+information about you, without arbitrary JavaScript running. For those
+that don&rsquo;t, it&rsquo;s quite simple to whitelist them.</p>
+<p>The downside of this is that it can be a chore. In Firefox, I need a
+slew of extensions to do this: which sites are allowed to run scripts
+(NoScript), which cross-site requests are allowed (RequestPolicy), and
+which sites can store cookies (CookieMonster).</p>
+<p>Managing each one in turn, allowing permissions for cookies, scripts and
+third-party scripts, can be tedious. I&rsquo;ve run NoScript for a long time,
+but these days with sites often hosting content and scripts somewhere
+other than on the domain you&rsquo;re visiting, it&rsquo;s much more work than it
+was.</p>
+<p>HTTP Switchboard was a big, all encompassing project for Chromium-based
+browsers that had features comparable to Adblock Plus, and the Firefox
+extensions, NoScript, RequestPolicy. Recently, the <a href="https://github.com/gorhill/httpswitchboard/issues/378" target="_blank" rel="noopener noreferrer">adblocking,
+pattern-based filtering</a>
+has been split out into another project,
+<a href="https://github.com/gorhill/ublock" target="_blank" rel="noopener noreferrer">ublock</a>.</p>
+<h2 id="ublock">ublock</h2>
+<p>By virtue of what HTTP Switchboard aims to do — give you full control of
+what is allowed by your browser — this makes its user interface slightly
+more complex, which I&rsquo;ll soon get onto.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/static/images/2014/ublock.png"
+        data-srcset="/static/images/2014/ublock.png, /static/images/2014/ublock.png 1.5x, /static/images/2014/ublock.png 2x"
+        data-sizes="auto"
+        alt="/static/images/2014/ublock.png"
+        title="The ublock enable/disable icon" /></p>
+<p>Stripping out this sophistication seems like a smart move, since
+ublock&rsquo;s incredibly easy to use. Really, it requires the same amount of
+setup as Adblock Plus does: not much at all.</p>
+<p>It comes with the most popular Adblock Plus filters accessible on
+install, and you can easily choose which of those filter lists are
+applied.</p>
+<p>Disabling ublock for a site is also straightforward. Click the red µ
+icon next to the address bar and then click the power icon.</p>
+<p>It does the same job as Adblock Plus, but with lower CPU and memory
+usage. If you&rsquo;ve ditched an ad blocker for this reason, it&rsquo;s worth
+looking at. Even if you&rsquo;re still happy using Adblock Plus (or one of its
+forks), ublock is definitely worth spending the couple of minutes to try
+it out.</p>
+<h2 id="http-switchboard">HTTP Switchboard</h2>
+<p>On to HTTP Switchboard, which allows fine grained control of the types
+and locations of content that Chromium-based browser can access.</p>
+<p>Note that with the current version of HTTP Switchboard, there&rsquo;s a little
+<a href="https://github.com/gorhill/httpswitchboard/issues/378" target="_blank" rel="noopener noreferrer">initial setup</a> to
+disable the adblocking filtering that uBlock covers.</p>
+<p>HTTP Switchboard&rsquo;s interface can feel initially overwhelming; more so
+than perhaps the likes of NoScript, RequestPolicy and CookieMonster that
+I use which all have similar menus to allow or deny permission for a
+site to run scripts or store cookies. These have a text explanation of
+what the option does.</p>
+<figure class="article-figure">
+  <img src="{static}/images/2014/Firefox_menus.png" alt="Examples of NoScript, CookieMonster and RequestPolicy permission menus.">
+  <figcaption>From left to right, examples of NoScript, CookieMonster and RequestPolicy permission menus when accessing Google Books.</figcaption>
+</figure>
+<p>The problem with this menu format is, though it&rsquo;s explicit and clear,
+it&rsquo;s cumbersome when you&rsquo;re dealing with several extensions. For each
+extension, you need to repeat the process of whitelisting every site
+that you&rsquo;re allowing.</p>
+<p>When you&rsquo;ve actually used HTTP Switchboard for a few minutes, its
+simplicity clicks. HTTP Switchboard opts for a table-like interface.
+Each site is represented as a row, and each type of content is shown as
+a column.</p>
+<figure class="article-figure">
+  <img src="{static}/images/2014/HTTP_Switchboard.png" alt="Example of HTTP Switchboard's table interface.">
+  <figcaption>Example of HTTP Switchboard's interface when accessing Google Books.</figcaption>
+</figure>
+<p>This lets the user approve different permissions for different sites
+quickly. Just read down the list of sites, click on those you want to
+whitelist completely, and for those you don&rsquo;t you can allow specific
+features only (e.g. loading images only). Likewise, if you want to
+enable one type of content for all sites, just click the appropriate
+column. If you want to save the permissions in future, click the padlock
+icon, and you&rsquo;re done.</p>
+<p>It helps a lot that you can see <strong>all</strong> the sites that are trying to
+load content or save cookies in one glance, rather than consulting
+separate menus.</p>
+<p>There&rsquo;s an autoreload option that refreshes the page when you change
+permissions, so once you&rsquo;ve approved everything needed, the page should
+then work as expected.</p>
+<p>Out of the box, (I think) HTTP Switchboard was configured to allow most
+requests through, apart from those blacklisted by filters. What
+initially confused me was at what level the filters apply. (Do they
+apply to this site? To this domain? globally?).</p>
+<p>What I&rsquo;d recommend is, like the extension developer, is to
+<a href="https://github.com/gorhill/httpswitchboard/wiki/How-to-use-HTTP-Switchboard:-Two-opposing-views" target="_blank" rel="noopener noreferrer">block everything</a>
+by default and then whitelist only what you want to allow.</p>
+<p>There&rsquo;s an option in the HTTP Switchboard settings under &ldquo;more security&rdquo;
+to create a new site-specific scope for every site you visit which is
+really useful. This creates a set of rules for each site you visit.
+Furthermore, the drop down (click the blue top-left box with the site
+name in) lets you select where the rule applies (to the site, to the
+domain or globally).</p>
+<p>This lets you block content from, say, a site like twitter.com when
+you&rsquo;re visiting a third-party site, but allow it when you&rsquo;re directly
+visiting Twitter.</p>
+<p>It also has some nice bonus privacy features, like removing HTTP
+referers when visiting non-whitelisted sites and a user-agent
+randomiser.</p>
+<p>The only thing that&rsquo;s missing for me is guidance on what the sites
+likely are. If you&rsquo;re happy to spend a few seconds researching, it&rsquo;s not
+hard to figure this out. It might save a bit of time if there was a
+database of sites telling you &ldquo;hey, you might need this, it&rsquo;s a content
+delivery network&rdquo; or &ldquo;this is tracking how you&rsquo;re using the site; you
+probably don&rsquo;t need it for the site to function properly&rdquo;. Yes, I can
+search, but it&rsquo;s a bit clunky to do that.</p>
+<h2 id="a-summary">A summary</h2>
+<p>These are really great browser extensions, and credit to Raymond Hill
+for an awesome job on them. Every time I&rsquo;m managing permissions with
+multiple extensions in Firefox now, I sigh a little. (Firefox&rsquo;s awesome
+bar is far more useful to me than Chrome/ium&rsquo;s omnibox though, so I tend
+to stick with Firefox.)</p>
+<p>Longer term, I&rsquo;d really hope that a Firefox add-on developer <a href="https://github.com/gorhill/uBlock/issues/27" target="_blank" rel="noopener noreferrer">picks up
+the baton to port these</a>.</p>
+<p>(As a postscript, I should point out that as well as adblocking and
+control over requests, <a href="https://www.eff.org/https-everywhere" target="_blank" rel="noopener noreferrer">HTTPS Everywhere</a>
+is another useful privacy-enhancing extension for Firefox and Chromium
+browsers. Where HTTPS browsing is available on sites but not always used,
+HTTPS Everywhere enables it for you.)</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2015-08-02</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/taking-control-of-chromium-and-chrome/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/taking-control-of-chromium-and-chrome/" data-title="Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard" data-hashtags="ad,µBlock,HTTP Switchboard,blocking,privacy,adblock,ublock"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/taking-control-of-chromium-and-chrome/" data-hashtag="ad"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/taking-control-of-chromium-and-chrome/" data-title="Taking control of Chromium (and Chrome) with ublock and HTTP Switchboard"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ad/">ad</a>,&nbsp;<a href="/tags/%C2%B5block/">µBlock</a>,&nbsp;<a href="/tags/http-switchboard/">HTTP Switchboard</a>,&nbsp;<a href="/tags/blocking/">blocking</a>,&nbsp;<a href="/tags/privacy/">privacy</a>,&nbsp;<a href="/tags/adblock/">adblock</a>,&nbsp;<a href="/tags/ublock/">ublock</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/updating-and-rooting-moto-g/" class="prev" rel="prev" title="Updating and rooting Moto G"><i class="fas fa-angle-left fa-fw"></i>Updating and rooting Moto G</a>
+            <a href="/posts/hiding-draft-articles-in-pelican/" class="next" rel="next" title="Hiding draft articles in Pelican">Hiding draft articles in Pelican<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

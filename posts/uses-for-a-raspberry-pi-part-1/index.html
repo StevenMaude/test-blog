@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Uses for a Raspberry Pi (part 1) - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Uses for a Raspberry Pi (part 1)" />
+<meta property="og:description" content="A few simple, but useful, applications for a Raspberry Pi, including a wireless adapter and AirPrint server." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-1/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2013-07-10T21:21:00+00:00" />
+<meta property="article:modified_time" content="2013-07-14T13:45:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Uses for a Raspberry Pi (part 1)"/>
+<meta name="twitter:description" content="A few simple, but useful, applications for a Raspberry Pi, including a wireless adapter and AirPrint server."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-1/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/migrating-email-from-pop-to-imap/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-2/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Uses for a Raspberry Pi (part 1)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/uses-for-a-raspberry-pi-part-1\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "adapter, Pi, Airprint, Raspberry, wireless, wifi","wordcount":  1014 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/uses-for-a-raspberry-pi-part-1\/","datePublished": "2013-07-10T21:21:00+00:00","dateModified": "2013-07-14T13:45:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Uses for a Raspberry Pi (part 1)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2013-07-10">2013-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1014 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-access-to-useful-linux-command-line-tools">1. Access to useful Linux command line tools</a></li>
+    <li><a href="#2-wireless-adapter-for-a-device-without-onboard-wifi">2. Wireless adapter for a device without onboard wifi</a></li>
+    <li><a href="#3-airprint-server">3. AirPrint server</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><img class="article-image" src="{static}/images/2013/Raspberry_Pi.jpg" alt="A powered on Raspberry Pi.">
+<blockquote>
+  <p>Don’t buy one and put it in the cupboard; buy one and do an
+  interesting thing with it and tell the world what you did.
+  </p>
+  <cite><a href="http://www.dailybrink.com/?p=3304">Eben Upton</a></cite>
+</blockquote>
+<p>When I finally got my hands on the low priced Raspberry Pi computer, it
+was autumn. Although it had been released in February, its low price and
+the engagement of the Raspberry Pi Foundation with the user and
+developer community meant that people were clamouring for them and
+supplies were scarce. This explains why it was very difficult to get
+hold of for several months. Since then, I&rsquo;ve found several uses for my
+Pi, and I thought it might be useful, in the spirit of the opening
+quote, to briefly discuss them.</p>
+<p>My uses for the Pi are fairly simple, especially in comparison to those
+that frequently adorn the official <a href="http://www.raspberrypi.org/" target="_blank" rel="noopener noreferrer">Raspberry
+Pi</a> site, but I&rsquo;ve still found them very
+handy nonetheless. I wouldn&rsquo;t have been particularly unhappy if I&rsquo;d
+spent £30 on a device that does just one of the tasks that I using the
+Pi for. It&rsquo;s no surprise that a device that does all of these tasks, and
+<em>can still do more</em>, makes the Pi one of my favourite bits of recent
+hardware. I&rsquo;m certainly not alone in that view: the driving force behind
+the Pi, Eben Upton, was <a href="http://www.zdnet.com/we-thought-wed-sell-1000-the-inside-story-of-the-raspberry-pi-7000009718/" target="_blank" rel="noopener noreferrer">quoted as initially hoping for 1,000
+sales</a>;
+a huge underestimate from the <em>hundreds of thousands</em>it has sold.</p>
+<p>One of the most obvious uses for a Pi is to run <a href="http://xbmc.org" target="_blank" rel="noopener noreferrer">XBMC</a>,
+the fantastic open source media center software. The fact that XBMC was
+shown to run pretty smoothly prior to the Pi&rsquo;s release no doubt played a
+part in the Pi&rsquo;s early popularity, considering the feature set that XBMC
+alone offers. That said, my assumption is that anyone with a Pi already
+knows about XBMC — in the unlikely event that you don&rsquo;t, make sure to
+try <a href="http://www.raspbmc.com/" target="_blank" rel="noopener noreferrer">Raspbmc</a> out — therefore I&rsquo;ll skip over it
+here and leave that discussion to the many pages that discuss XBMC on
+the Pi. Instead, I&rsquo;ll focus on other useful functions.</p>
+<p>For reference, at the time of writing, Raspbian is the <a href="http://www.raspberrypi.org/downloads" target="_blank" rel="noopener noreferrer">officially
+recommended</a> operating system and
+that&rsquo;s what I&rsquo;m running on my Pi. All of the uses for my Pi use it
+<a href="https://en.wikipedia.org/wiki/Headless_system" target="_blank" rel="noopener noreferrer">headless</a>. I usually
+connect to the Pi via an
+<a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank" rel="noopener noreferrer">SSH</a> client, though you
+could attach a keyboard and TV/monitor to it and enter terminal commands
+directly.</p>
+<p>So, what can you use a Pi for?</p>
+<hr>
+<h2 id="1-access-to-useful-linux-command-line-tools">1. Access to useful Linux command line tools</h2>
+<p>Even just installing a Linux distribution like Raspbian, <em>without
+installing anything else</em>, gives you access to <a href="https://en.wikipedia.org/wiki/List_of_Unix_utilities" target="_blank" rel="noopener noreferrer">several powerful
+programs</a>
+(particularly the <a href="https://github.com/nschneid/unix-text-commands" target="_blank" rel="noopener noreferrer">text processing
+commands</a>) that you
+might not have ready access to, if you don&rsquo;t already have another PC
+running Linux available.</p>
+<p>Yes, you can get access to some of these tools within Windows if you
+install something like <a href="http://gnuwin32.sourceforge.net/" target="_blank" rel="noopener noreferrer">GnuWin32</a> or
+<a href="http://www.cygwin.com/" target="_blank" rel="noopener noreferrer">Cygwin</a>, or go to the trouble of installing
+Linux in a <a href="https://www.virtualbox.org/" target="_blank" rel="noopener noreferrer">virtual machine</a>, but it&rsquo;s nice
+to just power on a device and start working with these tools immediately
+and without any further setup.</p>
+<p>Another example is that when I started using
+<a href="https://github.com/StevenMaude" target="_blank" rel="noopener noreferrer">github</a>, I found it easy to just run
+the <a href="http://git-scm.com/" target="_blank" rel="noopener noreferrer">git</a> command line tool from the Pi. <em>It just
+worked.</em> In my case, git had already been installed, so I didn&rsquo;t even
+need to type <code>sudo apt-get install git</code>. This was a lot
+simpler than me trying to decide on the best way to run git on Windows.</p>
+<h2 id="2-wireless-adapter-for-a-device-without-onboard-wifi">2. Wireless adapter for a device without onboard wifi</h2>
+<p>I installed a cheap Ralink wifi adapter (around £4 from eBay) to connect
+my Pi to a wireless network. Because of this, the Pi&rsquo;s onboard Ethernet
+port was going unused. It&rsquo;s relatively straightforward to configure the
+Pi to enable a device connected to it by Ethernet to use the Pi&rsquo;s wifi
+connection to access the network</p>
+<img class="article-image" src="{static}/images/2013/Wifi_dongle.jpg" alt="Wifi adapter for the Pi.">
+<p>Wifi is a common feature of networked devices these days, but the Xbox
+360 is an exception to this rule. Earlier this year, I explained in <a href="http://unix.stackexchange.com/a/64353" target="_blank" rel="noopener noreferrer">a
+Stack Exchange post</a> how to
+configure the Pi such that the Xbox can access the network. There&rsquo;s no
+reason why the same procedure couldn&rsquo;t be used for other networked
+devices without wifi.</p>
+<h2 id="3-airprint-server">3. AirPrint server</h2>
+<p>Earlier this year, I was asked, &ldquo;How can I print something from my
+iPad?&rdquo;
+My reply was along the lines of, &ldquo;Not easily: we don&rsquo;t have a printer
+that supports <a href="http://support.apple.com/kb/ht4356" target="_blank" rel="noopener noreferrer">AirPrint</a>.&rdquo;</p>
+<p>That conversation inspired me to have a look around in case it was
+actually possible. After a quick search, I found
+<a href="https://github.com/tjfontaine/airprint-generate" target="_blank" rel="noopener noreferrer">airprint-generate</a>,
+along with a <a href="http://the.taoofmac.com/space/blog/2012/12/16/1730" target="_blank" rel="noopener noreferrer">step-by-step
+guide</a> explaining
+how to install this on the Pi. Even with having to install
+<a href="http://www.cups.org/" target="_blank" rel="noopener noreferrer">CUPS</a> and testing a couple of
+<a href="https://en.wikipedia.org/wiki/IDevice" target="_blank" rel="noopener noreferrer">iDevices</a>, I don&rsquo;t think the
+whole setup took more than thirty minutes or so. With this AirPrint
+solution, printing from an iPad is integrated just as if we used an
+AirPrint-compatible printer; no third party app is necessary to print.</p>
+<hr>
+<p>As its price suggests, the Pi isn&rsquo;t hugely powerful, but that doesn&rsquo;t
+hinder it from being incredibly useful for applications where computing
+power isn&rsquo;t critical, like the AirPrint server. (Here, even if it runs a
+little slow, the response time isn&rsquo;t really an issue: would a user
+really notice the extra few seconds that a document might take to print,
+compared with a much faster PC?) The Pi is also very <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?t=18043" target="_blank" rel="noopener noreferrer">cheap to
+run</a>, as well
+as being silent, making it ideal for server applications with modest
+computing power requirements.</p>
+<p>Even if you are starting from scratch, and need to run the Pi&rsquo;s
+operating system installer first, it should only take you, at most, a
+couple of hours to get everything here running. In a single evening, you
+can complete a small project that you get something back from almost
+immediately, which is really encouraging.</p>
+<p>On that upbeat tone, that&rsquo;s probably a good place to end this post! When
+I write about the Pi next, I&rsquo;ll cover uses of the Pi as a file server
+(using <a href="http://www.samba.org/" target="_blank" rel="noopener noreferrer">Samba</a>), and how I&rsquo;ve found
+<a href="http://www.infradead.org/get_iplayer/html/get_iplayer.html" target="_blank" rel="noopener noreferrer">get_iplayer</a>
+to be a great alternative to the BBC&rsquo;s officially supported service.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2013-07-14</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/uses-for-a-raspberry-pi-part-1/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-1/" data-title="Uses for a Raspberry Pi (part 1)" data-hashtags="adapter,Pi,Airprint,Raspberry,wireless,wifi"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-1/" data-hashtag="adapter"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/uses-for-a-raspberry-pi-part-1/" data-title="Uses for a Raspberry Pi (part 1)"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/adapter/">adapter</a>,&nbsp;<a href="/tags/pi/">Pi</a>,&nbsp;<a href="/tags/airprint/">Airprint</a>,&nbsp;<a href="/tags/raspberry/">Raspberry</a>,&nbsp;<a href="/tags/wireless/">wireless</a>,&nbsp;<a href="/tags/wifi/">wifi</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/migrating-email-from-pop-to-imap/" class="prev" rel="prev" title="Migrating email from POP to IMAP in Thunderbird"><i class="fas fa-angle-left fa-fw"></i>Migrating email from POP to IMAP in Thunderbird</a>
+            <a href="/posts/uses-for-a-raspberry-pi-part-2/" class="next" rel="next" title="Uses for a Raspberry Pi (part 2)">Uses for a Raspberry Pi (part 2)<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

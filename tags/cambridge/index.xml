@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Cambridge - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/cambridge/</link>
+        <description>Cambridge - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 22 Jun 2014 21:47:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/cambridge/" rel="self" type="application/rss+xml" /><item>
+    <title>Chatting about data science careers</title>
+    <link>https://www.stevenmaude.co.uk/posts/chatting-about-data-science-careers/</link>
+    <pubDate>Sun, 22 Jun 2014 21:47:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/chatting-about-data-science-careers/</guid>
+    <description><![CDATA[Write-up of a careers event I participated in at the University of Cambridge.]]></description>
+</item></channel>
+</rss>

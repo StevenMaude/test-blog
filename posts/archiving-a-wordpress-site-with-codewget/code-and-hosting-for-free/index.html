@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Archiving a WordPress site with &lt;code&gt;wget&lt;/code&gt; and hosting for free - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Archiving a WordPress site with &lt;code&gt;wget&lt;/code&gt; and hosting for free" />
+<meta property="og:description" content="Migrating WordPress to a static GitHub Pages site." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/archiving-a-wordpress-site-with-codewget/code-and-hosting-for-free/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-09-21T23:54:00+00:00" />
+<meta property="article:modified_time" content="2016-09-21T23:54:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Archiving a WordPress site with &lt;code&gt;wget&lt;/code&gt; and hosting for free"/>
+<meta name="twitter:description" content="Migrating WordPress to a static GitHub Pages site."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/archiving-a-wordpress-site-with-codewget/code-and-hosting-for-free/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/stopping-windows-from-rebooting-at-the-bitlocker-boot-password-prompt/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/collecting-disposable-email-with-go-mailin8/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Archiving a WordPress site with \u003ccode\u003ewget\u003c/code\u003e and hosting for free",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/archiving-a-wordpress-site-with-codewget\/code-and-hosting-for-free\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "WordPress","wordcount":  1842 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/archiving-a-wordpress-site-with-codewget\/code-and-hosting-for-free\/","datePublished": "2016-09-21T23:54:00+00:00","dateModified": "2016-09-21T23:54:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Archiving a WordPress site with &lt;code&gt;wget&lt;/code&gt; and hosting for free</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2016-09-21">2016-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1842 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#wordpress-migration">WordPress migration</a></li>
+    <li><a href="#gathering-the-site-content-with-wget">Gathering the site content with <code>wget</code></a></li>
+    <li><a href="#hosting-for-free">Hosting for free</a></li>
+    <li><a href="#problems-i-had-to-solve">Problems I had to solve</a>
+      <ul>
+        <li><a href="#broken-links">Broken links</a></li>
+        <li><a href="#unrestricted-crawling">Unrestricted crawling</a></li>
+        <li><a href="#removing-dynamic-features-in-the-static-site-version">Removing dynamic features in the static site version</a></li>
+        <li><a href="#query-strings-in-filenames">Query strings in filenames</a></li>
+        <li><a href="#srcset-images"><code>srcset</code> images</a></li>
+        <li><a href="#links-in-option-values">Links in option values</a></li>
+        <li><a href="#wordpress-emoji-code">WordPress emoji code</a></li>
+        <li><a href="#fixing-up-incorrect-indexhtml-urls">Fixing up incorrect <code>index.html</code> URLs</a></li>
+        <li><a href="#some-other-redirect-problems">Some other redirect problems</a></li>
+      </ul>
+    </li>
+    <li><a href="#moving-on">Moving on</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>After what seems quite a long time from when the idea was first mentioned to
+change the name of my employer, it&rsquo;s finally happened, and they&rsquo;ve got a <a href="http://sensiblecode.io" target="_blank" rel="noopener noreferrer">new
+website</a> and everything. We still have the old company
+mugs, sadly.</p>
+<p>I&rsquo;d been helping out in renaming things. It&rsquo;s surprising just how deep
+the hooks of a name go: email addresses, documentation, licences, even
+mentions in code too. A more startlingly obvious case is that of a
+website. And as there&rsquo;s now a new website, we don&rsquo;t really need to
+maintain the old one anymore. Just taking everything down would be a
+shame as there&rsquo;s lots of content on there that people have found
+useful in the past.</p>
+<h2 id="wordpress-migration">WordPress migration</h2>
+<p>Like many sites, it used WordPress. One option for migration away from
+WordPress is to export the content as an XML file, which either various
+other hosts may be able to import for you directly, or you can try
+converting into a useful format yourself, e.g. if you&rsquo;re using a static
+site generator to build a new site.</p>
+<p>We just wanted to archive the site, rather than move to a new site and
+reuse the old content, which is a different task.</p>
+<p>There are several WordPress plugins that are supposed to convert your site into
+a static one. However, none of the two I tried were successful; one just froze
+without seemingly doing anything, while the other only pulled a couple of pages
+from the site.</p>
+<h2 id="gathering-the-site-content-with-wget">Gathering the site content with <code>wget</code></h2>
+<p>In the end, I resorted to <a href="https://www.gnu.org/software/wget/" target="_blank" rel="noopener noreferrer"><code>wget</code></a> which
+did an admirably good job after a few attempts.</p>
+<p><code>wget</code> is more often known as a command-line download tool, but is much more
+powerful than a simple downloader. The downside with this is that there are
+options present that you might not even know about until you try this kind of
+site archiving, hit a problem and then discover which <code>wget</code> option you should
+have used to fix it. The upside is that <code>wget</code> probably does feature the option
+you require.</p>
+<p>After lots of trial and error, what I ended up with was (deep breath):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">wget --page-requisites --convert-links --adjust-extension --mirror --span-hosts --domains<span class="o">=</span>blog.scraperwiki.com,scraperwiki.com --exclude-domains beta.scraperwiki.com,classic.scraperwiki.com,media.scraperwiki.com,mot.scraperwiki.com,newsreader.scraperwiki.com,premium.scraperwiki.com,status.scraperwiki.com,x.scraperwiki.com scraperwiki.com
+</code></pre></div><p>Let&rsquo;s look at what each option does:</p>
+<ul>
+<li>
+<p><code>--page-requisites</code> collects other files need to render a HTML page,
+e.g.  images and CSS.</p>
+</li>
+<li>
+<p><code>--convert-links</code> converts links in the retrieved document to one that
+will correctly display in the local mirror; this all happens at the
+end of a collection; if you check files while the collection is in
+progress, the links won&rsquo;t yet have changed.</p>
+</li>
+<li>
+<p><code>--adjust-extension</code> gives HTML files an <code>.html</code> file extension if
+they don&rsquo;t have one (<code>--convert-links</code> adheres to these modified
+filenames too, so if a HTML file has a modified name, then the link to
+will be correct).</p>
+</li>
+<li>
+<p><code>--mirror</code> is an alias for a series of options that facilitate
+mirroring a site.</p>
+</li>
+<li>
+<p><code>--span-hosts</code> enables wget to move across different hostnames.</p>
+</li>
+<li>
+<p><code>--domains</code> and <code>--exclude-domains</code> list domains that <code>wget</code> should or
+shouldn&rsquo;t retrieve content from.</p>
+</li>
+</ul>
+<p>Later the files from our multiple domains got moved into one directory for
+simplicity. I think you could have done this using <code>--no-host-directories</code>.</p>
+<p>Running this command will then proceed to collect the content from the sites
+you&rsquo;ve allowed it to crawl.</p>
+<h2 id="hosting-for-free">Hosting for free</h2>
+<p>If you have a free GitHub account and are competent enough with the
+basics of <code>git</code>, note that you can host static sites, also for free, on
+GitHub Pages.  Introducing <code>git</code> version control is an entirely other
+post, but there are plenty of online tutorials. To do something like
+this, don&rsquo;t feel overwhelmed by the different commands. You only really
+need the basics, i.e. knowing how to create a new repository, add files
+to it, make commits and push them to a remote repository.</p>
+<p>Another nice feature of preparing your static site in a version
+controlled repository is that when you encounter things that need
+fixing, you can try them and always be able to restore to an earlier
+version, should you need to.</p>
+<h2 id="problems-i-had-to-solve">Problems I had to solve</h2>
+<h3 id="broken-links">Broken links</h3>
+<p>Initially, the links to images or other pages were broken, the
+<code>--convert-links</code> option fixed that.</p>
+<h3 id="unrestricted-crawling">Unrestricted crawling</h3>
+<p><code>wget</code> was crawling other scraperwiki.com domains than the ones we wanted and
+collecting a lot of unnecessary content. All I needed was the main site, so I
+specified the domains to exclude.</p>
+<h3 id="removing-dynamic-features-in-the-static-site-version">Removing dynamic features in the static site version</h3>
+<p>Some features of the site, as expected, no longer functioned after collecting
+the pages. For example, the comment and contact forms we had involve some
+processing on the WordPress server, and therefore were displayed on the static
+site, but didn&rsquo;t work.</p>
+<p>Removing this content is possible in a couple of ways. Either you could process
+the HTML, using blunt instruments of find/replace, or the finer tools of
+reprocessing the HTML with a proper parser, and remove the unwanted elements,
+for instance using Python and <a href="http://lxml.de" target="_blank" rel="noopener noreferrer"><code>lxml</code></a>.</p>
+<p>Easier still is just hiding the broken elements. Finding an appropriate
+selector for those elements, and then adding a CSS rule for that
+selector containing <code>display: none;</code> (perhaps with <code>!important</code> if
+required) will hide them. This also preserves the HTML as it was without
+mangling it.</p>
+<p>It probably won&rsquo;t affect you, but it&rsquo;s worth noting that automated bots
+may well still be trying to trigger elements &ldquo;hidden&rdquo; in this way.
+They&rsquo;re still on the page, just not displayed to normal users of the
+site (unless they tweak the CSS). We had an odd issue possibly caused by
+a redirect from the old site: bots were presumably attempting to submit
+to a form on our new site, even though they were visiting the archive of
+the old site. (It was flagged by the form provider asking us to approve
+submissions from that URL.)</p>
+<h3 id="query-strings-in-filenames">Query strings in filenames</h3>
+<p>This was caused by WordPress hosting resources with version query
+strings in the URL, e.g.  CSS and JS.</p>
+<p>When <code>wget</code> retrieved the files initially, it retained the <code>?</code> and the
+trailing part of the name, e.g. <code>jetpack.css?ver=4.1.1</code>. The problem is
+that the links also look like this too.  The &ldquo;<code>?</code>&rdquo; gets interpreted by
+clients as a query string, and not part of a static filename. In a
+static version of the site, the query string won&rsquo;t work: the browser
+requests the file without the <code>?</code> and passes a (now) useless query
+string. Our copy of the file actually has a filename of
+<code>jetpack.css?ver=4.1.1</code>, not <code>jetpack.css</code>. We don&rsquo;t want the client to
+request <code>jetpack.css</code> with a query string of <code>?ver=4.1.1</code>, but to
+actually request a static file with the question mark in its name.</p>
+<p>I&rsquo;m not entirely sure what fixed this; I didn&rsquo;t notice at first. From
+some point onwards, the <code>?</code> ended up getting encoded as <code>%3F</code> which then
+gets correctly requested as a filename with a question mark in it. Not
+particularly clean, but it worked. It may have just been using a recent
+version of <code>wget</code> that solved this. This was nice as the alternative was
+a horrendous find/replace task using commands like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">find . -type f -exec grep -Iq . <span class="o">{}</span> <span class="se">\;</span> -and -exec sed -i
+<span class="s1">&#39;s!wp-content/plugins/jetpack/css/jetpack.css?ver=4.1.1!wp-content/plugins/jetpack/css/jetpack.css!g&#39;</span>
+<span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div><p>to fix up the content by hand for every CSS and JS file. (You could optimise by
+having <code>sed</code> perform all the replacements in one command, rather than executing
+the same find repeatedly, but I was verifying the changes by eye after
+processing each filename; <code>git diff</code> is useful here.) That equally worked, but
+was much more work to check.</p>
+<p>Searching now, by far the simplest fix would be use a Wordpress plugin
+to remove the query strings before archiving. There are a couple out
+there.</p>
+<h3 id="srcset-images"><code>srcset</code> images</h3>
+<p>Some of our images were responsive <code>srcset</code> images listed in <code>img</code>
+attributes.  Until recently, <code>wget</code> didn&rsquo;t handle this, but from <code>wget</code>
+1.18, it supports <code>srcset</code> images just as it does images in <code>src</code>
+attributes of <code>img</code> elements. To clarify, it both correctly retrieves
+the images <em>and</em> updates the links. (I assume only when using
+<code>--convert-links</code>.)</p>
+<h3 id="links-in-option-values">Links in option values</h3>
+<p>As part of the site archive navigation, there were links to option
+values.  These weren&rsquo;t updated. I just hid those elements as it didn&rsquo;t
+seem a critical part of the site.</p>
+<h3 id="wordpress-emoji-code">WordPress emoji code</h3>
+<p>Recent versions of WordPress feature code to add emoji support for certain
+browsers. This embedded JavaScript is in the HTML and was still pulling from
+the old WordPress site because it contains an absolute URL within it. Saving
+the file locally and correcting the URL is non-trivial as a relative URL
+depends on how deep in the local mirror you are. The simplest solution was
+disabling this feature, by adding the <a href="https://wordpress.org/plugins/disable-emojis/" target="_blank" rel="noopener noreferrer">&ldquo;Disable
+Emojis&rdquo;</a> plugin to the
+site, then recrawling.</p>
+<p>It&rsquo;s not essential to fix this, but means the static site is not making
+requests for files that don&rsquo;t exist when you move from WordPress.</p>
+<h3 id="fixing-up-incorrect-indexhtml-urls">Fixing up incorrect <code>index.html</code> URLs</h3>
+<p>Lots of URLs on the original site ended with <code>/</code>, rather than
+<code>/some_page.html</code>. <code>wget</code> instead saved these pages with a filename of
+<code>index.html</code>. Fixing these up was a pain. In terms of making the site
+work, this strictly wasn&rsquo;t necessary. GitHub Pages will respond with a
+request to <code>foo/</code> as the <code>index.html</code> in the <code>foo</code> directory, so any
+existing links to the site would still work. However, fixing this does
+ensure anyone sharing links to our pages uses the same URL as the pages
+always had.</p>
+<p>I&rsquo;m not even completely sure that this was entirely fixed correctly; there are
+just too many URLs to verify, but it appeared to have the desired behaviour.
+You can see the <a href="https://github.com/scraperwiki/scraperwiki-site-archive/commit/73881788c40a427068e6af415a3a16399bdecffa" target="_blank" rel="noopener noreferrer">commit
+message</a>
+for the code I used.</p>
+<p>Essentially, it used lots of regular expressions to substitute:</p>
+<ul>
+<li>
+<p><code>foo/index.html</code> to <code>foo/</code>;</p>
+</li>
+<li>
+<p><code>foo/index.html#bar</code> to <code>foo#bar</code>;</p>
+</li>
+<li>
+<p><code>foo/baz.html</code> to <code>foo/baz</code>;</p>
+</li>
+<li>
+<p><code>foo/baz.html#foobar</code> to <code>foo/baz#foobar</code>.</p>
+</li>
+</ul>
+<p>There are a few other tweaks I did to clean up URL links too. They are
+detailed in the other <a href="https://github.com/scraperwiki/scraperwiki-site-archive/commits/master" target="_blank" rel="noopener noreferrer">commit messages in the
+repository</a>.</p>
+<h3 id="some-other-redirect-problems">Some other redirect problems</h3>
+<p>For us, some redirects we had set up on the old site caused a couple of cases
+where files ended up in the wrong place or with the wrong name compared with
+the original site. We had to be careful to fix up relative URLs here. We also
+had multiple copies of certain files. These weren&rsquo;t difficult to fix by
+hand as there were only a few to modify.</p>
+<p>Finally, we had to correctly set up redirects to the new site in our server
+configuration, and everything was finally done.</p>
+<h2 id="moving-on">Moving on</h2>
+<p>After much work, the static version&rsquo;s now working well. Everything&rsquo;s
+pretty much the same on <a href="https://scraperwiki.com/" target="_blank" rel="noopener noreferrer">the site</a> aside from
+the interactive forms. It was much more of a task to get done than I&rsquo;d
+imagined. I think it was around half a day spent trying out <code>wget</code>
+options and another couple of days spent on resolving all the other
+issues.</p>
+<p>The advantages are that we don&rsquo;t need to maintain a WordPress
+installation to run the site and the site&rsquo;s getting hosted
+for free.</p>
+<p>Good luck if you&rsquo;re tackling the same problem! Hopefully some of the
+tips here might help you with your migration.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2016-09-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/archiving-a-wordpress-site-with-codewget/code-and-hosting-for-free/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/archiving-a-wordpress-site-with-codewget/code-and-hosting-for-free/" data-title="Archiving a WordPress site with &lt;code&gt;wget&lt;/code&gt; and hosting for free" data-hashtags="WordPress"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/archiving-a-wordpress-site-with-codewget/code-and-hosting-for-free/" data-hashtag="WordPress"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/archiving-a-wordpress-site-with-codewget/code-and-hosting-for-free/" data-title="Archiving a WordPress site with &lt;code&gt;wget&lt;/code&gt; and hosting for free"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/wordpress/">Wordpress</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/stopping-windows-from-rebooting-at-the-bitlocker-boot-password-prompt/" class="prev" rel="prev" title="Stopping Windows from rebooting at the BitLocker boot password prompt"><i class="fas fa-angle-left fa-fw"></i>Stopping Windows from rebooting at the BitLocker boot password prompt</a>
+            <a href="/posts/collecting-disposable-email-with-go-mailin8/" class="next" rel="next" title="Collecting disposable email with go-mailin8">Collecting disposable email with go-mailin8<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

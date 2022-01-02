@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>plugin - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/plugin/</link>
+        <description>plugin - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Jul 2015 11:51:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/plugin/" rel="self" type="application/rss+xml" /><item>
+    <title>Restoring a tag cloud dispersed by Pelican 3.6.0</title>
+    <link>https://www.stevenmaude.co.uk/posts/restoring-a-tag-cloud-dispersed-by-pelican-3.6.0/</link>
+    <pubDate>Sun, 12 Jul 2015 11:51:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/restoring-a-tag-cloud-dispersed-by-pelican-3.6.0/</guid>
+    <description><![CDATA[How to fix tag clouds in Pelican 3.6.0.]]></description>
+</item></channel>
+</rss>

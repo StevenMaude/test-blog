@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>ink - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/ink/</link>
+        <description>ink - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Jan 2014 13:45:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/ink/" rel="self" type="application/rss+xml" /><item>
+    <title>Fixing no ink levels being displayed in Epson Status Monitor</title>
+    <link>https://www.stevenmaude.co.uk/posts/fixing-no-ink-levels-being-displayed-in/</link>
+    <pubDate>Sat, 18 Jan 2014 13:45:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/fixing-no-ink-levels-being-displayed-in/</guid>
+    <description><![CDATA[Solving a problem with Epson printers where no ink levels are displayed in the printer status monitor.]]></description>
+</item></channel>
+</rss>

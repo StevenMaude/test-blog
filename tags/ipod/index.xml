@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>iPod - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/ipod/</link>
+        <description>iPod - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 08 Apr 2014 21:24:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/ipod/" rel="self" type="application/rss+xml" /><item>
+    <title>Rockbox, iPod Nano 2G and inverted audio channels</title>
+    <link>https://www.stevenmaude.co.uk/posts/rockbox-ipod-nano-2g-and-inverted-audio/</link>
+    <pubDate>Tue, 08 Apr 2014 21:24:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/rockbox-ipod-nano-2g-and-inverted-audio/</guid>
+    <description><![CDATA[Discovering an (old) bug in Rockbox swapping audio channels on iPod Nano 2G.]]></description>
+</item></channel>
+</rss>

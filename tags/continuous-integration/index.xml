@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>continuous integration - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/continuous-integration/</link>
+        <description>continuous integration - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 02 Aug 2020 14:38:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/continuous-integration/" rel="self" type="application/rss+xml" /><item>
+    <title>Continuous integration with GitHub Actions</title>
+    <link>https://www.stevenmaude.co.uk/posts/continuous-integration-with-github-actions/</link>
+    <pubDate>Sun, 02 Aug 2020 14:38:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/continuous-integration-with-github-actions/</guid>
+    <description><![CDATA[A look at GitHub Actions, and the good and bad of coupling automation]]></description>
+</item></channel>
+</rss>

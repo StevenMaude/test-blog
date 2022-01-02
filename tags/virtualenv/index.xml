@@ -1,0 +1,27 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>virtualenv - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/virtualenv/</link>
+        <description>virtualenv - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 30 Dec 2016 00:10:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/virtualenv/" rel="self" type="application/rss+xml" /><item>
+    <title>Installing pip, virtualenv and virtualenvwrapper tidily in Linux</title>
+    <link>https://www.stevenmaude.co.uk/posts/installing-pip-virtualenv-and-virtualenvwrapper-tidily-in-linux/</link>
+    <pubDate>Fri, 30 Dec 2016 00:10:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/installing-pip-virtualenv-and-virtualenvwrapper-tidily-in-linux/</guid>
+    <description><![CDATA[Don&rsquo;t want to clutter up your system&rsquo;s Python install? Install]]></description>
+</item><item>
+    <title>Installing matplotlib in a virtualenv</title>
+    <link>https://www.stevenmaude.co.uk/posts/installing-matplotlib-in-virtualenv/</link>
+    <pubDate>Mon, 30 Sep 2013 18:57:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/installing-matplotlib-in-virtualenv/</guid>
+    <description><![CDATA[Solving matplotlib&rsquo;s plotting backends being inaccessible in virtualenvs.]]></description>
+</item><item>
+    <title>Explaining Python virtualenvwrapper (in a couple of minutes)</title>
+    <link>https://www.stevenmaude.co.uk/posts/explaining-python-virtualenvwrapper-in/</link>
+    <pubDate>Thu, 19 Sep 2013 17:53:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/explaining-python-virtualenvwrapper-in/</guid>
+    <description><![CDATA[How to use virtualenvwrapper to manage your Python virtualenvs.]]></description>
+</item><item>
+    <title>Explaining Python virtualenv (in under two minutes)</title>
+    <link>https://www.stevenmaude.co.uk/posts/explaining-python-virtualenv-in-under/</link>
+    <pubDate>Thu, 22 Aug 2013 20:31:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/explaining-python-virtualenv-in-under/</guid>
+    <description><![CDATA[How to setup virtualenvs to simplify Python software development.]]></description>
+</item></channel>
+</rss>

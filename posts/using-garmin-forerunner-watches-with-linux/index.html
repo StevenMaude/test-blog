@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Using Garmin Forerunner watches with Linux - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Using Garmin Forerunner watches with Linux" />
+<meta property="og:description" content="A quick look at Garmin&rsquo;s Forerunner 15 watch and using it with Linux." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/using-garmin-forerunner-watches-with-linux/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-12-30T23:30:00+00:00" />
+<meta property="article:modified_time" content="2016-09-16T23:40:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Using Garmin Forerunner watches with Linux"/>
+<meta name="twitter:description" content="A quick look at Garmin&rsquo;s Forerunner 15 watch and using it with Linux."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/using-garmin-forerunner-watches-with-linux/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/beatmatching-to-beat-grid-in-traktor/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/answers-to-some-windows-10-activation-questions/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Using Garmin Forerunner watches with Linux",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/using-garmin-forerunner-watches-with-linux\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Garmin, Forerunner, Linux, GPS, running","wordcount":  1376 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/using-garmin-forerunner-watches-with-linux\/","datePublished": "2015-12-30T23:30:00+00:00","dateModified": "2016-09-16T23:40:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Using Garmin Forerunner watches with Linux</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2015-12-30">2015-12-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1376 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#can-you-use-it-with-linux">Can you use it with Linux?</a>
+      <ul>
+        <li><a href="#installing-gpsbabel">Installing GPSBabel</a></li>
+        <li><a href="#converting-garmins-fit-data-to-gpx">Converting Garmin&rsquo;s FIT data to GPX</a></li>
+        <li><a href="#upgrading-the-watchs-firmware">Upgrading the watch&rsquo;s firmware</a></li>
+      </ul>
+    </li>
+    <li><a href="#whats-the-watch-actually-like">What&rsquo;s the watch actually like?</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>!!! article-edit &quot;&quot;
+Edit September 2016: What I didn&rsquo;t mention here was how you could
+get EPO data when on Linux. This can help reduce the time it takes
+for your watch to get a GPS signal lock. There&rsquo;s a helpful
+<a href="https://www.kluenter.de/2014/03/23/garmin-ephemeris-files-and-linux.html" target="_blank" rel="noopener noreferrer">blog post</a>
+that gives a lot of the details. There&rsquo;s a
+<a href="https://github.com/scrapper/postrunner/" target="_blank" rel="noopener noreferrer">Ruby utility</a> that manages
+FIT files and features an option to collect the EPO data from
+Garmin&rsquo;s servers. Alternatively, I also wrote a <a href="https://github.com/StevenMaude/armstrong" target="_blank" rel="noopener noreferrer">Go
+program</a> (which
+just compiles to a single binary rather than needing lots of
+dependencies) to collect this data which I&rsquo;ve been using on Linux;
+you should be able to compile it easily to work on OS X or Windows.</p>
+<p>I&rsquo;m now the owner of a Garmin GPS watch. When I was looking at GPS
+watches, I couldn&rsquo;t find a huge amount of information on using them with
+Linux. This post concerns the Forerunner 15 (FR15) particularly, but
+think may well apply to several others in that range that function as
+USB storage devices, with the usual &ldquo;your mileage may vary&rdquo; caveats.</p>
+<h2 id="can-you-use-it-with-linux">Can you use it with Linux?</h2>
+<p>Yes, to some extent. Though you won&rsquo;t be able to use all the fancy
+display features on Garmin&rsquo;s site. That said, I&rsquo;m not bothered about
+that and would actually prefer to keep my data offline, especially with
+the number of website data breaches there have been recently.</p>
+<p>The FR15 shows up as a normal USB storage device so you can copy over
+.FIT files from the watch directly and work with them on your computer.
+My run data was stored in <code>GARMIN/ACTIVITY</code>.</p>
+<p>Note that, when researching this, you may read older posts about the
+unofficial Garmin Communication web browser plugin that was capable of
+uploading data to Garmin&rsquo;s servers.  This no longer functions and <a href="https://github.com/adiesner/GarminPlugin/issues/14" target="_blank" rel="noopener noreferrer">this
+GitHub issue</a>
+suggests it won&rsquo;t be fixed anytime soon.</p>
+<h3 id="installing-gpsbabel">Installing GPSBabel</h3>
+<p>The next job is to get the FIT files into a format that&rsquo;s more widely
+usable.</p>
+<p><a href="https://www.gpsbabel.org/" target="_blank" rel="noopener noreferrer">GPSBabel</a> is a application for Windows, OS X
+and Linux that lets you convert between GPS data formats, including
+converting Garmin&rsquo;s FIT (Flexible and Interoperable Data Transfer)
+format into .GPX (GPS Exchange Format) which is well supported by
+various free, open source applications.</p>
+<p>Support for FIT was added to GPSBabel in versions 1.4.3 and later,
+judging from the <a href="https://www.gpsbabel.org/changes.html" target="_blank" rel="noopener noreferrer">GPSBabel
+changelog</a>.</p>
+<p>If your distribution&rsquo;s repositories have an older version, you&rsquo;ll need
+to compile it from source. In Ubuntu, it was reasonably straightforward
+to clone it from <a href="https://github.com/gpsbabel/gpsbabel" target="_blank" rel="noopener noreferrer">GitHub</a> and then
+do the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/.local
+make
+make install
+</code></pre></div><p>Using <code>prefix</code> in <code>configure</code> allows you to <a href="https://unix.stackexchange.com/a/42569" target="_blank" rel="noopener noreferrer">install to a local
+directory</a> and avoids the need
+for <code>sudo</code> in <code>make install</code>.</p>
+<p>The only hiccup was that the <code>configure</code> step gave the error message:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="go">configure: error: Qt4 or Qt5 is required, but neither was found
+</span></code></pre></div><p><a href="https://stackoverflow.com/questions/16607003/qmake-could-not-find-a-qt-installation-of" target="_blank" rel="noopener noreferrer">The fix</a>
+was to do the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get install qtcreator
+</code></pre></div><p>which was probably overkill as it installed a lot of packages, but
+compiling then worked. (I then removed <code>qtcreator</code> via <code>apt-get remove</code>.)</p>
+<h3 id="converting-garmins-fit-data-to-gpx">Converting Garmin&rsquo;s FIT data to GPX</h3>
+<p>An example use of GPSBabel is:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">gpsbabel -i garmin_fit -f input.FIT -o gpx -F output.gpx
+</code></pre></div><p>This gives you a GPX file which can be loaded into far more software.</p>
+<p>As a quick test, I loaded the output GPX file into
+<a href="https://github.com/viking-gps/viking" target="_blank" rel="noopener noreferrer">Viking</a> which seems a
+little bit limited, but at least let me visualise speed against time,
+and see where I&rsquo;ve been.</p>
+<p>There are web apps out there that will save you this hassle and do the
+conversion for you, but, again, I&rsquo;d rather keep my location data to
+myself.</p>
+<p>(Some of the high-end watches also have the ability to send the data to
+Garmin via Bluetooth to mobile apps that collect the data, so that&rsquo;s
+another way you could avoid the requirement for Windows or OS X.)</p>
+<h3 id="upgrading-the-watchs-firmware">Upgrading the watch&rsquo;s firmware</h3>
+<p>My watch came with the latest firmware installed and the watch has been
+out a while, so I doubt there are any major issues remaining. But, there
+may still be further updates as it&rsquo;s still a supported product.</p>
+<p>The official update method is via Garmin&rsquo;s Windows or OS X software. If
+you search their site, you can find that updates exist, but you&rsquo;re told
+to use Garmin Express to install them.</p>
+<p>However, it is possible to find download URLs for firmware updates, if
+you look in the HTML source. For instance, the <a href="http://download.garmin.com/software/Forerunner15_270.rgn" target="_blank" rel="noopener noreferrer">current FR15
+firmware</a> is
+available via direct download using any client you like, albeit via
+insecure http. (I haven&rsquo;t tested the official software, it may well use
+the same links.)</p>
+<p>I haven&rsquo;t needed this information yet, but there are <a href="https://forums.garmin.com/archive/index.php/t-103787.html" target="_blank" rel="noopener noreferrer">more details
+regarding a different
+model</a> on the
+Garmin forums, but may well be relevant here. As a post there states,
+you may need to remove 60 bytes of an extraneous header using <code>tail</code>:</p>
+<blockquote>
+<p>To verify that an original file needs this header-removing, open it
+with <code>hexdump -C [Download FileName] | head</code>. You should see it
+starting with the string KpGrd The main watch firmware has two of
+those KpGrd headers, but we only remove the first one.</p>
+</blockquote>
+<p>Also bear in mind that there may be multiple firmware files to update,
+e.g. the watch firmware itself, as well as language files and the ANT
+firmware. And apparently <em>all</em> these need the header removing. Anyway,
+you can search Garmin&rsquo;s site for e.g. &ldquo;Forerunner 15 update&rdquo; and see
+what you find.</p>
+<h2 id="whats-the-watch-actually-like">What&rsquo;s the watch actually like?</h2>
+<p>I&rsquo;ve only started using it today, but it seems good at what it does. I
+tracked a run and, at a glance, the data looked consistent with where
+I&rsquo;d been and how I&rsquo;d run.</p>
+<p>It&rsquo;s a basic model, but capable. It&rsquo;s got what seems like a decent
+battery, apparently eight hours in active GPS use. Anecdotally, I headed
+out taking it straight from the box without charging and it was flashing
+an empty battery warning for most of the run (an hour or so), but still
+managed to record the entire distance.</p>
+<p>It&rsquo;s also waterproof which was handy since I was caught up in a heavy
+downpour while out. And it didn&rsquo;t feel noticeably less comfortable or
+more cumbersome than the (near-weightless) Casio digital watch that I&rsquo;m
+usually wearing.</p>
+<p>There are also activity tracker features available to count steps and
+calories, though I&rsquo;m less concerned about those. Recording a run for
+later inspection, tracking my heart rate, distance travelled and time
+elapsed while running, and keeping my best times are the features I
+really want. And the FR15 does all of these things.</p>
+<p>The FR15 was on offer when I bought it. Would I have paid the full
+retail price? I don&rsquo;t know. At that price and adding on an optional
+heart rate monitor bundled, it&rsquo;s very similar in price to higher-end
+watches like Garmin&rsquo;s 225.</p>
+<p>On the other hand, I did look into more expensive watches and all of
+them, at least the Garmin watches, seemed to have drawbacks. There
+wasn&rsquo;t an obvious candidate that stood out as the one to get.</p>
+<p>As a starter watch, the FR15 seems like a good deal, especially as it
+seems we&rsquo;re in a time where the technology&rsquo;s still improving. (Perhaps
+indicative of that, Garmin, much to the chagrin of unlucky purchasers,
+released a newer version of their FR225 only a few months after they
+launched it.) There&rsquo;s also competition from the likes of Fitbit and
+Jawbone which will probably push improvements to these devices in
+future. Newer, more expensive watches are already switching over to
+wrist monitoring of heart rate instead of using more traditional heart
+rate bands.</p>
+<p>So, if this is technology that I use long term, then the next step would
+be to a watch featuring wrist heart rate monitoring and cadence
+measurement. Nonetheless, the expandability of the FR15 is a bonus: you
+can use a separate ANT heart rate monitor (it optionally is bundled with
+one), as well as a footpod. Excluding these extras keeps the price down,
+but it&rsquo;s still possible to augment the device with these features in
+future; I&rsquo;ve already ordered a heart rate monitor.</p>
+<p>The one downside of the design I&rsquo;ve seen so far is that I think the
+battery will be a chore to replace when it expires. It&rsquo;s not officially
+user-replaceable. That drawback aside, it seems a decent choice.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2016-09-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/using-garmin-forerunner-watches-with-linux/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/using-garmin-forerunner-watches-with-linux/" data-title="Using Garmin Forerunner watches with Linux" data-hashtags="Garmin,Forerunner,Linux,GPS,running"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/using-garmin-forerunner-watches-with-linux/" data-hashtag="Garmin"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/using-garmin-forerunner-watches-with-linux/" data-title="Using Garmin Forerunner watches with Linux"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/garmin/">Garmin</a>,&nbsp;<a href="/tags/forerunner/">Forerunner</a>,&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/gps/">GPS</a>,&nbsp;<a href="/tags/running/">running</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/beatmatching-to-beat-grid-in-traktor/" class="prev" rel="prev" title="Beatmatching to beat grid in Traktor "><i class="fas fa-angle-left fa-fw"></i>Beatmatching to beat grid in Traktor </a>
+            <a href="/posts/answers-to-some-windows-10-activation-questions/" class="next" rel="next" title="Answers to some Windows 10 activation questions">Answers to some Windows 10 activation questions<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

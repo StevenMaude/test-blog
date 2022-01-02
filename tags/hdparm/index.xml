@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>hdparm - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/hdparm/</link>
+        <description>hdparm - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 22 Nov 2016 13:54:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/hdparm/" rel="self" type="application/rss+xml" /><item>
+    <title>Securely erasing frozen hard disks with hdparm</title>
+    <link>https://www.stevenmaude.co.uk/posts/securely-erasing-frozen-hard-disks-with-hdparm/</link>
+    <pubDate>Tue, 22 Nov 2016 13:54:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/securely-erasing-frozen-hard-disks-with-hdparm/</guid>
+    <description><![CDATA[How to use hdparm to erase hard drives, and what to do if the drive is frozen.]]></description>
+</item><item>
+    <title>Securely erasing SSD drives</title>
+    <link>https://www.stevenmaude.co.uk/posts/securely-erasing-ssd-drives/</link>
+    <pubDate>Sat, 04 Jan 2014 11:22:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/securely-erasing-ssd-drives/</guid>
+    <description><![CDATA[How to securely erase drives with the ATA Secure Erase function via hdparm.]]></description>
+</item></channel>
+</rss>

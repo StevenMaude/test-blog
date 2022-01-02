@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>PDroid - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/pdroid/</link>
+        <description>PDroid - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 28 Mar 2014 21:56:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/pdroid/" rel="self" type="application/rss+xml" /><item>
+    <title>Phone upgrades and privacy downgrades</title>
+    <link>https://www.stevenmaude.co.uk/posts/phone-upgrades-and-privacy-downgrades/</link>
+    <pubDate>Fri, 28 Mar 2014 21:56:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/phone-upgrades-and-privacy-downgrades/</guid>
+    <description><![CDATA[Thoughts on upgrading my phone and app permissions.]]></description>
+</item><item>
+    <title>Leaky phone apps</title>
+    <link>https://www.stevenmaude.co.uk/posts/leaky-phone-apps/</link>
+    <pubDate>Fri, 28 Jun 2013 21:03:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/leaky-phone-apps/</guid>
+    <description><![CDATA[My view on third party phone apps that leak data.]]></description>
+</item><item>
+    <title>Patching Android ROMs for PDroid using Auto-Patcher</title>
+    <link>https://www.stevenmaude.co.uk/posts/patching-android-roms-for-pdroid-using/</link>
+    <pubDate>Sat, 11 May 2013 14:26:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/patching-android-roms-for-pdroid-using/</guid>
+    <description><![CDATA[How to modify Android ROMs using Auto-Patcher to enable the PDroid privacy controls app.]]></description>
+</item></channel>
+</rss>

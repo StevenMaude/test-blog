@@ -1,0 +1,27 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>security - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/security/</link>
+        <description>security - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 06 Mar 2017 23:30:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/security/" rel="self" type="application/rss+xml" /><item>
+    <title>If you want my money, please state your payment processor clearly</title>
+    <link>https://www.stevenmaude.co.uk/posts/if-you-want-my-money-please-state-your-payment-processor-clearly/</link>
+    <pubDate>Mon, 06 Mar 2017 23:30:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/if-you-want-my-money-please-state-your-payment-processor-clearly/</guid>
+    <description><![CDATA[Why don&rsquo;t websites always clarify who they&rsquo;re using to handle]]></description>
+</item><item>
+    <title>The dangers of long forgotten Bitbucket team accounts</title>
+    <link>https://www.stevenmaude.co.uk/posts/the-dangers-of-long-forgotten-bitbucket-team-accounts/</link>
+    <pubDate>Sat, 04 Feb 2017 21:30:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/the-dangers-of-long-forgotten-bitbucket-team-accounts/</guid>
+    <description><![CDATA[The security issues of having a legacy Bitbucket team account]]></description>
+</item><item>
+    <title>Heartbleed: ill communication</title>
+    <link>https://www.stevenmaude.co.uk/posts/heartbleed-ill-communication/</link>
+    <pubDate>Sun, 04 May 2014 16:48:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/heartbleed-ill-communication/</guid>
+    <description><![CDATA[On the lack of communication of websites as to the impact of Heartbleed.]]></description>
+</item><item>
+    <title>Windows Update locking up on XP when checking for updates: fixing the svchost.exe CPU usage problem</title>
+    <link>https://www.stevenmaude.co.uk/posts/windows-update-locking-up-on-xp-when/</link>
+    <pubDate>Wed, 11 Dec 2013 10:36:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/windows-update-locking-up-on-xp-when/</guid>
+    <description><![CDATA[How to fix the recent (2013) freezing of Windows Update on XP machines due to svchost.exe being stuck at full (100%) CPU usage.]]></description>
+</item></channel>
+</rss>

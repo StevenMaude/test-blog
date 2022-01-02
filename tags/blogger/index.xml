@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Blogger - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/blogger/</link>
+        <description>Blogger - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Jul 2015 23:54:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/blogger/" rel="self" type="application/rss+xml" /><item>
+    <title>Thinking of using a static site generator for your blog?</title>
+    <link>https://www.stevenmaude.co.uk/posts/thinking-of-using-a-static-site-generator-for-your-blog/</link>
+    <pubDate>Sat, 18 Jul 2015 23:54:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/thinking-of-using-a-static-site-generator-for-your-blog/</guid>
+    <description><![CDATA[The (many) good and the (few) bad aspects of static site]]></description>
+</item><item>
+    <title>Blogger versus WordPress</title>
+    <link>https://www.stevenmaude.co.uk/posts/blogger-versus-wordpress/</link>
+    <pubDate>Sat, 11 May 2013 12:55:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/blogger-versus-wordpress/</guid>
+    <description><![CDATA[Deciding on what blogging platform to use.]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Thinking of using a static site generator for your blog? - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Thinking of using a static site generator for your blog?" />
+<meta property="og:description" content="The (many) good and the (few) bad aspects of static site" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/thinking-of-using-a-static-site-generator-for-your-blog/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-07-18T23:54:00+00:00" />
+<meta property="article:modified_time" content="2015-07-19T00:37:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Thinking of using a static site generator for your blog?"/>
+<meta name="twitter:description" content="The (many) good and the (few) bad aspects of static site"/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/thinking-of-using-a-static-site-generator-for-your-blog/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/restoring-a-tag-cloud-dispersed-by-pelican-3.6.0/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/getting-an-official-windows-10-disk-image/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Thinking of using a static site generator for your blog?",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/thinking-of-using-a-static-site-generator-for-your-blog\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Blogger, Pelican, Wordpress, static site","wordcount":  1372 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/thinking-of-using-a-static-site-generator-for-your-blog\/","datePublished": "2015-07-18T23:54:00+00:00","dateModified": "2015-07-19T00:37:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Thinking of using a static site generator for your blog?</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2015-07-18">2015-07-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1372 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#converting-and-writing-content-markdown">Converting and writing content (Markdown)</a>
+      <ul>
+        <li><a href="#bad">Bad</a></li>
+        <li><a href="#good">Good</a></li>
+      </ul>
+    </li>
+    <li><a href="#adding-content-to-the-site-and-hosting">Adding content to the site and hosting</a>
+      <ul>
+        <li><a href="#bad-1">Bad</a></li>
+        <li><a href="#good-1">Good</a></li>
+      </ul>
+    </li>
+    <li><a href="#appearance-and-viewer-experience">Appearance and viewer experience</a>
+      <ul>
+        <li><a href="#bad-2">Bad</a></li>
+        <li><a href="#good-2">Good</a></li>
+      </ul>
+    </li>
+    <li><a href="#running-the-generator">Running the generator</a>
+      <ul>
+        <li><a href="#bad-3">Bad</a></li>
+        <li><a href="#good-3">Good</a></li>
+      </ul>
+    </li>
+    <li><a href="#living-with-a-static-site">Living with a static site</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><pre><code>     generators.
+</code></pre>
+<p>When I first thought about moving from Blogger to Pelican, it was
+because I&rsquo;d had more than enough of Blogger&rsquo;s drawbacks. What hadn&rsquo;t
+crossed my mind, because I had no experience of using them, were the
+problems that static site generators could have. At the time, my hunch
+was that it wasn&rsquo;t possible for them to be worse than Blogger.</p>
+<p>As it turns out, that was the case. But, they are not entirely perfect
+and, going through this migration, I better understood what the
+good and the bad of static site generators are. If you&rsquo;re thinking of
+making a similar migration, these points might give you an idea of what
+you might deal with in shifting.</p>
+<p>While I&rsquo;m familiar with Pelican and Blogger, most of the points apply
+generally so could still be informative for you if you&rsquo;re considering a
+move from, say, Wordpress to Jekyll.</p>
+<h2 id="converting-and-writing-content-markdown">Converting and writing content (Markdown)</h2>
+<h3 id="bad">Bad</h3>
+<ul>
+<li>
+<p>Depending on what you used to create a blog previously, and how much
+content you had on your old blog, it may be time consuming to move
+content. Even armed with a <a href="https://github.com/getpelican/pelican/pull/1390" target="_blank" rel="noopener noreferrer">fork of Pelican</a> where
+someone helpful had added Blogger conversion, the output
+wasn&rsquo;t perfect and still had plenty of residual cruft that had to be
+fixed up by hand.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+</li>
+<li>
+<p>Markdown&rsquo;s quick to write with, but only gives you a small subset of
+HTML and so doesn&rsquo;t handle every eventuality. There are dialects of
+Markdown which expand this with more layout options that may be
+available in your blog software of choice.</p>
+<p>With Pelican at least, it&rsquo;s possible to use
+<a href="http://pandoc.org/" target="_blank" rel="noopener noreferrer">Pandoc</a> via a
+<a href="https://github.com/liob/pandoc_reader" target="_blank" rel="noopener noreferrer">plugin</a>. Pandoc is one of
+the more versatile Markdown converters, but does introduces another
+dependency. Pelican also offers reStructuredText support which has
+support for more formatting options than vanilla Markdown, but just
+isn&rsquo;t as nimble to write.</p>
+<p>Instead, I opted to occasionally allow fall back to raw HTML in
+posts, mainly for handling images. This isn&rsquo;t ideal, but is a decent
+compromise that&rsquo;s at least compatible with different Markdown
+implementations.</p>
+</li>
+</ul>
+<h3 id="good">Good</h3>
+<ul>
+<li>All my content is in fairly plain Markdown which I love writing in.
+It also means that I&rsquo;m far less locked into Pelican than I was ever
+tied into Blogger. Should I wish to switch to another static site
+generator, only the metadata and Python-Markdown specific tweaks may
+need adjusting.</li>
+</ul>
+<h2 id="adding-content-to-the-site-and-hosting">Adding content to the site and hosting</h2>
+<h3 id="bad-1">Bad</h3>
+<ul>
+<li>My git repositories are structured in a way that I like: blog HTML,
+the theme I use, my Pelican configuration, my Markdown posts, and
+the post images are all separate. However, for making small
+adjustments to posts, this is a nuisance: you need to edit the post
+and remember to push that, <em>then</em> generate the HTML, <em>then</em> move
+that into the HTML repository and finally push that to GitHub. I
+usually do this via branches too, which is more work too (though
+this is my choice). Improving this workflow is on my to-do list.</li>
+</ul>
+<h3 id="good-1">Good</h3>
+<ul>
+<li>
+<p>My blog&rsquo;s not trapped within Google&rsquo;s servers. Certainly, I&rsquo;m wary
+of how much Google&rsquo;s hands are present in much of what I do on the
+web, whether through hardware devices I use, their search tools or
+through websites that use features like Google Analytics and Fonts
+(including mine). At least the blog&rsquo;s now hosted elsewhere and
+Analytics and Fonts that the site&rsquo;s using could, in the worst case,
+be removed entirely, or replaced with alternatives.</p>
+</li>
+<li>
+<p>In fact, the blog&rsquo;s not really dependent on the whims of any service
+owner at all. If GitHub stop hosting, I can take the HTML and host
+it elsewhere. With Blogger, you&rsquo;re at Google&rsquo;s mercy: if they ever
+decided to drop Blogger, then you&rsquo;d be forced to switch to a new
+blog platform.</p>
+</li>
+<li>
+<p>All the content is tracked within a git repository. This means it&rsquo;s
+version controlled, and there&rsquo;s no easy way to obliterate posts.
+With Blogger, at least once, I foolishly attempted to edit multiple
+posts in separate browser tabs and subsequently lost the content of
+one of them. Luckily, I had a window open with the web version of
+the post to recover it. Having only a single canonical copy of
+posts stored in Google&rsquo;s servers was clearly not a good thing.
+(Wordpress is better in that it&rsquo;s possible to store multiple
+revisions of posts.)</p>
+</li>
+<li>
+<p>You have much more control of the post URLs; Blogger posts always
+have the year and date in them.</p>
+</li>
+<li>
+<p>Blog hosting using my own domain name on GitHub is free of charge.
+This is also free on Blogger. If you use wordpress.com, you&rsquo;ll need
+to pay; if you&rsquo;re using your own Wordpress installation, using your
+own domain is free, but it&rsquo;s likely you&rsquo;ll need to pay for hosting.</p>
+</li>
+</ul>
+<h2 id="appearance-and-viewer-experience">Appearance and viewer experience</h2>
+<h3 id="bad-2">Bad</h3>
+<ul>
+<li>With Pelican (probably much less so for Jekyll), there&rsquo;s not a huge
+range of themes. If you&rsquo;re fussy like me, you may need to spend some
+time tweaking, or creating your own.</li>
+</ul>
+<h3 id="good-2">Good</h3>
+<ul>
+<li>
+<p>My site now functions without the viewer needing JavaScript. With
+Blogger, you used to only see half the page content. If JavaScript
+is disabled now, the only issue is that the mobile menu doesn&rsquo;t
+open, which is far less of a problem.</p>
+</li>
+<li>
+<p>There&rsquo;s no awful separate mobile version of the site. On Blogger,
+the template I used had an unfriendly feature where swiping would
+navigate away from the page to the previous or next article. This
+could be triggered quite unintentionally by trying to pinch to zoom.</p>
+</li>
+<li>
+<p>Often my posts are on programming. Having code snippets that look
+nice without me having to do anything is a great bonus. In Blogger,
+you&rsquo;d need a JavaScript plugin for syntax highlighting.</p>
+</li>
+</ul>
+<h2 id="running-the-generator">Running the generator</h2>
+<h3 id="bad-3">Bad</h3>
+<ul>
+<li>
+<p>Static site generators are not for the impatient. For Pelican, being
+comfortable with Python is a big help, though not essential.
+Pelican — and I imagine this applies to Jekyll too — isn&rsquo;t difficult
+to get a basic blog up and running, but to get the result you want
+may take you considerable work.</p>
+</li>
+<li>
+<p>If you have a very large number of posts, the time it takes to build
+your site may become an issue. With 61 posts and 1 page, my site
+takes 2 to 3 seconds on my Core i5 PC. If the site starts taking
+minutes to build, that may become a chore. This would be
+particularly frustrating if editing posts and wanting to quickly
+preview how the changes look since, with Pelican, the entire site is
+rebuilt when running the development server.</p>
+</li>
+</ul>
+<h3 id="good-3">Good</h3>
+<ul>
+<li>
+<p>Pelican is nice to use, and I had very few problems in doing so.
+Most of my effort was spent on converting content and amending the
+theme to my liking. Though the community&rsquo;s relatively small, it does
+seem like there are more blog posts and activity compared with when
+I first looked into it last year.</p>
+</li>
+<li>
+<p>Pelican, and many other static site generators, are <a href="http://opensource.org/" target="_blank" rel="noopener noreferrer">open source</a> software. This means they are free
+to use, and free to modify (and share those modifications). The
+implication is that, as long as there are developers interested in
+it, it&rsquo;s likely that it will continue to be supported and developed.
+Even in the unlikely event that everyone else abandons it and you&rsquo;re
+the only user, you can still continue modifying it. (This also
+applies to Wordpress' source too incidentally.)</p>
+</li>
+</ul>
+<h2 id="living-with-a-static-site">Living with a static site</h2>
+<p>When worrying about the limitations that static sites may have, think
+about the actual minimum you need on a web site to share and present
+written ideas and thoughts you have. It&rsquo;s really not very much; do you
+<em>really</em> need everything that Wordpress offers?</p>
+<p>Overall, I&rsquo;m pleased with the result. When I&rsquo;d started thinking about
+moving, I&rsquo;d got fed up of using clunky old Blogger, which feels
+distinctly unloved by Google.</p>
+<p>Being able to write directly in the format (Markdown) that the blog
+actually uses is a real convenience. (Note that Wordpress offers this
+option too.) Along with that, the blog looking fresher than it did is a
+bonus. These features, more than perhaps anything else, actually makes
+me want to add new content to my blog, which is more than I could say
+that Blogger ever did for my inspiration.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>You can see exactly how much work in the early commits
+<a href="https://github.com/StevenMaude/blog-content/commits/master" target="_blank" rel="noopener noreferrer">here</a>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2015-07-19</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/thinking-of-using-a-static-site-generator-for-your-blog/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/thinking-of-using-a-static-site-generator-for-your-blog/" data-title="Thinking of using a static site generator for your blog?" data-hashtags="Blogger,Pelican,Wordpress,static site"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/thinking-of-using-a-static-site-generator-for-your-blog/" data-hashtag="Blogger"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/thinking-of-using-a-static-site-generator-for-your-blog/" data-title="Thinking of using a static site generator for your blog?"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/blogger/">Blogger</a>,&nbsp;<a href="/tags/pelican/">Pelican</a>,&nbsp;<a href="/tags/wordpress/">Wordpress</a>,&nbsp;<a href="/tags/static-site/">static site</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/restoring-a-tag-cloud-dispersed-by-pelican-3.6.0/" class="prev" rel="prev" title="Restoring a tag cloud dispersed by Pelican 3.6.0"><i class="fas fa-angle-left fa-fw"></i>Restoring a tag cloud dispersed by Pelican 3.6.0</a>
+            <a href="/posts/getting-an-official-windows-10-disk-image/" class="next" rel="next" title="Getting an official Windows 10 disk image">Getting an official Windows 10 disk image<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

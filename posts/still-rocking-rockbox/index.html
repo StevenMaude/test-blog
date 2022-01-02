@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Still rocking Rockbox - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Still rocking Rockbox" />
+<meta property="og:description" content="Explaining why Rockbox is my portable audio player software of choice, and how you can try it out." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/still-rocking-rockbox/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-12-10T23:06:00+00:00" />
+<meta property="article:modified_time" content="2016-12-10T23:06:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Still rocking Rockbox"/>
+<meta name="twitter:description" content="Explaining why Rockbox is my portable audio player software of choice, and how you can try it out."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/still-rocking-rockbox/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/conversation-conservation-recording-audio-input-and-output-simultaneously-in-linux/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/a-year-of-garmin-a-forerunner-15-review/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Still rocking Rockbox",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/still-rocking-rockbox\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "open source, Rockbox","wordcount":  1032 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/still-rocking-rockbox\/","datePublished": "2016-12-10T23:06:00+00:00","dateModified": "2016-12-10T23:06:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Still rocking Rockbox</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2016-12-10">2016-12-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1032 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#easy-listening">Easy listening</a></li>
+    <li><a href="#installing-rockbox">Installing Rockbox</a></li>
+    <li><a href="#the-future">The future?</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>In the days of the iPod, when travelling on public transport, in the UK
+at least, those trademark white earphones were everywhere. But it seems
+that portable audio players have become a thing of history; with the
+advent of phones as all-in-one devices, these have pretty much replaced
+audio players (and cameras too). Why carry extra devices when the one
+you&rsquo;ve already got in your pocket will do?</p>
+<p>Returning back to those past days, I&rsquo;d put up with a couple of very
+cheap MP3 players, which would often glitch in all kinds of infuriating
+ways. That ranged from failing to read certain MP3s, going further in
+their obstinance and just locking up entirely, or further still and
+actively protesting noisily. I&rsquo;m not sure that &ldquo;randomly firing a loud
+burst of white noise into my ears until power off&rdquo; is a particular
+bullet point to stick on the box blurb.</p>
+<p>Fortunately, it didn&rsquo;t take long before I&rsquo;d spotted Rockbox, a open
+source replacement firmware for audio players. Since then, Rockbox has
+become one of the open source projects that I use most. I&rsquo;ve used it
+near daily on some device or other for probably around a decade, and I
+don&rsquo;t see that changing anytime soon.</p>
+<h2 id="easy-listening">Easy listening</h2>
+<p>As an audio player is one of the things I&rsquo;m using all the time, I like
+having a separate device with its own, usually lengthy, battery life.
+With that in mind, I&rsquo;m probably a little ignorant if there&rsquo;s phone audio
+player software that&rsquo;s as competent and fully featured as Rockbox. It&rsquo;s
+certainly possible there&rsquo;s a suitable competitor. But I&rsquo;d be surprised.</p>
+<p>In terms of the range of audio formats supported and the number of
+features Rockbox offers, it seems difficult to match. There&rsquo;s gapless
+playback, bookmarking, equalizer, compressor, crossfeed, control of
+pitch and speed, and ReplayGain support. On top of that, adjusting many
+aspects of a Rockbox-enabled device is possible. Even the display theme
+is fully customisable should you wish to create your own.  Furthermore,
+if a device has the option of adding external media card storage, such
+as microSD, Rockbox sometimes goes beyond a device&rsquo;s official support,
+enabling the use of larger memory cards.</p>
+<h2 id="installing-rockbox">Installing Rockbox</h2>
+<p>If you want to give it a try, the first step is to take a look at the
+<a href="https://rockbox.org" target="_blank" rel="noopener noreferrer">official site</a> and see what devices are currently
+supported. It&rsquo;s also worth checking around the forums there too,
+particularly under &ldquo;New Ports&rdquo; as there may be newer devices where less
+stable ports-in-progress are available, but not listed on the main site.</p>
+<p>Devices that run Rockbox are commonly fairly cheap as it&rsquo;s usually
+older, out of demand hardware that&rsquo;s supported. It does mean getting
+hold of one in good condition might not be necessarily easy. I&rsquo;ve used
+Rockbox on several different devices, first and second generation iPod
+Nanos, and the Sansa Fuze and Fuze+. There have been devices I have
+preferred, but most devices are quite usable since once you&rsquo;ve selected
+what to play, there&rsquo;s little more to do. The main differences really
+come down to screen size, ease of accessing the user interface (for
+instance, the Fuze+ has a touch sensitive pad which isn&rsquo;t ideal compared
+with the definite precision of the iPod Nano or Fuze wheels), and
+whether a device supports storage expansion.</p>
+<p>When you&rsquo;ve got a compatible device, it&rsquo;s relatively straightforward to
+get things going. The Rockbox Utility is a program that you can use to
+install Rockbox directly to hardware that&rsquo;s plugged into your PC, or you
+can install manually if you prefer, although it may involve using a
+compiler. The actual installation process varies depending on hardware,
+for instance, you may also have to download some official firmware file
+for your hardware first so that it can be patched to add Rockbox. After
+that, you should be ready to copy files onto your player&rsquo;s storage and
+start using it.</p>
+<p>On a security point: when I last used the Rockbox Utility, only a few
+weeks back, it was using insecure HTTP URLs for downloading from the
+site. This is despite the download servers the Utility downloads files
+from during installation actually supporting HTTPS. I don&rsquo;t have the
+changes I made to hand, but it&rsquo;s possible to use your favourite
+find-replace tool to patch the source to replace URLs that match, for
+example (but not limited to) <a href="http://download.rockbox.org" target="_blank" rel="noopener noreferrer">http://download.rockbox.org</a> to use HTTPS. I
+really should have submitted a patch but I couldn&rsquo;t face the hassle of
+creating a account to access Rockbox&rsquo;s Gerrit instance at the time.</p>
+<h2 id="the-future">The future?</h2>
+<p>What&rsquo;s the long, long term future of the project? If you&rsquo;ve hardware for
+which Rockbox is claimed to be stable, you&rsquo;ll probably find that&rsquo;s the
+case. I&rsquo;ve had devices occasionally lock up, but these haven&rsquo;t happened
+frequently enough to be frustrating. As mentioned above, it&rsquo;s as
+feature-filled as you&rsquo;d likely require too, so even if development
+stopped on it entirely it would still continue to be usable too.
+Nonetheless, it&rsquo;s still actively maintained with a steady run of code
+changes being made.</p>
+<p>You&rsquo;re limited to what devices you can install Rockbox on, but these
+were often produced in large quantities (e.g. iPods) so there should be
+an abundance of them on the market. All this makes it relatively simple
+to pick up a working used one to install Rockbox. For now. Getting hold
+of one of these is unlikely to be a problem as there are so many out
+there, but getting one in good working order may prove increasingly
+difficult as time goes on. If it&rsquo;s a failed battery that&rsquo;s a problem,
+it&rsquo;s probably easy to get a replacement, although replacing the battery
+may prove trickier: these devices weren&rsquo;t often designed to be
+user-serviceable.</p>
+<p>There has been work on making Rockbox an Android app. Ultimately, that&rsquo;s
+likely the way things will go in the far distant future as old audio
+hardware becomes scarce and fewer new devices are designed and
+manufactured. In the meantime, it&rsquo;s nice to have software that does one
+thing and does it particularly well. As nothing better seems to have
+come along to usurp Rockbox&rsquo;s place, it&rsquo;s quite possible that I&rsquo;ll be
+using it over the next ten years as I have for the last ten.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2016-12-10</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/still-rocking-rockbox/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/still-rocking-rockbox/" data-title="Still rocking Rockbox" data-hashtags="open source,Rockbox"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/still-rocking-rockbox/" data-hashtag="open source"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/still-rocking-rockbox/" data-title="Still rocking Rockbox"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/open-source/">open source</a>,&nbsp;<a href="/tags/rockbox/">Rockbox</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/conversation-conservation-recording-audio-input-and-output-simultaneously-in-linux/" class="prev" rel="prev" title="Conversation conservation: recording audio input and output simultaneously in Linux"><i class="fas fa-angle-left fa-fw"></i>Conversation conservation: recording audio input and output simultaneously in Linux</a>
+            <a href="/posts/a-year-of-garmin-a-forerunner-15-review/" class="next" rel="next" title="A Year of Garmin: a Forerunner 15 review">A Year of Garmin: a Forerunner 15 review<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

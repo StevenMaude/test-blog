@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Securely erasing frozen hard disks with hdparm - stevenmaude.co.uk</title><meta name="description" content="Steven Maude&#39;s blog"><meta property="og:title" content="Securely erasing frozen hard disks with hdparm" />
+<meta property="og:description" content="How to use hdparm to erase hard drives, and what to do if the drive is frozen." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.stevenmaude.co.uk/posts/securely-erasing-frozen-hard-disks-with-hdparm/" /><meta property="og:image" content="https://www.stevenmaude.co.uk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-11-22T13:54:00+00:00" />
+<meta property="article:modified_time" content="2017-12-29T21:59:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.stevenmaude.co.uk/logo.png"/>
+
+<meta name="twitter:title" content="Securely erasing frozen hard disks with hdparm"/>
+<meta name="twitter:description" content="How to use hdparm to erase hard drives, and what to do if the drive is frozen."/>
+<meta name="application-name" content="Steven Maude">
+<meta name="apple-mobile-web-app-title" content="Steven Maude"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.stevenmaude.co.uk/posts/securely-erasing-frozen-hard-disks-with-hdparm/" /><link rel="prev" href="https://www.stevenmaude.co.uk/posts/collecting-disposable-email-with-go-mailin8/" /><link rel="next" href="https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-almost-2017-edition/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.935c5813d5461a54113f4388bd97dd5fac3dca09573e2e89f8d860d52282ec38.css" integrity="sha256-k1xYE9VGGlQRP0OIvZfdX6w9yglXPi6J&#43;Nhg1SKC7Dg="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Securely erasing frozen hard disks with hdparm",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.stevenmaude.co.uk\/posts\/securely-erasing-frozen-hard-disks-with-hdparm\/"
+        },"image": ["https:\/\/www.stevenmaude.co.uk\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hdparm, erase","wordcount":  701 ,
+        "url": "https:\/\/www.stevenmaude.co.uk\/posts\/securely-erasing-frozen-hard-disks-with-hdparm\/","datePublished": "2016-11-22T13:54:00+00:00","dateModified": "2017-12-29T21:59:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/www.stevenmaude.co.uk\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Steven Maude"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="stevenmaude.co.uk"><span class="header-title-pre"><i class='fas fa-laptop-code fa-fw'></i></span>stevenmaude.co.uk</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/StevenMaude" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title flipInX">Securely erasing frozen hard disks with hdparm</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Steven Maude</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2016-11-22">2016-11-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;701 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#safety-first">Safety first</a></li>
+    <li><a href="#setting-a-password">Setting a password</a></li>
+    <li><a href="#unfreezing">Unfreezing</a></li>
+    <li><a href="#erasing">Erasing</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>!!! article-edit &quot;&quot;
+Edit 2017-12-29: Justin Smith, who&rsquo;d read this post, had a
+discussion by email with me pointing out he&rsquo;d had some problems
+with this process: namely, wiping appeared to complete, but then he
+could still find files present on the disk afterwards. I couldn&rsquo;t
+figure it out, but suggested Justin contacted hdparm&rsquo;s author, Mark
+Lord, for advice. Mark diagnosed the problem as the drive not being
+unmounted first:</p>
+<pre><code>&gt; Yes, you MUST unmount anything that got automounted, because stuff
+&gt; that is mounted gets periodically written to by the kernel
+&gt; (filesystem timestamps etc), which could account for some of the
+&gt; non-zero stuff you saw later.
+
+Mark's suggestion for wiping the drive was as follows:
+
+&gt; Do this:
+&gt;
+&gt; (1) Un-mount all partitions of the drive, including those that got
+&gt; auto-mounted. Then do &quot;`sync`&quot;.
+&gt;
+&gt; (2) Set an empty password: `hdparm --security-set-pass NULL /dev/sdX`
+&gt;
+&gt; (3) Erase it: `hdparm --security-erase NULL /dev/sdX`
+</code></pre>
+<p>Yesterday I was trying to erase a hard drive before I used it for a new
+install. It may well have never been used, but I couldn&rsquo;t remember and,
+for the sake of a few minutes, it seemed sensible to do so first.</p>
+<p>The best way to erase, especially if the drive is a solid state drive,
+is to use the <a href="https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase" target="_blank" rel="noopener noreferrer">ATA Secure
+Erase</a> command
+which <a href="%7bfilename%7d../2014/securely-erasing-ssd-drives.md" rel="">I&rsquo;ve mentioned
+before</a>.
+This command should also work for most magnetic hard drives too, unless
+they&rsquo;re ancient.</p>
+<p>Instead of just mentioning the tool, I&rsquo;ve summarised the details from
+the lengthy page where I found them below, and discuss how to deal with
+&ldquo;frozen&rdquo; drives.</p>
+<p>You can access hdparm by booting into, for example, an Ubuntu
+installation DVD or USB. Installing Linux isn&rsquo;t required: you can just
+&ldquo;Try Ubuntu&rdquo; instead which doesn&rsquo;t install anything at all.</p>
+<h2 id="safety-first">Safety first</h2>
+<p>First, the most sensible thing to do when erasing a drive is remove any
+drives other than those you wish to erase. It means even if you
+accidentally type the wrong thing that you won&rsquo;t erase a drive that you
+didn&rsquo;t intend to.</p>
+<p>Next, you need to get the drive&rsquo;s name. Open a terminal by pressing
+Ctrl+Alt+T.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo lshw -class disk
+</code></pre></div><p>This will show you details of the disk, including the name. Replace the
+<code>/dev/sdX</code> in the commands below with that name.</p>
+<h2 id="setting-a-password">Setting a password</h2>
+<p>The next task is to set a password. I&rsquo;m not sure that you really need to
+do this, but the
+<a href="https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase" target="_blank" rel="noopener noreferrer">kernel.org guide</a>
+advises it due to problems with certain PCs, and it only takes one extra
+command. Note that the &ldquo;foo&rdquo; password below can be replaced by something
+of your choice, but it doesn&rsquo;t really matter; when the drive is erased,
+the password should be removed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ sudo hdparm --user-master u --security-set-pass foo /dev/sdX
+security_password: <span class="s2">&#34;foo&#34;</span>
+/dev/sdX:
+ Issuing SECURITY_SET_PASS command, <span class="nv">password</span><span class="o">=</span><span class="s2">&#34;foo&#34;</span>, <span class="nv">user</span><span class="o">=</span>user, <span class="nv">mode</span><span class="o">=</span>high
+SECURITY_SET_PASS: Input/output error
+</code></pre></div><p>Well, that error wasn&rsquo;t expected.</p>
+<p>When I&rsquo;ve used hdparm in this way previously, I haven&rsquo;t had a problem.
+You might expect it if the drive has a password set already, but in this
+case I couldn&rsquo;t recall doing that. If that&rsquo;s the same for you, it could
+be a simple fix.  First, check the drive&rsquo;s current status via:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ sudo hdparm -I /dev/sdX
+</code></pre></div><p>and you may see &ldquo;frozen&rdquo;,  as opposed to &ldquo;not frozen&rdquo;, in the &ldquo;Security&rdquo;
+section of the <code>hdparm</code> output. This means you can&rsquo;t change security
+settings, so attempting to set a password fails.</p>
+<h2 id="unfreezing">Unfreezing</h2>
+<p>In this case, the <a href="https://superuser.com/questions/810867/new-ssd-hdparm-shows-frozen-whether-secure-erase-is-needed-before-installing" target="_blank" rel="noopener noreferrer">actual
+fix</a>
+is simple. Suspending the PC, then powering it back on should then give
+you an unfrozen drive: you can check by running the <code>hdparm -I</code> command
+above again.</p>
+<p>Now, if you retry setting a password, you should be able to run the
+<code>SECURITY_SET_PASS</code> command without error. Also, rerunning the <code>hdparm -I</code> command yet another time should show that a password is &ldquo;enabled&rdquo; as
+opposed to &ldquo;not enabled&rdquo;.</p>
+<h2 id="erasing">Erasing</h2>
+<p>You can now proceed with the erase. If your drive&rsquo;s <code>hdparm</code> output
+states <code>supported: enhanced erase</code>, you could replace the
+<code>--security-erase</code> below with <code>--security-erase-enhanced</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ sudo <span class="nb">time</span> hdparm --user-master u --security-erase foo /dev/sdX
+</code></pre></div><p>After the erase, the password should be removed, and running the <code>hdparm -I</code> command one final time should show that the password is &ldquo;not
+enabled&rdquo;.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2017-12-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/securely-erasing-frozen-hard-disks-with-hdparm/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.stevenmaude.co.uk/posts/securely-erasing-frozen-hard-disks-with-hdparm/" data-title="Securely erasing frozen hard disks with hdparm" data-hashtags="hdparm,erase"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.stevenmaude.co.uk/posts/securely-erasing-frozen-hard-disks-with-hdparm/" data-hashtag="hdparm"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.stevenmaude.co.uk/posts/securely-erasing-frozen-hard-disks-with-hdparm/" data-title="Securely erasing frozen hard disks with hdparm"><i class="fab fa-hacker-news fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hdparm/">hdparm</a>,&nbsp;<a href="/tags/erase/">erase</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/collecting-disposable-email-with-go-mailin8/" class="prev" rel="prev" title="Collecting disposable email with go-mailin8"><i class="fas fa-angle-left fa-fw"></i>Collecting disposable email with go-mailin8</a>
+            <a href="/posts/a-beginners-guide-to-os-encryption-almost-2017-edition/" class="next" rel="next" title="A beginner&#39;s guide to OS encryption: (almost) 2017 edition">A beginner&#39;s guide to OS encryption: (almost) 2017 edition<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2013 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Steven Maude</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

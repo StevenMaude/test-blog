@@ -1,0 +1,42 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Bitlocker - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/bitlocker/</link>
+        <description>Bitlocker - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Feb 2017 17:54:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/bitlocker/" rel="self" type="application/rss+xml" /><item>
+    <title>Switching BitLocker protection methods without re-encrypting</title>
+    <link>https://www.stevenmaude.co.uk/posts/switching-bitlocker-protection-methods-without-re-encrypting/</link>
+    <pubDate>Sat, 04 Feb 2017 17:54:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/switching-bitlocker-protection-methods-without-re-encrypting/</guid>
+    <description><![CDATA[How to change BitLocker key protectors without having to]]></description>
+</item><item>
+    <title>A beginner&#39;s guide to OS encryption: (almost) 2017 edition</title>
+    <link>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-almost-2017-edition/</link>
+    <pubDate>Mon, 28 Nov 2016 00:26:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-almost-2017-edition/</guid>
+    <description><![CDATA[How to dual boot Windows with Ubuntu and encrypt them both.]]></description>
+</item><item>
+    <title>Stopping Windows from rebooting at the BitLocker boot password prompt</title>
+    <link>https://www.stevenmaude.co.uk/posts/stopping-windows-from-rebooting-at-the-bitlocker-boot-password-prompt/</link>
+    <pubDate>Sat, 17 Sep 2016 23:52:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/stopping-windows-from-rebooting-at-the-bitlocker-boot-password-prompt/</guid>
+    <description><![CDATA[How to prevent Windows from rebooting after a short timeout when waiting for a boot BitLocker password.]]></description>
+</item><item>
+    <title>Things I&#39;ve learned from building (and rebuilding) a PC.</title>
+    <link>https://www.stevenmaude.co.uk/posts/things-ive-learned-from-building-and/</link>
+    <pubDate>Tue, 31 Dec 2013 11:52:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/things-ive-learned-from-building-and/</guid>
+    <description><![CDATA[Things I&rsquo;ve learned from building (and rebuilding) a PC.]]></description>
+</item><item>
+    <title>Odd behaviour of Bitlocker, or maybe my HDD…</title>
+    <link>https://www.stevenmaude.co.uk/posts/odd-behaviour-of-bitlocker-or-maybe-my/</link>
+    <pubDate>Sun, 13 Oct 2013 20:36:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/odd-behaviour-of-bitlocker-or-maybe-my/</guid>
+    <description><![CDATA[Description of some strange behaviour I observed when setting up a USB drive with Bitlocker.]]></description>
+</item><item>
+    <title>How to secure your storage and backup drives on Windows and Linux</title>
+    <link>https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/</link>
+    <pubDate>Sat, 28 Sep 2013 17:03:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/how-to-secure-your-storage-and-backup/</guid>
+    <description><![CDATA[A guide to securing data on external and backup drives by encrypting them.]]></description>
+</item><item>
+    <title>A beginner&#39;s guide to OS encryption: dual booting and encrypting Windows and Ubuntu</title>
+    <link>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-dual/</link>
+    <pubDate>Tue, 17 Sep 2013 18:48:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/a-beginners-guide-to-os-encryption-dual/</guid>
+    <description><![CDATA[How to encrypt Windows and Ubuntu in a dual boot system.]]></description>
+</item></channel>
+</rss>

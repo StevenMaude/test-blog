@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Bitbucket - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/bitbucket/</link>
+        <description>Bitbucket - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Feb 2017 21:30:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/bitbucket/" rel="self" type="application/rss+xml" /><item>
+    <title>The dangers of long forgotten Bitbucket team accounts</title>
+    <link>https://www.stevenmaude.co.uk/posts/the-dangers-of-long-forgotten-bitbucket-team-accounts/</link>
+    <pubDate>Sat, 04 Feb 2017 21:30:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/the-dangers-of-long-forgotten-bitbucket-team-accounts/</guid>
+    <description><![CDATA[The security issues of having a legacy Bitbucket team account]]></description>
+</item><item>
+    <title>Managing a Bitbucket user&#39;s permissions when they&#39;ve left your team</title>
+    <link>https://www.stevenmaude.co.uk/posts/managing-a-bitbucket-users-permissions-when-theyve-left-your-team/</link>
+    <pubDate>Sat, 16 Apr 2016 01:54:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/managing-a-bitbucket-users-permissions-when-theyve-left-your-team/</guid>
+    <description><![CDATA[Removing users entirely from accessing your Bitbucket team&rsquo;s repositories.]]></description>
+</item><item>
+    <title>Working with multiple SSH keys: setting up git over SSH with GitHub and Bitbucket</title>
+    <link>https://www.stevenmaude.co.uk/posts/working-with-multiple-ssh-keys-setting/</link>
+    <pubDate>Tue, 08 Oct 2013 19:33:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/working-with-multiple-ssh-keys-setting/</guid>
+    <description><![CDATA[How to setup <code>.ssh/config</code> to use different ssh keys for different servers, e.g. when connecting to GitHub and Bitbucket.]]></description>
+</item></channel>
+</rss>

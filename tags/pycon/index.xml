@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>PyCon - Tag - stevenmaude.co.uk</title>
+        <link>https://www.stevenmaude.co.uk/tags/pycon/</link>
+        <description>PyCon - Tag - stevenmaude.co.uk</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 15 Oct 2021 17:27:00 &#43;0000</lastBuildDate><atom:link href="https://www.stevenmaude.co.uk/tags/pycon/" rel="self" type="application/rss+xml" /><item>
+    <title>PyCon 2021: Secure software supply chains</title>
+    <link>https://www.stevenmaude.co.uk/posts/pycon-2021-secure-software-supply-chains/</link>
+    <pubDate>Fri, 15 Oct 2021 17:27:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/pycon-2021-secure-software-supply-chains/</guid>
+    <description><![CDATA[A summary of a talk by Dustin Ingram at PyCon 2021.]]></description>
+</item><item>
+    <title>Solve your problem with sloppy Python</title>
+    <link>https://www.stevenmaude.co.uk/posts/solve-your-problem-with-sloppy-python/</link>
+    <pubDate>Sun, 20 May 2018 17:24:00 &#43;0000</pubDate><dc:creator>Steven Maude</dc:creator><guid>https://www.stevenmaude.co.uk/posts/solve-your-problem-with-sloppy-python/</guid>
+    <description><![CDATA[A summary of a talk by Larry Hastings at PyCon 2018.]]></description>
+</item></channel>
+</rss>
